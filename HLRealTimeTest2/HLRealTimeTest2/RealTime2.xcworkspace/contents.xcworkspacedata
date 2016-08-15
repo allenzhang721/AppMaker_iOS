@@ -8,6 +8,6 @@
       location = "group:HLRealTimeTest2.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:HLIOS_traditional/HLRealTimeTest2/HLRealTimeTest2/HLRealTimeTest2_SmartApps.xcodeproj">
+      location = "group:../HLRealTimeTest2_Taiwan/HLRealTimeTest2_SmartApps.xcodeproj">
    </FileRef>
 </Workspace>
