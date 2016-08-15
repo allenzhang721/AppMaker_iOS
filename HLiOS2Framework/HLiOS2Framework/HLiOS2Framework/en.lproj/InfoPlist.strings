@@ -1,0 +1,17 @@
+/* 
+  InfoPlist.strings
+  MoueeiOS2Framework
+
+  Created by 星宇陈 on 13-11-22.
+  Copyright (c) 2013年 北京谋易软件有限责任公司. All rights reserved.
+*/
+"Attention"="Attention";
+"Purchase"="Purchase";
+"PurchaseFail"="Purchase fail .";
+"CancelPurchase"="You have cancel purchasing .";
+"whetherPurchase"="Would you like purchase this book's full version ?";
+"saving"="Saving...";
+"cleanAll"="Clean all ?";
+
+"cancel"="Cancel";
+"confirm"="Confirm";

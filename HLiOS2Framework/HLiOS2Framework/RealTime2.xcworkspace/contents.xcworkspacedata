@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:RealTime2.xcworkspace">
+   </FileRef>
+   <FileRef
+      location = "group:../../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework.xcodeproj">
+   </FileRef>
+</Workspace>

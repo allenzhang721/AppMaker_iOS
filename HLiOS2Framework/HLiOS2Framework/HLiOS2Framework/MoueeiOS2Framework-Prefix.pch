@@ -1,0 +1,12 @@
+//
+// Prefix header for all source files of the 'MoueeiOS2Framework' target in the 'MoueeiOS2Framework' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
+
+//只能开启一个
+#define TAIWAN 0
+#define JAP    0
+#define SIMP   1

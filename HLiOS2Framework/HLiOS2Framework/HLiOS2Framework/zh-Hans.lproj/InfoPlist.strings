@@ -1,0 +1,17 @@
+/* 
+  InfoPlist.strings
+  MoueeiOS2Framework
+
+  Created by 星宇陈 on 13-11-22.
+  Copyright (c) 2013年 北京谋易软件有限责任公司. All rights reserved.
+*/
+"Attention"="提示";
+"Purchase"="购买";
+"PurchaseFail"="购买失败。";
+"CancelPurchase"="您已经取消应用内购。";
+"whetherPurchase"="即将看到的内容为付费内容，是否购买？";
+"saving"="正在保存...";
+"cleanAll"="您确定要清空吗？";
+
+"cancel"="取消";
+"confirm"="确定";

@@ -1,0 +1,31 @@
+//
+// Prefix header for all source files of the 'MoueeiOS2Framework' target in the 'MoueeiOS2Framework' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#import <LocalizationDefine.h>
+
+#endif
+
+
+//只能开启一个
+#define TAIWAN 0
+#define JAP    0
+#define SIMP   1
+
+#ifdef DEBUG
+//A better version of NSLog
+#define NSLog(format, ...) do {                                             \
+fprintf(stderr, "<%s : %d> %s\n",                                           \
+[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
+__LINE__, __func__);                                                        \
+(NSLog)((format), ##__VA_ARGS__);                                           \
+fprintf(stderr, "-------\n");                                               \
+} while (0)
+
+#else
+
+#define NSLog(format, ...) // Close `NSLog` in release scheme
+
+#endif

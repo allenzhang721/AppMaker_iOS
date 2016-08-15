@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E67498AC-A7F5-4745-B3EA-4D372A92D5D5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RealTime2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>37C480DA-88AF-427F-959B-D47205B0B8B3</key>
+		<string>https://192.168.1.208/svn/com.mouee.ios/MoueeIOS/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HLRealTimeTest2/HLRealTimeTest2/RealTime2.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>37C480DA-88AF-427F-959B-D47205B0B8B3</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>37C480DA-88AF-427F-959B-D47205B0B8B3</key>
+		<string>https://192.168.1.208/svn/com.mouee.ios</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://192.168.1.208/svn/com.mouee.ios/MoueeIOS/trunk/MoueeRealTimeTest2/MoueeRealTimeTest2/RealTime2.xcworkspace</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>37C480DA-88AF-427F-959B-D47205B0B8B3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>37C480DA-88AF-427F-959B-D47205B0B8B3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>moueeiOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
