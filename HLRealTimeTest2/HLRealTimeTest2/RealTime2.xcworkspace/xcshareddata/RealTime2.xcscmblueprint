@@ -1,0 +1,46 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2F9A8AD88BE7CBA2C74A1C9E0B9E1D1323A31ED7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "c3f44f6b-1dca-8a4b-afe8-91b4d01b633f++1700" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "55C233C9-AFCF-4F73-94C5-9B5FB9266FAB" : 0,
+    "c3f44f6b-1dca-8a4b-afe8-91b4d01b633f++1700" : 0,
+    "E0537899CF0BAF040D6670881ECFED72C39E9BEF" : 0,
+    "2F9A8AD88BE7CBA2C74A1C9E0B9E1D1323A31ED7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EEEFCEAA-9438-4F2D-9BC1-798F558B11C3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "55C233C9-AFCF-4F73-94C5-9B5FB9266FAB" : "HLIOS",
+    "c3f44f6b-1dca-8a4b-afe8-91b4d01b633f++1700" : "HLIOS_Development",
+    "E0537899CF0BAF040D6670881ECFED72C39E9BEF" : "appMaker_framework_publisher_tester\/",
+    "2F9A8AD88BE7CBA2C74A1C9E0B9E1D1323A31ED7" : "AppMaker_iOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RealTime2",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HLRealTimeTest2\/HLRealTimeTest2\/RealTime2.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/allenzhang721\/AppMaker_iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2F9A8AD88BE7CBA2C74A1C9E0B9E1D1323A31ED7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.208\/svn\/com.hl.appmaker",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "55C233C9-AFCF-4F73-94C5-9B5FB9266FAB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/allenzhang721\/appMaker_framework_publisher_tester.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E0537899CF0BAF040D6670881ECFED72C39E9BEF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.208\/svn\/com.hl.appmaker",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c3f44f6b-1dca-8a4b-afe8-91b4d01b633f++1700"
+    }
+  ]
+}
