@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5DEB867E3DAC9FC9A485BC07D8AB808784EE2BD8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "c3f44f6b-1dca-8a4b-afe8-91b4d01b633f++1700" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5DEB867E3DAC9FC9A485BC07D8AB808784EE2BD8" : 0,
+    "c3f44f6b-1dca-8a4b-afe8-91b4d01b633f++1700" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B2405F28-7B2A-4608-ABF0-CDECD4DE2DED",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5DEB867E3DAC9FC9A485BC07D8AB808784EE2BD8" : "appMaker_Publisher\/",
+    "c3f44f6b-1dca-8a4b-afe8-91b4d01b633f++1700" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HLIOSPublisher",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HLIOSPublisher\/HLIOSPublisher.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cszwdy\/appMaker_Publisher.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5DEB867E3DAC9FC9A485BC07D8AB808784EE2BD8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.208\/svn\/com.hl.appmaker",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c3f44f6b-1dca-8a4b-afe8-91b4d01b633f++1700"
+    }
+  ]
+}
