@@ -10,6 +10,7 @@
 #import "GMGridViewLayoutStrategies.h"
 #import "ShellCell.h" 
 #import "App.h"
+#import "ShelfViewController.h"
 
 
 
@@ -121,8 +122,6 @@
     
     [self.shelfEntity.books insertObject:bookEntity atIndex:0];
     [self addNewBook];
-    
-    
 }
 
 - (void)tapAction:(UITapGestureRecognizer *)gesture
@@ -190,10 +189,23 @@
     }
 }
 
+-(void)removeBookAt:(NSUInteger) i {
+    
+    [self.gridView removeObjectAtIndex:i withAnimation:GMGridViewItemAnimationFade];
+    ShelfBookEntity *entity  = [self.shelfEntity.books objectAtIndex: i];
+    [entity remove];
+    [self.shelfEntity.books removeObjectAtIndex:self.alertView.tag];
+    [self.gridView reloadData];
+    [self updateBgView];
+    [self.shelfEntity save];
+}
+
 - (void)GMGridView:(GMGridView *)gridView processDeleteActionForItemAtIndex:(NSInteger)index
 {
-    self.alertView.tag = index;
-    [self.alertView showWithAnimation:URBAlertAnimationFlipVertical];
+//    self.alertView.tag = index;
+//    [self.alertView showWithAnimation:URBAlertAnimationFlipVertical];
+    
+    [self.shelfViewController showAlertRemoveBookAt:index];
 }
 
 - (CGSize)GMGridView:(GMGridView *)gridView sizeForItemsInInterfaceOrientation:(UIInterfaceOrientation)orientation

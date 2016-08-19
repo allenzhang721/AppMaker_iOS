@@ -7,26 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDK/ShareSDK.h>
 //#import "WXApi.h"
 //#import "WBApi.h"
-#import <TencentOpenAPI/QQApi.h>
-#import <TencentOpenAPI/QQApiInterface.h>
-#import <TencentOpenAPI/TencentOAuth.h>
-#import "AGViewDelegate.h"
+//#import <TencentOpenAPI/QQApi.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
+//#import <TencentOpenAPI/TencentOAuth.h>
+//#import "AGViewDelegate.h"
 
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
 //    enum WXScene _scene;
-    AGViewDelegate *_viewDelegate;
+//    AGViewDelegate *_viewDelegate;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) ViewController *viewController;
 
-@property (nonatomic,readonly) AGViewDelegate *viewDelegate;
+//@property (nonatomic,readonly) AGViewDelegate *viewDelegate;
 
 @end

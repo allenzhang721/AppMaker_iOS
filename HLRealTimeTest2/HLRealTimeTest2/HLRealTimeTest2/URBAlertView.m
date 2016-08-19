@@ -1202,9 +1202,9 @@ static CGSize const kURBAlertViewDefaultSize = {280.0, 180.0};
 	if (self.focusedTextField) {
 		[self.focusedTextField resignFirstResponder];
 	}
-	//self.layer.transform = CATransform3DIdentity;
-	//self.transform = CGAffineTransformIdentity;
-	self.alpha = 1.0f;
+	self.layer.transform = CATransform3DIdentity;
+	self.transform = CGAffineTransformIdentity;
+	self.alpha = 0.0f;
 	self.window = nil;
 	// rekey main AppDelegate window
 	[[[[UIApplication sharedApplication] delegate] window] makeKeyWindow];

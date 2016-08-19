@@ -216,68 +216,68 @@
     [super dealloc];
 }
 
-- (void)shareToWeiboClickHandler:(NSString *)imagePath content:(NSString *)content type:(ShareType)type
-{
-    //added by Adward 13-11-26判断当前设备有没有安装微信，如果没有安装的话弹出alertView
-//    if ((type == ShareTypeWeixiTimeline)&&![WXApi isWXAppSupportApi])
-//    {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAttention message:kNotice delegate:self cancelButtonTitle:kCancel otherButtonTitles:kConfire, nil];
-//        [alert show];
-//        [alert release];
-//        return;
-//    }
-    //创建分享内容
-    id<ISSContent> publishContent = [ShareSDK content:content
-                                       defaultContent:@""
-                                                image:[ShareSDK imageWithPath:imagePath]
-                                                title:nil
-                                                  url:nil
-                                          description:nil
-                                            mediaType:SSPublishContentMediaTypeText];
-    
-    //创建弹出菜单容器
-    id<ISSContainer> container = [ShareSDK container];
-    [container setIPadContainerWithView:nil arrowDirect:UIPopoverArrowDirectionUp];
-    
-    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
-                                                         allowCallback:YES
-                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
-                                                          viewDelegate:nil
-                                               authManagerViewDelegate:_appDelegate.viewDelegate];
-    //在授权页面中添加关注官方微博
-    [authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
-                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                    SHARE_TYPE_NUMBER(type),
-                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                    SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
-                                    nil]];
-    
-    //显示分享菜单
-    [ShareSDK showShareViewWithType:type
-                          container:container
-                            content:publishContent
-                      statusBarTips:YES
-                        authOptions:authOptions
-                       shareOptions:[ShareSDK defaultShareOptionsWithTitle:nil
-                                                           oneKeyShareList:[ShareSDK getShareListWithType:type, nil]
-                                                            qqButtonHidden:YES
-                                                     wxSessionButtonHidden:YES
-                                                    wxTimelineButtonHidden:YES
-                                                      showKeyboardOnAppear:NO
-                                                         shareViewDelegate:_appDelegate.viewDelegate
-                                                       friendsViewDelegate:_appDelegate.viewDelegate
-                                                     picViewerViewDelegate:nil]
-                             result:^(ShareType type, SSPublishContentState state, id<ISSStatusInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                                 if (state == SSPublishContentStateSuccess)
-                                 {
-                                     NSLog(@"发表成功");
-                                 }
-                                 else if (state == SSPublishContentStateFail)
-                                 {
-                                     NSLog(@"发布失败!error code == %d, error code == %@", [error errorCode], [error errorDescription]);
-                                 }
-                             }];
-}
+//- (void)shareToWeiboClickHandler:(NSString *)imagePath content:(NSString *)content type:(ShareType)type
+//{
+//    //added by Adward 13-11-26判断当前设备有没有安装微信，如果没有安装的话弹出alertView
+////    if ((type == ShareTypeWeixiTimeline)&&![WXApi isWXAppSupportApi])
+////    {
+////        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAttention message:kNotice delegate:self cancelButtonTitle:kCancel otherButtonTitles:kConfire, nil];
+////        [alert show];
+////        [alert release];
+////        return;
+////    }
+//    //创建分享内容
+//    id<ISSContent> publishContent = [ShareSDK content:content
+//                                       defaultContent:@""
+//                                                image:[ShareSDK imageWithPath:imagePath]
+//                                                title:nil
+//                                                  url:nil
+//                                          description:nil
+//                                            mediaType:SSPublishContentMediaTypeText];
+//    
+//    //创建弹出菜单容器
+//    id<ISSContainer> container = [ShareSDK container];
+//    [container setIPadContainerWithView:nil arrowDirect:UIPopoverArrowDirectionUp];
+//    
+//    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
+//                                                         allowCallback:YES
+//                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
+//                                                          viewDelegate:nil
+//                                               authManagerViewDelegate:_appDelegate.viewDelegate];
+//    //在授权页面中添加关注官方微博
+//    [authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
+//                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
+//                                    SHARE_TYPE_NUMBER(type),
+//                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
+//                                    SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
+//                                    nil]];
+//    
+//    //显示分享菜单
+//    [ShareSDK showShareViewWithType:type
+//                          container:container
+//                            content:publishContent
+//                      statusBarTips:YES
+//                        authOptions:authOptions
+//                       shareOptions:[ShareSDK defaultShareOptionsWithTitle:nil
+//                                                           oneKeyShareList:[ShareSDK getShareListWithType:type, nil]
+//                                                            qqButtonHidden:YES
+//                                                     wxSessionButtonHidden:YES
+//                                                    wxTimelineButtonHidden:YES
+//                                                      showKeyboardOnAppear:NO
+//                                                         shareViewDelegate:_appDelegate.viewDelegate
+//                                                       friendsViewDelegate:_appDelegate.viewDelegate
+//                                                     picViewerViewDelegate:nil]
+//                             result:^(ShareType type, SSPublishContentState state, id<ISSStatusInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+//                                 if (state == SSPublishContentStateSuccess)
+//                                 {
+//                                     NSLog(@"发表成功");
+//                                 }
+//                                 else if (state == SSPublishContentStateFail)
+//                                 {
+//                                     NSLog(@"发布失败!error code == %d, error code == %@", [error errorCode], [error errorDescription]);
+//                                 }
+//                             }];
+//}
 
 - (void)viewDidUnload {
     [self setXs:nil];

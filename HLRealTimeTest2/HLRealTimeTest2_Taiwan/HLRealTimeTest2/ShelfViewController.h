@@ -24,4 +24,7 @@
 @property (nonatomic,retain) ShelfController *shelfController;
 @property (nonatomic,retain) URBAlertView *alertView;
 @property (nonatomic,assign) ShelfEntity  *shelfEntity;
+
+-(void) showAlertRemoveBookAt:(NSUInteger)i;
+
 @end

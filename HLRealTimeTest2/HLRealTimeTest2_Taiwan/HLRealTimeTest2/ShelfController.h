@@ -12,12 +12,15 @@
 #import "ShelfEntity.h"
 #import "URBAlertView.h"
 
+@class ShelfViewController;
+
 @interface ShelfController : NSObject<GMGridViewDataSource,GMGridViewActionDelegate,GMGridViewSortingDelegate>
 {}
 
 @property (nonatomic,retain) UIView *bgView;
 @property (nonatomic,assign) GMGridView *gridView;
 @property (nonatomic,assign) ShelfEntity *shelfEntity;
+@property (nonatomic,assign) ShelfViewController *shelfViewController;
 @property (nonatomic,retain) URBAlertView *alertView;
 @property (nonatomic,retain) URBAlertView *infoAlertView;
 
@@ -28,4 +31,5 @@
 -(void) closeEditing;
 -(void) addNewBook;
 -(void) removeBlockHandle;
+-(void)removeBookAt:(NSUInteger) i;
 @end

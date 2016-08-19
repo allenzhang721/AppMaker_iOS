@@ -331,7 +331,6 @@
 		6AB217EB171AD7C10020CFE8 /* HLBookEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB217E9171AD7C10020CFE8 /* HLBookEntity.m */; };
 		6AB217EF171AD7D50020CFE8 /* HLBaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB217EE171AD7D50020CFE8 /* HLBaseEntity.m */; };
 		6AB217F2171AD8020020CFE8 /* HLMagazinePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB217F1171AD8020020CFE8 /* HLMagazinePopupViewController.m */; };
-		6AB217F6171AD9440020CFE8 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB217F5171AD9430020CFE8 /* libxml2.dylib */; };
 		6AB217F9171AE32C0020CFE8 /* appMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AB2146E171AB7CB0020CFE8 /* appMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C301160717B8BA3100C517D9 /* VerSliderInteractiveEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = C301160517B8BA3100C517D9 /* VerSliderInteractiveEntity.h */; };
 		C301160817B8BA3100C517D9 /* VerSliderInteractiveEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C301160617B8BA3100C517D9 /* VerSliderInteractiveEntity.m */; };
@@ -653,6 +652,7 @@
 		29EFBAB9188133A000D3A2C3 /* HLAFKFlip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAFKFlip.m; sourceTree = "<group>"; };
 		29EFBABC188133BB00D3A2C3 /* HLCurverFlipController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLCurverFlipController.h; sourceTree = "<group>"; };
 		29EFBABD188133BB00D3A2C3 /* HLCurverFlipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLCurverFlipController.m; sourceTree = "<group>"; };
+		2C0DAB851D66EA2F00670D6A /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		6A37232C172BA3AF0097D34A /* HTML5Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTML5Entity.h; sourceTree = "<group>"; };
 		6A37232D172BA3AF0097D34A /* HTML5Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTML5Entity.m; sourceTree = "<group>"; };
 		6A372330172BAC070097D34A /* Html5Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Html5Component.h; sourceTree = "<group>"; };
@@ -1294,7 +1294,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				292C9C521830921E005EFA46 /* StoreKit.framework in Frameworks */,
-				6AB217F6171AD9440020CFE8 /* libxml2.dylib in Frameworks */,
 				6AB21442171AB6920020CFE8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1542,6 +1541,7 @@
 		6AB21440171AB6920020CFE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C0DAB851D66EA2F00670D6A /* libxml2.tbd */,
 				292C9C50183090F5005EFA46 /* StoreKit.framework */,
 				6AB217F5171AD9430020CFE8 /* libxml2.dylib */,
 				6AB21441171AB6920020CFE8 /* Foundation.framework */,
@@ -4733,7 +4733,10 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = HLiOS2Framework;
 				PROVISIONING_PROFILE = "";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
@@ -4760,7 +4763,10 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = HLiOS2Framework;
 				PROVISIONING_PROFILE = "";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";

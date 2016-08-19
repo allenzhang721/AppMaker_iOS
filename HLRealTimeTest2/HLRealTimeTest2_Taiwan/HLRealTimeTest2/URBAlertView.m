@@ -620,14 +620,18 @@ static CGSize const kURBAlertViewDefaultSize = {280.0, 180.0};
 			[UIView animateWithDuration:0.08 animations:^{
 				self.layer.transform = CATransform3DConcat(CATransform3DMakeRotation(-10.0 * M_PI / 180.0, xAxis, yAxis, 0.0), perspectiveTransform);
 			} completion:^(BOOL finished) {
-				[UIView animateWithDuration:0.17 * firstDurationScale animations:^{
-					self.layer.transform = CATransform3DConcat(CATransform3DMakeRotation(70.0 * M_PI / 180.0, xAxis, yAxis, 0.0), perspectiveTransform);
-					self.alpha = 0.0f;
-				} completion:^(BOOL finished) {
-					[self cleanup];
-					if (completion)
-						completion();
-				}];
+                if (finished) {
+                    [UIView animateWithDuration:0.17 * firstDurationScale animations:^{
+                        self.layer.transform = CATransform3DConcat(CATransform3DMakeRotation(70.0 * M_PI / 180.0, xAxis, yAxis, 0.0), perspectiveTransform);
+                        self.alpha = 0.0f;
+                    } completion:^(BOOL finished) {
+                        if (finished) {
+                            [self cleanup];
+                        }
+                        if (completion)
+                            completion();
+                    }];
+                }
 			}];
 		}
 	}
@@ -1206,6 +1210,7 @@ static CGSize const kURBAlertViewDefaultSize = {280.0, 180.0};
 	//self.transform = CGAffineTransformIdentity;
 	self.alpha = 1.0f;
 	self.window = nil;
+    [self removeFromSuperview];
 	// rekey main AppDelegate window
 	[[[[UIApplication sharedApplication] delegate] window] makeKeyWindow];
 }
