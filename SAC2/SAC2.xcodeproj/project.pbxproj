@@ -1929,7 +1929,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.botai.usmarttech.smartApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "16dca7ff-b14f-487c-916b-577ec6ebd60a";
@@ -2001,7 +2001,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.botai.usmarttech.smartApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36d9738e-c356-4ba4-b233-bab455653f1f";
