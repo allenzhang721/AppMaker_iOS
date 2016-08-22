@@ -1457,11 +1457,12 @@
 		6ADEFC0F171F943F00BD80E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "北京谋易软件有限责任公司";
 				TargetAttributes = {
 					6ADEFC16171F943F00BD80E9 = {
-						DevelopmentTeam = H7HX4A2DL8;
+						DevelopmentTeam = N8WL2V9VY9;
 					};
 				};
 			};
@@ -1932,9 +1933,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "16dca7ff-b14f-487c-916b-577ec6ebd60a";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1945,7 +1946,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RealTime2-bhqaamhkvvmozxfbfgaodvbhztgc/Build/Products/Debug-iphoneos",
@@ -1999,14 +2000,14 @@
 					work,
 					"copy/newHLIOS/tags/Development_BugFixed/HLiOS2Framework/HLiOS2Framework/build/Release-iphoneos",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36d9738e-c356-4ba4-b233-bab455653f1f";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
