@@ -42,7 +42,7 @@ platform :ios do
   lane :appstore do
     # match(type: "appstore")
     # snapshot
-    increment_build_number
+    #increment_build_number
     gym(scheme: "HLRealTimeTest2_SmartApps") # Build your app - more options available
     deliver(force: true)
     # frameit
