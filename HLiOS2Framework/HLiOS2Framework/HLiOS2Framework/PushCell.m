@@ -6,7 +6,7 @@
 //  Copyright © 2016 北京谋易软件有限责任公司. All rights reserved.
 //
 
-#import "PushView.h"
+#import "PushCell.h"
 
 @implementation UIView (Frame)
 
@@ -37,20 +37,45 @@
     [self setOrigin:CGPointMake(origin.x - f.size.width, origin.y - f.size.height) size:f.size];
 }
 
+- (CGFloat)x {
+    return  CGRectGetMinX(self.frame);
+ }
+
+- (CGFloat)y {
+    return  CGRectGetMinY(self.frame);
+}
+
+- (CGFloat)width {
+    return CGRectGetWidth(self.bounds);
+}
+
+- (CGFloat)height {
+    return CGRectGetHeight(self.bounds);
+}
+
+- (CGPoint) topRightOrigin {
+    return CGPointMake(CGRectGetMaxX(self.frame), CGRectGetMinY(self.frame));
+}
+
 - (CGPoint) bottomRightOrigin {
-    return CGPointMake(self.frame.origin.x + self.bounds.size.width, self.frame.origin.y + self.bounds.size.height);
+    return CGPointMake(CGRectGetMaxX(self.frame), CGRectGetMaxY(self.frame));
+}
+
+- (CGPoint) bottomLeftOrigin {
+    return CGPointMake(CGRectGetMinX(self.frame), CGRectGetMaxY(self.frame));
 }
 
 @end
 
-@interface PushView ()
+@interface PushCell ()
 @property (assign, nonatomic) UILabel *textView;
 @property (assign, nonatomic) UILabel *titleLabel;
 @property (assign, nonatomic) UILabel *dateLabel;
+@property (assign, nonatomic) UIButton *closeButton;
 
 @end
 
-@implementation PushView
+@implementation PushCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -62,13 +87,13 @@
 }
 
 - (void)setup {
+    self.userInteractionEnabled = true;
     self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
     
     UILabel *t = [[UILabel alloc] initWithFrame:(CGRectZero)];
     t.font = [UIFont systemFontOfSize:13];
     t.textColor = [UIColor whiteColor];
     t.numberOfLines = 0;
-    t.text = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
     [self addSubview:t];
     _textView = t;
     
@@ -76,17 +101,23 @@
     title.textColor = [UIColor whiteColor];
     [self addSubview:title];
     _titleLabel = title;
-    _titleLabel.text = @"Emiaostein";
     
     UIButton *close = [UIButton buttonWithType:UIButtonTypeSystem];
+    [close addTarget:self action:@selector(close:) forControlEvents:(UIControlEventTouchUpInside)];
+    [close setTitle:@"close" forState:(UIControlStateNormal)];
     [self addSubview:close];
+    _closeButton = close;
     
     UILabel *date = [[UILabel alloc] initWithFrame:CGRectZero];
     date.font = [UIFont systemFontOfSize:10];
     date.textColor = [UIColor lightGrayColor];
     [self addSubview:date];
     _dateLabel = date;
-    _dateLabel.text = @"Emiaostein";
+}
+
+- (void) close:(id)sender {
+    
+    NSLog(@"closed");
 }
 
 - (void)layoutSubviews {
@@ -94,11 +125,14 @@
     [_titleLabel sizeToFit];
     [_titleLabel setOrigin:CGPointMake(20, 10)];
     
-     [_textView setOrigin:CGPointMake(20, 30) size:[_textView sizeThatFits:CGSizeMake(self.bounds.size.width - 40 , CGFLOAT_MAX)]];
+     [_textView setOrigin:[_titleLabel bottomLeftOrigin] size:[_textView sizeThatFits:CGSizeMake([self width] - 40 , CGFLOAT_MAX)]];
     
     [_dateLabel sizeToFit];
     CGPoint br = [_textView bottomRightOrigin];
     [_dateLabel setTopRightOrigin:br];
+    
+    [_closeButton sizeToFit];
+    [_closeButton setBottomRightOrigin:[_textView topRightOrigin]];
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {

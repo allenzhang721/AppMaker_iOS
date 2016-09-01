@@ -99,9 +99,11 @@
 		29EFBABF188133BB00D3A2C3 /* HLCurverFlipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EFBABD188133BB00D3A2C3 /* HLCurverFlipController.m */; };
 		2C54BB6A1D704333007320BA /* PushController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C54BB681D704333007320BA /* PushController.h */; };
 		2C54BB6B1D704333007320BA /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C54BB691D704333007320BA /* PushController.m */; };
-		2C6118A91D76BFF600AB8350 /* PushView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C6118A71D76BFF600AB8350 /* PushView.h */; };
-		2C6118AA1D76BFF600AB8350 /* PushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6118A81D76BFF600AB8350 /* PushView.m */; };
-		2C6118AB1D76C1E100AB8350 /* PushView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6118A61D76BD4400AB8350 /* PushView.xib */; };
+		2C6118A91D76BFF600AB8350 /* PushCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C6118A71D76BFF600AB8350 /* PushCell.h */; };
+		2C6118AA1D76BFF600AB8350 /* PushCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6118A81D76BFF600AB8350 /* PushCell.m */; };
+		2C6118AB1D76C1E100AB8350 /* PushCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6118A61D76BD4400AB8350 /* PushCell.xib */; };
+		2C99C5501D77DBD3009757C6 /* PushHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C99C54E1D77DBD3009757C6 /* PushHUD.h */; };
+		2C99C5511D77DBD3009757C6 /* PushHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C99C54F1D77DBD3009757C6 /* PushHUD.m */; };
 		6A372327172ABC420097D34A /* SlideCellComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A2C79172575A80096335A /* SlideCellComponent.m */; };
 		6A37232E172BA3AF0097D34A /* HTML5Entity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A37232C172BA3AF0097D34A /* HTML5Entity.h */; };
 		6A37232F172BA3AF0097D34A /* HTML5Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A37232D172BA3AF0097D34A /* HTML5Entity.m */; };
@@ -660,9 +662,11 @@
 		2C0DAB851D66EA2F00670D6A /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		2C54BB681D704333007320BA /* PushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushController.h; sourceTree = "<group>"; };
 		2C54BB691D704333007320BA /* PushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushController.m; sourceTree = "<group>"; };
-		2C6118A61D76BD4400AB8350 /* PushView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushView.xib; sourceTree = "<group>"; };
-		2C6118A71D76BFF600AB8350 /* PushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushView.h; sourceTree = "<group>"; };
-		2C6118A81D76BFF600AB8350 /* PushView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushView.m; sourceTree = "<group>"; };
+		2C6118A61D76BD4400AB8350 /* PushCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushCell.xib; sourceTree = "<group>"; };
+		2C6118A71D76BFF600AB8350 /* PushCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushCell.h; sourceTree = "<group>"; };
+		2C6118A81D76BFF600AB8350 /* PushCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushCell.m; sourceTree = "<group>"; };
+		2C99C54E1D77DBD3009757C6 /* PushHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushHUD.h; sourceTree = "<group>"; };
+		2C99C54F1D77DBD3009757C6 /* PushHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushHUD.m; sourceTree = "<group>"; };
 		6A37232C172BA3AF0097D34A /* HTML5Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTML5Entity.h; sourceTree = "<group>"; };
 		6A37232D172BA3AF0097D34A /* HTML5Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTML5Entity.m; sourceTree = "<group>"; };
 		6A372330172BAC070097D34A /* Html5Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Html5Component.h; sourceTree = "<group>"; };
@@ -1392,16 +1396,18 @@
 			name = sliderCover;
 			sourceTree = "<group>";
 		};
-		2C6118A51D76BCA000AB8350 /* Push */ = {
+		2C6118A51D76BCA000AB8350 /* PushHUD */ = {
 			isa = PBXGroup;
 			children = (
+				2C99C54E1D77DBD3009757C6 /* PushHUD.h */,
+				2C99C54F1D77DBD3009757C6 /* PushHUD.m */,
 				2C54BB681D704333007320BA /* PushController.h */,
 				2C54BB691D704333007320BA /* PushController.m */,
-				2C6118A71D76BFF600AB8350 /* PushView.h */,
-				2C6118A81D76BFF600AB8350 /* PushView.m */,
-				2C6118A61D76BD4400AB8350 /* PushView.xib */,
+				2C6118A71D76BFF600AB8350 /* PushCell.h */,
+				2C6118A81D76BFF600AB8350 /* PushCell.m */,
+				2C6118A61D76BD4400AB8350 /* PushCell.xib */,
 			);
-			name = Push;
+			name = PushHUD;
 			sourceTree = "<group>";
 		};
 		6A372329172BA35A0097D34A /* HTLM5Component */ = {
@@ -1578,7 +1584,7 @@
 		6AB21443171AB6920020CFE8 /* HLiOS2Framework */ = {
 			isa = PBXGroup;
 			children = (
-				2C6118A51D76BCA000AB8350 /* Push */,
+				2C6118A51D76BCA000AB8350 /* PushHUD */,
 				29CF1F17196A73CB0079F372 /* appMakerUI.xcassets */,
 				29CF1ED6196A63B10079F372 /* HLDefaultRecord.h */,
 				29CF1ED7196A63B10079F372 /* HLConstant.h */,
@@ -4102,6 +4108,7 @@
 				C3DFBC1A17A63FEC001EBFB1 /* ScrollCatalogEntity.h in Headers */,
 				C3DFBC1E17A64005001EBFB1 /* ScrollCatalogComponent.h in Headers */,
 				C36B3CB617A67290005A51E9 /* RootSliderScrollView.h in Headers */,
+				2C99C5501D77DBD3009757C6 /* PushHUD.h in Headers */,
 				C3E4EF7117B337EF00D8380F /* HorConnectLineComponent.h in Headers */,
 				C3E4EF7617B3380F00D8380F /* HorConnectLineEntity.h in Headers */,
 				C301160717B8BA3100C517D9 /* VerSliderInteractiveEntity.h in Headers */,
@@ -4119,7 +4126,7 @@
 				C3EF990817D0478400E21ADA /* HLPushPopPressView.h in Headers */,
 				C3799C1717D9E13600A9BA8B /* HLMBProgressHUD.h in Headers */,
 				C3F375DF17DEEBAA001F8F7D /* AutoScrollableEntity.h in Headers */,
-				2C6118A91D76BFF600AB8350 /* PushView.h in Headers */,
+				2C6118A91D76BFF600AB8350 /* PushCell.h in Headers */,
 				C3F375E317DEEBD4001F8F7D /* AutoScrollableComponent.h in Headers */,
 				C3591C8B17E1954400598A8F /* LanternSlideEntity.h in Headers */,
 				C3591C8F17E1956200598A8F /* LanternSlideComponent.h in Headers */,
@@ -4205,7 +4212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C6118AB1D76C1E100AB8350 /* PushView.xib in Resources */,
+				2C6118AB1D76C1E100AB8350 /* PushCell.xib in Resources */,
 				2917615B19654DAD00B6A2F0 /* InfoPlist.strings in Resources */,
 				2917616C196551A900B6A2F0 /* InfoPlist.strings in Resources */,
 				2917616419654E6200B6A2F0 /* flip.mp3 in Resources */,
@@ -4350,6 +4357,7 @@
 				6AB2159F171ACF410020CFE8 /* SphereViewEntity.m in Sources */,
 				6AB215AB171ACF660020CFE8 /* ImageSliderEntity.m in Sources */,
 				6AB215B0171ACF810020CFE8 /* iAdComponent.m in Sources */,
+				2C99C5511D77DBD3009757C6 /* PushHUD.m in Sources */,
 				6AB215B4171ACF8C0020CFE8 /* iAdEntity.m in Sources */,
 				6AB215BB171ACFD60020CFE8 /* NoteManager.m in Sources */,
 				6AB215BC171ACFD60020CFE8 /* RollingTextComponent.m in Sources */,
@@ -4423,7 +4431,7 @@
 				6AB21770171AD5570020CFE8 /* tessmono.c in Sources */,
 				6AB21785171AD57B0020CFE8 /* iCarousel.m in Sources */,
 				6AB21789171AD58D0020CFE8 /* EGOTextView.m in Sources */,
-				2C6118AA1D76BFF600AB8350 /* PushView.m in Sources */,
+				2C6118AA1D76BFF600AB8350 /* PushCell.m in Sources */,
 				291E09AD18A4E0A20027FC03 /* HLBookMaskView.m in Sources */,
 				6AB21793171AD5A50020CFE8 /* HLXMLWriter.m in Sources */,
 				6AB21794171AD5A50020CFE8 /* EMTBXML.m in Sources */,

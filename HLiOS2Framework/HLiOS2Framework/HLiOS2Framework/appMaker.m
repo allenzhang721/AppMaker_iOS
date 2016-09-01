@@ -9,6 +9,7 @@
 #import "appMaker.h"
 #import "HLBookController.h"
 #import "PushController.h"
+#import "PushHUD.h"
 
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
@@ -219,17 +220,11 @@
         NSString *pushID = _bookController.entity.pushID;
         [self sendRequestWithPushID:pushID handler:^(NSArray<PushMessage *> *messages) {
             
-            dispatch_async(dispatch_get_main_queue(), ^{
-//                PushMessage *m = messages[0];
-                UIView *p = [PushController newPushViewWithMessage:nil];
-                CGSize size = [p sizeThatFits:v.frame.size];
-                CGRect f = p.frame;
-                f.size = size;
-                p.frame = f;
-                
-                
-                [v addSubview:p];
-            });
+            [PushHUD show];
+            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+////                PushMessage *m = messages[0];
+//                
         }];
     }
 }

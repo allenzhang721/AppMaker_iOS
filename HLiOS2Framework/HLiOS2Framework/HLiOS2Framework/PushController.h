@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class PushView;
+@class PushCell;
 
 @interface PushMessage : NSObject
 
@@ -28,6 +28,6 @@
 -(void) removeMessageAt:(NSUInteger)index;
 -(void) removeAll;
 -(nullable PushMessage *)next;
-+(PushView *)newPushViewWithMessage:(nullable PushMessage *)message;
++(PushCell *)newPushViewWithMessage:(nullable PushMessage *)message;
 
 @end
