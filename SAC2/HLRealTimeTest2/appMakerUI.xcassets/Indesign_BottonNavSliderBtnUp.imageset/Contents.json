@@ -2,13 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Indesign_BottonNavSliderBtnUp.png"
+      "filename" : "Indesign_BottonNavSliderBtnUp.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "Indesign_BottonNavSliderBtnUp@2x.png"
+      "filename" : "Indesign_BottonNavSliderBtnUp@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
