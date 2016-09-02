@@ -11,6 +11,7 @@
 #import "HLBookController.h"
 #import "HLSliderFlipController.h"
 #import "KGModal.h"
+#import "PushHUD.h"
 
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)        //陈星宇，11.27，适配
 
@@ -489,7 +490,20 @@
         {
             self.btnSearch.layer.opacity = 1.0;
         }
+        
+        
+        // Feature - Push List Button - Emiaostein, Sep 2, 2016
+        UIButton *list = [UIButton buttonWithType:(UIButtonTypeContactAdd)];
+        [list addTarget:self action:@selector(showList) forControlEvents:(UIControlEventTouchUpInside)];
+        [self.view addSubview:list];
+        CGRect f = self.btnHome.frame;
+        f.origin.x += f.size.width;
+        list.frame = f;
     }
+}
+
+- (void) showList {
+    [PushHUD showList];
 }
 
 -(void) refreshPanel:(int)index count:(int)count enableNav:(Boolean )enableNav

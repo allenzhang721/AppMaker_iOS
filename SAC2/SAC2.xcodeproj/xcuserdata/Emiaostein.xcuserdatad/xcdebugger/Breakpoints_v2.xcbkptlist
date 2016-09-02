@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/appMaker.m"
-            timestampString = "494397995.077962"
+            timestampString = "494505093.675241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454">
+            startingLineNumber = "460"
+            endingLineNumber = "460">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/appMaker.m"
-            timestampString = "494397995.077962"
+            timestampString = "494505093.675241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "426"
-            endingLineNumber = "426"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
             landmarkName = "@implementation appMaker"
             landmarkType = "3">
          </BreakpointContent>
@@ -39,28 +39,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/PushController.m"
-            timestampString = "494330091.638398"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "+newPushViewWithMessage:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/appMaker.m"
-            timestampString = "494396450.099813"
+            timestampString = "494499537.690408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "-startView"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,49 +84,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/appMaker.m"
+            timestampString = "494505093.675241"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
+            landmarkName = "-sendRequestWithPushID:handler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/PushHUD.m"
-            timestampString = "494403199.060679"
+            filePath = "../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/HLBasicControlPanelViewController.m"
+            timestampString = "494504227.236454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "-pointInside:withEvent:"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
+            landmarkName = "-setup:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CleardView pointInside:withEvent:]"
-                  moduleName = "SAC2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Emiaostein/Documents/GitHub/Projects/AppMaker_iOS/HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/PushHUD.m"
-                  timestampString = "494403210.164752"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "79">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CleardView pointInside:withEvent:]"
-                  moduleName = "SAC2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Emiaostein/Documents/GitHub/Projects/AppMaker_iOS/HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/PushHUD.m"
-                  timestampString = "494403210.164967"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/HLBasicControlPanelViewController.m"
+            timestampString = "494504227.236454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "475"
+            endingLineNumber = "475"
+            landmarkName = "-setup:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework/HLBasicControlPanelViewController.m"
+            timestampString = "494504227.236454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
+            landmarkName = "-setup:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

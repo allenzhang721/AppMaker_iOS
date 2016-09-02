@@ -24,7 +24,12 @@
  └─────────────────┘
   20             20
  */
+
+typedef void(^Handler)();
 @interface PushCell : UIView
+
+@property (nonatomic, copy) Handler closeHandler;
+@property (nonatomic, copy) Handler tapHandler;
 
 -(void) setConent:(NSString *)content title:(NSString *)title date:(NSString *)date;
 

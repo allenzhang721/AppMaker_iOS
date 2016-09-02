@@ -216,15 +216,21 @@
     [self.bookController strartView];
     
     if (_bookController.entity.activePush) {
+        PushController *controller = [[PushController alloc] initWithPushID:_bookController.entity.pushID];
         __block UIView* v = _bookController.bookviewcontroller.view;
         NSString *pushID = _bookController.entity.pushID;
+
+//        [PushHUD shareInstance].datasource = controller;
+//        [PushHUD show];
+        
         [self sendRequestWithPushID:pushID handler:^(NSArray<PushMessage *> *messages) {
             
-            [PushHUD show];
-            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-////                PushMessage *m = messages[0];
-//                
+            if (messages.count > 0) {
+                [controller setDisplayMessages:messages];
+                [controller appendMessages:messages];
+                [PushHUD shareInstance].datasource = controller;
+                [PushHUD show];
+            }
         }];
     }
 }
@@ -352,7 +358,7 @@
      Request (GET http://smartappscreator.com/sac/index.php)
      */
     
-    NSString *deviceID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSString *deviceID = [[[[UIDevice currentDevice] identifierForVendor] UUIDString] stringByReplacingOccurrencesOfString:@"-" withString:@""];
     NSURL* URL = [NSURL URLWithString:@"http://smartappscreator.com/sac/index.php"];
     NSDictionary* URLParams = @{
                                 @"m": @"Wapps",

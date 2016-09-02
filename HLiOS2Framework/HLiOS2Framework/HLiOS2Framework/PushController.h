@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PushHUD.h"
 
 @class PushCell;
 
-@interface PushMessage : NSObject
+@interface PushMessage : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *ID;
 @property (nonatomic, copy) NSString *title;
@@ -22,12 +23,17 @@
 
 @end
 
-@interface PushController : NSObject
+@interface PushController : NSObject <PushHUDDataSource>
 
+- (instancetype)initWithPushID:(NSString *)pushID;
+
+- (void)setDisplayMessages:(NSArray<PushMessage *> *)messages;
 -(void) appendMessages:(NSArray<PushMessage *> *)messages;
 -(void) removeMessageAt:(NSUInteger)index;
 -(void) removeAll;
+-(NSUInteger) numberOfMessages;
 -(nullable PushMessage *)next;
-+(PushCell *)newPushViewWithMessage:(nullable PushMessage *)message;
+-(nullable PushMessage *)messageAtIndex:(NSUInteger)i;
++(PushCell *)newPushView;
 
 @end

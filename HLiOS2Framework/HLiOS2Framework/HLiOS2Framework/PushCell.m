@@ -118,6 +118,9 @@
 - (void) close:(id)sender {
     
     NSLog(@"closed");
+    if (_closeHandler) {
+        _closeHandler();
+    }
 }
 
 - (void)layoutSubviews {
@@ -125,7 +128,8 @@
     [_titleLabel sizeToFit];
     [_titleLabel setOrigin:CGPointMake(20, 10)];
     
-     [_textView setOrigin:[_titleLabel bottomLeftOrigin] size:[_textView sizeThatFits:CGSizeMake([self width] - 40 , CGFLOAT_MAX)]];
+    CGSize textSize = [_textView sizeThatFits: CGSizeMake([self width] - 40 , CGFLOAT_MAX)];
+     [_textView setOrigin:[_titleLabel bottomLeftOrigin] size: CGSizeMake([self width] - 40, MAX(20, textSize.height))];
     
     [_dateLabel sizeToFit];
     CGPoint br = [_textView bottomRightOrigin];
