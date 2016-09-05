@@ -67,14 +67,16 @@ typedef void(^Handler)();
     toolbar.barStyle = UIBarStyleBlack;
     UIBarButtonItem *fix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFixedSpace) target:nil action:nil];
     fix.width = 10;
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemDone) target:self action:@selector(done:)];
+    UIBarButtonItem *close = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemStop) target:self action:@selector(done:)];
+    close.tintColor = [UIColor whiteColor];
     
     UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFlexibleSpace) target:nil action:nil];
     
-    UIBarButtonItem *clear = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:(UIBarButtonItemStylePlain) target:self action:@selector(clear:)];
+    UIBarButtonItem *clear = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemTrash) target:self action:@selector(clear:)];
+    clear.tintColor = [UIColor whiteColor];
     UIBarButtonItem *fix2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFixedSpace) target:nil action:nil];
     fix2.width = 10;
-    toolbar.items = @[fix,item,flex, clear, fix2];
+    toolbar.items = @[fix, clear, flex, close, fix2];
     [self addSubview:toolbar];
     
     
@@ -92,6 +94,26 @@ typedef void(^Handler)();
     if (_clearHandler) {
         _clearHandler();
     }
+}
+
+@end
+
+@interface TableViewCell : UITableViewCell
+
+@end
+
+@implementation TableViewCell
+
+-(void) layoutSubviews {
+    [super layoutSubviews];
+    
+    CGRect f1 = self.textLabel.frame;
+    f1.origin.x = 20;
+    self.textLabel.frame = f1;
+    
+    CGRect f = self.detailTextLabel.frame;
+    f.origin.x = 20;
+    self.detailTextLabel.frame = f;
 }
 
 @end
@@ -197,6 +219,7 @@ typedef void(^Handler)();
         [_listView.tableView reloadData];
     };
     _listView.tableView.dataSource = self;
+    _listView.tableView.delegate = self;
     
     [self addSubview:_listView];
 }
@@ -214,7 +237,9 @@ typedef void(^Handler)();
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     if (!cell.detailTextLabel) {
-        cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier: @"Cell"];
+        cell = [[TableViewCell alloc] initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier: @"Cell"];
+        
+        
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -231,6 +256,9 @@ typedef void(^Handler)();
     
     cell.detailTextLabel.textColor = [UIColor lightGrayColor];
     cell.detailTextLabel.text = m.createDate;
+    
+
+    
     return cell;
 }
 

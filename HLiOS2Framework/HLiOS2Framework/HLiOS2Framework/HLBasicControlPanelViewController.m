@@ -493,12 +493,22 @@
         
         
         // Feature - Push List Button - Emiaostein, Sep 2, 2016
-        UIButton *list = [UIButton buttonWithType:(UIButtonTypeContactAdd)];
+        UIButton *list = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        UIImage *image = [UIImage imageNamed:@"notification"];
+        list.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+        [list setImage:[UIImage imageNamed:@"notification_selected"] forState:(UIControlStateHighlighted)];
+        [list setImage:[UIImage imageNamed:@"notification"] forState:(UIControlStateNormal)];
         [list addTarget:self action:@selector(showList) forControlEvents:(UIControlEventTouchUpInside)];
         [self.view addSubview:list];
-        CGRect f = self.btnHome.frame;
-        f.origin.x += f.size.width;
-        list.frame = f;
+        if (_isHideBackBtn) {
+            CGRect f = self.btnOpenBookSnapshots.frame;
+            list.frame = CGRectMake(CGRectGetMidX(rect) - CGRectGetWidth(self.btnExit.frame)/2, 0, CGRectGetWidth(f), CGRectGetHeight(f));
+        } else {
+            CGRect f = self.btnOpenBookSnapshots.frame;
+            f.origin.x -= f.size.width;
+            list.frame = f;
+        }
+        
     }
 }
 

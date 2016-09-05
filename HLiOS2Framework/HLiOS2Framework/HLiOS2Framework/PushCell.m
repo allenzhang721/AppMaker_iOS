@@ -91,7 +91,7 @@
     self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
     
     UILabel *t = [[UILabel alloc] initWithFrame:(CGRectZero)];
-    t.font = [UIFont systemFontOfSize:13];
+    t.font = [UIFont systemFontOfSize:17];
     t.textColor = [UIColor whiteColor];
     t.numberOfLines = 0;
     [self addSubview:t];
@@ -104,7 +104,9 @@
     
     UIButton *close = [UIButton buttonWithType:UIButtonTypeSystem];
     [close addTarget:self action:@selector(close:) forControlEvents:(UIControlEventTouchUpInside)];
-    [close setTitle:@"close" forState:(UIControlStateNormal)];
+    [close setImage:[UIImage imageNamed:@"close-button"] forState:(UIControlStateNormal)];
+    close.tintColor = [UIColor whiteColor];
+//    [close setTitle:@"close" forState:(UIControlStateNormal)];
     [self addSubview:close];
     _closeButton = close;
     
