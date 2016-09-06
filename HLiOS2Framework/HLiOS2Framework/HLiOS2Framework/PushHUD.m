@@ -132,6 +132,7 @@ typedef void(^Handler)();
     NSUInteger _totalCount;
     NSUInteger _currentCount;
     BOOL showing;
+    BOOL showingList;
 }
 
 - (instancetype)init
@@ -154,6 +155,11 @@ typedef void(^Handler)();
 }
 
 - (void)next {
+    
+    if (showingList) {
+        return;
+    }
+    
     if (_currentCount >= _totalCount) {
         showing = false;
         [PushHUD dismiss];
@@ -210,6 +216,12 @@ typedef void(^Handler)();
 
 - (void)showList {
     
+    if (showing) {
+        return;
+    }
+    
+    showingList = true;
+    
     _listView = [[PushListView alloc] initWithFrame:self.bounds];
     _listView.handler = ^{
         [PushHUD dismissList];
@@ -227,6 +239,7 @@ typedef void(^Handler)();
 - (void)dismissList {
     _listView.tableView.dataSource = nil;
     [_listView removeFromSuperview];
+    showingList = false;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
