@@ -8,6 +8,8 @@
 
 #import "appMaker.h"
 #import "HLBookController.h"
+#import "PushController.h"
+#import "PushHUD.h"
 
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
@@ -200,15 +202,40 @@
     
 }
 
+// Feature - Inside Notifiction - Emiaostein, Aug 31, 2016
 -(void) startView
 {
+    // MARK: - show info
+    NSLog(@"---------------needpush: %d, pushID: %@----------", self.bookController.entity.activePush, self.bookController.entity.pushID);
+    
     if (defaultImgView)
     {
         [defaultImgView removeFromSuperview];
         defaultImgView = nil;
     }
     [self.bookController strartView];
+    
+    if (_bookController.entity.activePush) {
+        PushController *controller = [[PushController alloc] initWithPushID:_bookController.entity.pushID];
+        __block UIView* v = _bookController.bookviewcontroller.view;
+        NSString *pushID = _bookController.entity.pushID;
+
+//        [PushHUD shareInstance].datasource = controller;
+//        [PushHUD show];
+        
+        [self sendRequestWithPushID:pushID handler:^(NSArray<PushMessage *> *messages) {
+            
+            if (messages.count > 0) {
+                [controller setDisplayMessages:messages];
+                [controller appendMessages:messages];
+                [PushHUD shareInstance].datasource = controller;
+                [PushHUD show];
+            }
+        }];
+    }
 }
+
+
 
 -(void) hideBackButton
 {
@@ -311,6 +338,112 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"PageIsCollected" object:nil];
     [super dealloc];
 }
+
+// MARK: - Check
+- (void)sendRequestWithPushID:(NSString *)pushID handler:(void (^)(NSArray<PushMessage *> *))handler
+{
+    /* Configure session, choose between:
+     * defaultSessionConfiguration
+     * ephemeralSessionConfiguration
+     * backgroundSessionConfigurationWithIdentifier:
+     And set session-wide properties, such as: HTTPAdditionalHeaders,
+     HTTPCookieAcceptPolicy, requestCachePolicy or timeoutIntervalForRequest.
+     */
+    NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    /* Create session, and optionally set a NSURLSessionDelegate. */
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    
+    /* Create the Request:
+     Request (GET http://smartappscreator.com/sac/index.php)
+     */
+    
+    NSString *deviceID = [[[[UIDevice currentDevice] identifierForVendor] UUIDString] stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    NSURL* URL = [NSURL URLWithString:@"http://smartappscreator.com/sac/index.php"];
+    NSDictionary* URLParams = @{
+                                @"m": @"Wapps",
+                                @"a": @"app_msg_load",
+                                @"pmsg_id": pushID,
+                                @"account": @"qwe",
+                                @"password": @"asd123",
+                                @"device_id": deviceID,
+                                };
+    URL = NSURLByAppendingQueryParameters(URL, URLParams);
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"GET";
+    
+    // Headers
+    
+    [request addValue:@"PHPSESSID=elj4er9gl8ofh1322irf7rap32" forHTTPHeaderField:@"Cookie"];
+    
+    /* Start a new Task */
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            // Success
+            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+//            NSArray *result = [[NSString alloc] initWithData:data encoding:(NSUTF8StringEncoding)];
+            NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSMutableArray<PushMessage *> *messages = [[NSMutableArray alloc] init];
+            for (NSDictionary *dic in result) {
+                PushMessage *m = [[PushMessage alloc] initWithDictionary:dic
+                                  ];
+                [messages addObject:m];
+            }
+            
+            handler(messages);
+            
+            NSLog(@"result = %@", result);
+        }
+        else {
+            // Failure
+            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+        }
+    }];
+    [task resume];
+    [session finishTasksAndInvalidate];
+}
+
+/*
+ * Utils: Add this section before your class implementation
+ */
+
+/**
+ This creates a new query parameters string from the given NSDictionary. For
+ example, if the input is @{@"day":@"Tuesday", @"month":@"January"}, the output
+ string will be @"day=Tuesday&month=January".
+ @param queryParameters The input dictionary.
+ @return The created parameters string.
+ */
+static NSString* NSStringFromQueryParameters(NSDictionary* queryParameters)
+{
+    NSMutableArray* parts = [NSMutableArray array];
+    [queryParameters enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+        NSString *part = [NSString stringWithFormat: @"%@=%@",
+                          [key stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding],
+                          [value stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]
+                          ];
+        [parts addObject:part];
+    }];
+    return [parts componentsJoinedByString: @"&"];
+}
+
+/**
+ Creates a new URL by adding the given query parameters.
+ @param URL The input URL.
+ @param queryParameters The query parameter dictionary to add.
+ @return A new NSURL.
+ */
+static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryParameters)
+{
+    NSString* URLString = [NSString stringWithFormat:@"%@?%@",
+                           [URL absoluteString],
+                           NSStringFromQueryParameters(queryParameters)
+                           ];
+    return [NSURL URLWithString:URLString];
+}
+
+
+
 
 @end
 

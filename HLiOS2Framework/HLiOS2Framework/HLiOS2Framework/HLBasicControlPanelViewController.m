@@ -11,6 +11,7 @@
 #import "HLBookController.h"
 #import "HLSliderFlipController.h"
 #import "KGModal.h"
+#import "PushHUD.h"
 
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)        //陈星宇，11.27，适配
 
@@ -489,7 +490,30 @@
         {
             self.btnSearch.layer.opacity = 1.0;
         }
+        
+        
+        // Feature - Push List Button - Emiaostein, Sep 2, 2016
+        UIButton *list = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        UIImage *image = [UIImage imageNamed:@"notification"];
+        list.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+        [list setImage:[UIImage imageNamed:@"notification_selected"] forState:(UIControlStateHighlighted)];
+        [list setImage:[UIImage imageNamed:@"notification"] forState:(UIControlStateNormal)];
+        [list addTarget:self action:@selector(showList) forControlEvents:(UIControlEventTouchUpInside)];
+        [self.view addSubview:list];
+        if (_isHideBackBtn) {
+            CGRect f = self.btnOpenBookSnapshots.frame;
+            list.frame = CGRectMake(CGRectGetMidX(rect) - CGRectGetWidth(self.btnExit.frame)/2, 0, CGRectGetWidth(f), CGRectGetHeight(f));
+        } else {
+            CGRect f = self.btnOpenBookSnapshots.frame;
+            f.origin.x -= f.size.width;
+            list.frame = f;
+        }
+        
     }
+}
+
+- (void) showList {
+    [PushHUD showList];
 }
 
 -(void) refreshPanel:(int)index count:(int)count enableNav:(Boolean )enableNav

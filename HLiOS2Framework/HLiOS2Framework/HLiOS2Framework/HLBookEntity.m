@@ -58,6 +58,9 @@
         
     {
         // Initialization code here.
+        self.activePush = NO;
+        self.pushID = @"";
+        
         self.pages        = [[NSMutableArray alloc] initWithCapacity:10];
         self.snapshots    = [[NSMutableArray alloc] initWithCapacity:10];
         self.sections     = [[NSMutableArray alloc] initWithCapacity:10];
