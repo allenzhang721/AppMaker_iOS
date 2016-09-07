@@ -25,6 +25,7 @@
 @property (nonatomic,retain) UIButton *btnBgMusic;
 @property (nonatomic,retain) UIButton *btnSearch;
 @property BOOL isHideBackBtn;
+@property BOOL activePushBtn; // notification button - Emiaostein, Sep 7, 2016
 @property BOOL isPDFType;
 
 -(void) setup:(CGRect )rect;
