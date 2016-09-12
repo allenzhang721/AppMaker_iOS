@@ -1462,7 +1462,7 @@
 				ORGANIZATIONNAME = "北京谋易软件有限责任公司";
 				TargetAttributes = {
 					6ADEFC16171F943F00BD80E9 = {
-						DevelopmentTeam = N8WL2V9VY9;
+						DevelopmentTeam = H7HX4A2DL8;
 					};
 				};
 			};
@@ -1930,7 +1930,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.botai.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -2002,7 +2002,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.botai.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
