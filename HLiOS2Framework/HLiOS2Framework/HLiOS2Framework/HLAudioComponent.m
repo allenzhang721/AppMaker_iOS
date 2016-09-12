@@ -151,6 +151,8 @@
     _playing  = YES;
     
     self.valueChangeTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(slideValueChange:) userInfo:Nil repeats:YES];
+    
+    NSLog(@"%@", self.valueChangeTimer);
 }
 
 -(void) play    //停止或暂停 -> 播放
@@ -170,6 +172,10 @@
                 CALayer *playerLayer  = self.playBtnView.layer;
                 [self resumeLayer:playerLayer];
             }
+            
+            [self.valueChangeTimer setFireDate:[NSDate distantPast]];
+            
+//            self.valueChangeTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(slideValueChange:) userInfo:Nil repeats:YES];
         }
         else
         {
@@ -220,7 +226,7 @@
     _isPaused = NO;
     _playing  = YES;
     
-    self.valueChangeTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(slideValueChange:) userInfo:Nil repeats:YES];
+    
 }
 
 -(void) pause
@@ -228,9 +234,10 @@
     NSLog(@"pause");
     if (self.valueChangeTimer != nil )
     {
-        if (self.valueChangeTimer.isValid ==YES)
+        if (self.valueChangeTimer.isValid == YES)
         {
-            [self.valueChangeTimer invalidate];
+            NSLog(@"%@", self.valueChangeTimer);
+            [self.valueChangeTimer setFireDate:[NSDate distantFuture]];
         }
     }
     [self btPause];
@@ -492,6 +499,8 @@
 -(void)slideValueChange:(id)sender
 {
     NSLog(@"slideValueChange");
+    
+//    NSLog(@"%@", self.valueChangeTimer);
     
     if (!_sliderMoveing) {
         
