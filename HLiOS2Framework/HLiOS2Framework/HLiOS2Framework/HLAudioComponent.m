@@ -165,6 +165,11 @@
             [self.player play];
             
             [self.container onPlay];
+            
+            if (self.playBtnView != nil) {
+                CALayer *playerLayer  = self.playBtnView.layer;
+                [self resumeLayer:playerLayer];
+            }
         }
         else
         {
