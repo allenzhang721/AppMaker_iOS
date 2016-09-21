@@ -119,7 +119,7 @@
 -(void) setHeight:(float) height
 {
 	[self setAnchorPoint];
-	if (self.component.uicomponent != nil)
+	if (self.component.uicomponent != nil && self.component.customHeight == false)
     {
 		CGRect rect							   = self.component.uicomponent.layer.frame;
         rect.size.height					 = height;

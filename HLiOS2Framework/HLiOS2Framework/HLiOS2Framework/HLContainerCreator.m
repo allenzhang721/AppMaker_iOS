@@ -7,6 +7,7 @@
 //
 
 #import "HLContainerCreator.h"
+#import "HLTextInputEntity.h"
 #import "AudioEntity.h"
 #import "VideoEntity.h"
 #import "GifEntity.h"
@@ -48,6 +49,13 @@
     
 + (HLContainerEntity *)createEntity:(NSString *)type moduleid:(NSString *)moduleid
     {
+        // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
+        if ([type compare:@"TextInputComponent"]== NSOrderedSame)
+        {
+            return [[HLTextInputEntity alloc] init];
+        }
+        
+        
         if ([type compare:@"PlayCase"]== NSOrderedSame)
         {
             return [[CaseEntity alloc] init];

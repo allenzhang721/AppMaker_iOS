@@ -25,6 +25,7 @@
         // Initialization code here.
         self.hidden = NO;
         self.neeedCallStop = YES;
+        self.customHeight = false;
     }
     return self;
 }

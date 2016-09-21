@@ -24,6 +24,7 @@
 @property Boolean hidden;
 @property Boolean neeedCallStop;
 @property BOOL isbyUserScale;                                          //陈星宇，11.19，图片放大可以移动
+@property Boolean customHeight;
 
 - (id)initWithEntity:(HLContainerEntity *) entity;
 

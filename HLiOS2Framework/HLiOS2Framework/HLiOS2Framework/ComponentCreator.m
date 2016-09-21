@@ -7,6 +7,8 @@
 //
 
 #import "ComponentCreator.h"
+#import "HLTextInputEntity.h"
+#import "HLTextInputComponent.h"
 #import "HLAudioComponent.h"
 #import "VideoEntity.h"
 #import "VideoComponent.h"
@@ -85,6 +87,11 @@
 +(Component *) createComponent:(HLContainerEntity *) entity 
 {
     Component *component;
+    if ([entity isKindOfClass:[HLTextInputEntity class]]) {
+        component = [[HLTextInputComponent alloc] initWithEntity:entity];
+        return component;
+    }
+    
     if ([entity isKindOfClass:[ImageEntity class]])
     {
         component = [[ImageComponent alloc] initWithEntity:entity];
