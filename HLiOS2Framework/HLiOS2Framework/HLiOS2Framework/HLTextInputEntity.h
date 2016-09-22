@@ -12,6 +12,7 @@
 @interface HLTextInputEntity : HLContainerEntity
 
 @property (copy, nonatomic) NSString *placeholder;
+@property (copy, nonatomic) NSString *text;
 @property (assign, nonatomic) float fontSize;
 @property (copy, nonatomic) NSString *fontColor;
 @property (assign, nonatomic) NSTextAlignment alignment;

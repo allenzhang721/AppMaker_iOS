@@ -27,8 +27,37 @@
     UITextField *textfiled = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, _entity.width.floatValue, 30)];
     
     textfiled.borderStyle = UITextBorderStyleRoundedRect;
+    textfiled.placeholder = _entity.placeholder;
+    textfiled.text = _entity.text;
+    textfiled.textAlignment = _entity.alignment;
+    textfiled.textColor = [self colorWithHexString:_entity.fontColor];
+    textfiled.borderStyle = _entity.bordVisible ? UITextBorderStyleRoundedRect : UITextBorderStyleNone;
+    textfiled.delegate = self;
     
     self.uicomponent = textfiled;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChanged:) name:UITextFieldTextDidChangeNotification object:nil];
 }
+
+- (void)textDidChanged:(NSNotification *)noti {
+    UITextField *target = (UITextField *)noti.object;
+    UITextField *textField = self.uicomponent;
+    
+    if (target == textField) {
+        NSLog(textField.text);
+        NSString *string = textField.text;
+        
+        if ([self onTextDidChanged:string]) {
+            [textField resignFirstResponder];
+        }
+    }
+}
+
+
+- (void)dealloc
+{
+     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 @end

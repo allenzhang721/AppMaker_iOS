@@ -43,6 +43,9 @@
 -(BOOL) onTouchEnd;
 -(void) onTouchEndTouchUp;
 -(BOOL) onTapGesture;//adward 3.6
+- (BOOL)onTextDidChanged:(NSString *)string;
+
+-(UIColor*)colorWithHexString:(NSString*)hex;
 
 -(void) onSwipeUp;
 -(Boolean) isBusy;

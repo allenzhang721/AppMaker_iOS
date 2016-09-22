@@ -9,7 +9,7 @@
 #import "Component.h"
 #import "HLTextInputEntity.h"
 
-@interface HLTextInputComponent : Component
+@interface HLTextInputComponent : Component<UITextFieldDelegate>
 
 @property (nonatomic, retain)HLTextInputEntity   *entity;
 

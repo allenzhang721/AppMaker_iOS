@@ -15,8 +15,9 @@
     self = [super init];
     if (self) {
         self.placeholder = @"";
+        self.text = @"";
         self.fontSize = 14;
-        self.fontColor = @"000000";
+        self.fontColor = @"0x000000";
         self.alignment = NSTextAlignmentLeft;
         self.bordVisible = true;
     }
@@ -39,6 +40,11 @@
         self.placeholder = [EMTBXML textForElement:placeHolder];
     }
     
+    TBXMLElement *text = [EMTBXML childElementNamed:@"text" parentElement:data];
+    if (text) {
+        self.text = [EMTBXML textForElement:text];
+    }
+    
     TBXMLElement *fontSize = [EMTBXML childElementNamed:@"fontSize" parentElement:data];
     if (fontSize) {
         self.fontSize = [[EMTBXML textForElement:fontSize] floatValue];
@@ -52,9 +58,13 @@
     TBXMLElement *fontAlig = [EMTBXML childElementNamed:@"fontAlig" parentElement:data];
     if (fontAlig) {
         NSString *alignent = [EMTBXML textForElement:fontAlig];
-        if ([alignent  isEqual: @"Left"]) {
+        if ([alignent  isEqual: @"left"]) {
             self.alignment = NSTextAlignmentLeft;
-        } else {
+        } else if ([alignent  isEqual: @"center"]) {
+            self.alignment = NSTextAlignmentCenter;
+        } else if ([alignent  isEqual: @"right"]) {
+            self.alignment = NSTextAlignmentRight;
+        }else {
             self.alignment = NSTextAlignmentLeft;
         }
     }
@@ -65,6 +75,14 @@
     }
     
     [pool release];
+}
+
+-(void) restoreData:(id)object {
+    
+    if (object != nil && [object isKindOfClass:[NSString class]]) {
+        _text = (NSString *)object;
+    }
+    
 }
 
 @end

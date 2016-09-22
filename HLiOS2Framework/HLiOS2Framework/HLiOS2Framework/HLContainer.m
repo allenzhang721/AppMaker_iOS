@@ -236,6 +236,37 @@
     }
     return value;
 }
+
+-(BOOL) runBehavior:(NSString *)eventName object:(id)object {
+    
+    if (self.isCleaned == YES)
+    {
+        return YES;
+    }
+    Boolean ret = NO;
+    Boolean isTrigger = NO;
+    Boolean isTriigerOnTap = YES;
+    //    if (self.entity.behaviors.count == 0 && self.componetRect.size.width == 0 && self.componetRect.size.height == 0)    //陈星宇，11，11
+    //        if (self.entity.behaviors.count == 0) //修复回置问题
+    //    {
+    //        [self getComStartPoint];
+    //    }
+    for (int i = 0; i < [self.entity.behaviors count]; i++) {
+        
+        HLBehaviorEntity *behavior = [self.entity.behaviors objectAtIndex:i];
+        
+        NSString *functionName = [NSString stringWithString:behavior.functionName];
+    
+        if ([eventName isEqualToString:@"BEHAVIOR_ON_TEXT_CHANGE"]&&[behavior.eventName isEqualToString:@"BEHAVIOR_ON_TEXT_CHANGE"] && [object isKindOfClass:[NSString class]]){
+            
+            if ([behavior.behaviorValue isEqualToString:(NSString *)object]) {
+               ret = [self.behaviorController runBehavior:self.entity.entityid entity:behavior];
+                return !ret;
+            }
+        }
+    }
+}
+
 -(BOOL) runBehavior:(NSString *) eventName
 {
     if (self.isCleaned == YES)
@@ -257,7 +288,8 @@
         
         NSString *functionName = [NSString stringWithString:behavior.functionName];
         
-        if ([eventName isEqualToString:@"BEHAVIOR_ON_ENTER_SPOT"]&&[behavior.eventName isEqualToString:@"BEHAVIOR_ON_ENTER_SPOT"])
+        // Feature - TextInput - Emiaostein, 22 Sep 2016
+      if ([eventName isEqualToString:@"BEHAVIOR_ON_ENTER_SPOT"]&&[behavior.eventName isEqualToString:@"BEHAVIOR_ON_ENTER_SPOT"])
         {
             Boolean hasOutEvent = NO;
             

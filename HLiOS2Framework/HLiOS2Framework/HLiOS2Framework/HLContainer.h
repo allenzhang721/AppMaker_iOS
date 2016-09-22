@@ -103,6 +103,7 @@
 -(void) runLinkageContainerXY:(float)lx :(float)ly;
 -(BOOL) runBehavior:(NSString *) eventName index:(int)index;
 -(BOOL) runBehavior:(NSString *) eventName;
+-(BOOL) runBehavior:(NSString *)eventName object:(id)object;
 -(void) setSpotInContainer;
 -(Boolean) runBehaviorWithEntity:(HLBehaviorEntity *)behavior;
 -(void)runLinkageContainerWidth:(float)wchange Height :(float)hchange;
