@@ -11,6 +11,12 @@
 @implementation HLContainerTypeCreator
 +(NSString *) getContainerType:(NSString *) className
     {
+        // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
+        if ([className compare:@"com.hl.flex.components.objects.hlTextInput::HLTextInputComponent"] == NSOrderedSame)
+        {
+            return @"TextInputComponent";
+        }
+        
         if ([className compare:@"com.hl.flex.components.objects.hlButton::HLLocalButtonComponent"] == NSOrderedSame)
         {
             return @"UIButtonComponent";

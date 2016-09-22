@@ -72,6 +72,10 @@
     
 }
 
+-(void) restoreData:(id)object {
+    
+}
+
 - (void)dealloc 
 {
 //	self.name = nil;

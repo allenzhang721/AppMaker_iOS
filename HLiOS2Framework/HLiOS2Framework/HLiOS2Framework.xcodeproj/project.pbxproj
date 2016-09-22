@@ -97,6 +97,10 @@
 		29EFBABB188133A000D3A2C3 /* HLAFKFlip.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EFBAB9188133A000D3A2C3 /* HLAFKFlip.m */; };
 		29EFBABE188133BB00D3A2C3 /* HLCurverFlipController.h in Headers */ = {isa = PBXBuildFile; fileRef = 29EFBABC188133BB00D3A2C3 /* HLCurverFlipController.h */; };
 		29EFBABF188133BB00D3A2C3 /* HLCurverFlipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EFBABD188133BB00D3A2C3 /* HLCurverFlipController.m */; };
+		2C11CE481D924A2B00E9C29E /* HLTextInputEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C11CE461D924A2B00E9C29E /* HLTextInputEntity.h */; };
+		2C11CE491D924A2B00E9C29E /* HLTextInputEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C11CE471D924A2B00E9C29E /* HLTextInputEntity.m */; };
+		2C11CE4C1D924BB000E9C29E /* HLTextInputComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C11CE4A1D924BB000E9C29E /* HLTextInputComponent.h */; };
+		2C11CE4D1D924BB000E9C29E /* HLTextInputComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C11CE4B1D924BB000E9C29E /* HLTextInputComponent.m */; };
 		2C54BB6A1D704333007320BA /* PushController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C54BB681D704333007320BA /* PushController.h */; };
 		2C54BB6B1D704333007320BA /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C54BB691D704333007320BA /* PushController.m */; };
 		2C6118A91D76BFF600AB8350 /* PushCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C6118A71D76BFF600AB8350 /* PushCell.h */; };
@@ -660,6 +664,10 @@
 		29EFBABC188133BB00D3A2C3 /* HLCurverFlipController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLCurverFlipController.h; sourceTree = "<group>"; };
 		29EFBABD188133BB00D3A2C3 /* HLCurverFlipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLCurverFlipController.m; sourceTree = "<group>"; };
 		2C0DAB851D66EA2F00670D6A /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		2C11CE461D924A2B00E9C29E /* HLTextInputEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTextInputEntity.h; sourceTree = "<group>"; };
+		2C11CE471D924A2B00E9C29E /* HLTextInputEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTextInputEntity.m; sourceTree = "<group>"; };
+		2C11CE4A1D924BB000E9C29E /* HLTextInputComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTextInputComponent.h; sourceTree = "<group>"; };
+		2C11CE4B1D924BB000E9C29E /* HLTextInputComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTextInputComponent.m; sourceTree = "<group>"; };
 		2C54BB681D704333007320BA /* PushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushController.h; sourceTree = "<group>"; };
 		2C54BB691D704333007320BA /* PushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushController.m; sourceTree = "<group>"; };
 		2C6118A61D76BD4400AB8350 /* PushCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushCell.xib; sourceTree = "<group>"; };
@@ -1396,6 +1404,17 @@
 			name = sliderCover;
 			sourceTree = "<group>";
 		};
+		2C11CE451D924A0500E9C29E /* TextInputComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2C11CE461D924A2B00E9C29E /* HLTextInputEntity.h */,
+				2C11CE471D924A2B00E9C29E /* HLTextInputEntity.m */,
+				2C11CE4A1D924BB000E9C29E /* HLTextInputComponent.h */,
+				2C11CE4B1D924BB000E9C29E /* HLTextInputComponent.m */,
+			);
+			name = TextInputComponent;
+			sourceTree = "<group>";
+		};
 		2C6118A51D76BCA000AB8350 /* PushHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -2030,6 +2049,7 @@
 		6AB214F2171ABDBF0020CFE8 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2C11CE451D924A0500E9C29E /* TextInputComponent */,
 				6AB214F3171ABDC50020CFE8 /* Base */,
 				6AB215E8171AD09A0020CFE8 /* AudioComponent */,
 				C3F375D917DEEB0A001F8F7D /* AutoScrollableComponent */,
@@ -4069,6 +4089,7 @@
 				C304B02117745667004CA879 /* FontSizeSliderComponent.h in Headers */,
 				C3D740521777E5C900B18E71 /* CTidy.h in Headers */,
 				C3D740541777E5C900B18E71 /* EMCXHTMLDocument.h in Headers */,
+				2C11CE4C1D924BB000E9C29E /* HLTextInputComponent.h in Headers */,
 				29CF1EFE196A656A0079F372 /* HLSliderCoverPageContainersController.h in Headers */,
 				29CF1EDC196A63B10079F372 /* HLEnumConstant.h in Headers */,
 				29CF1EE0196A64D90079F372 /* HLsingleCoverController.h in Headers */,
@@ -4087,6 +4108,7 @@
 				C3D740661777E5C900B18E71 /* CXMLNode_CreationExtensions.h in Headers */,
 				C3D740681777E5C900B18E71 /* CXMLNode_PrivateExtensions.h in Headers */,
 				C3D7406A1777E5C900B18E71 /* CXMLNode_XPathExtensions.h in Headers */,
+				2C11CE481D924A2B00E9C29E /* HLTextInputEntity.h in Headers */,
 				C3D7406C1777E5C900B18E71 /* TouchXML.h in Headers */,
 				C3B847D11779A1730042C129 /* HLSliderContainerController.h in Headers */,
 				29CF1F00196A656A0079F372 /* HLSliderCoverPageController.h in Headers */,
@@ -4324,6 +4346,7 @@
 				6AB21527171ABEE70020CFE8 /* QuizComponent.m in Sources */,
 				6AB2152F171ABF0A0020CFE8 /* QuizEntity.m in Sources */,
 				6AB21530171ABF0A0020CFE8 /* QuestionEntity.m in Sources */,
+				2C11CE491D924A2B00E9C29E /* HLTextInputEntity.m in Sources */,
 				6AB21531171ABF0A0020CFE8 /* AnswerEntity.m in Sources */,
 				6AB21538171ABF280020CFE8 /* HLImage.m in Sources */,
 				6AB21539171ABF280020CFE8 /* ImageComponent.m in Sources */,
@@ -4465,6 +4488,7 @@
 				6A6A2DA117268D740096335A /* glues_error.c in Sources */,
 				6A6A2DA317268D740096335A /* glues_mipmap.c in Sources */,
 				6A6A2DA517268D740096335A /* glues_project.c in Sources */,
+				2C11CE4D1D924BB000E9C29E /* HLTextInputComponent.m in Sources */,
 				6A6A2DA717268D740096335A /* glues_quad.c in Sources */,
 				6A6A2DA917268D740096335A /* glues_registry.c in Sources */,
 				6A6A2DCC17268D8C0096335A /* PLCamera.m in Sources */,
