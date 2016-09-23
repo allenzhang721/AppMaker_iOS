@@ -41,8 +41,14 @@ static int totalCount = -1;
         }
         else
         {
-            self.selfValue = ce.minValue;
-            [self.display setText:[NSString stringWithFormat:@"%d",ce.minValue]];
+//            self.selfValue = ce.minValue;
+            int v =[[[NSUserDefaults standardUserDefaults] valueForKey:entity.entityid] intValue];
+            if (v != nil) {
+                self.selfValue = v;
+            } else {
+                self.selfValue = ce.minValue;
+            }
+            [self.display setText:[NSString stringWithFormat:@"%d",self.selfValue]];
             
         }
         self.uicomponent = self.display;
@@ -110,6 +116,7 @@ static int totalCount = -1;
     else
     {
         self.selfValue = ce.minValue;
+        [self storeValue:self.selfValue];
         [self.display setText:[NSString stringWithFormat:@"%d",ce.minValue]];
     }
     [self.display sizeToFit];
@@ -134,12 +141,18 @@ static int totalCount = -1;
     }
     else
     {
-        self.selfValue += value;
-        if (self.selfValue > ((CounterEntity*)self.container.entity).maxValue)
-        {
-            self.selfValue = ((CounterEntity*)self.container.entity).maxValue;
+        int preValue = self.selfValue;
+        int nextValue = self.selfValue + value;
+        //        self.selfValue -= value;
+        if (nextValue > ((CounterEntity*)self.container.entity).maxValue) {
+            nextValue = ((CounterEntity*)self.container.entity).maxValue;
         }
-        [self.display setText:[NSString stringWithFormat:@"%d",self.selfValue]];
+        
+        if (preValue != nextValue) {
+            self.selfValue = nextValue;
+            [self storeValue:nextValue];
+            [self.display setText:[NSString stringWithFormat:@"%d",self.selfValue]];
+        }
     }
     [self.display sizeToFit];
     [self checkBehavior];
@@ -160,16 +173,27 @@ static int totalCount = -1;
     }
     else
     {
-        self.selfValue -= value;
-        if (self.selfValue < ((CounterEntity*)self.container.entity).minValue)
-        {
-            self.selfValue = ((CounterEntity*)self.container.entity).minValue;
+        int preValue = self.selfValue;
+        int nextValue = self.selfValue - value;
+//        self.selfValue -= value;
+        if (nextValue < ((CounterEntity*)self.container.entity).minValue) {
+            nextValue = ((CounterEntity*)self.container.entity).minValue;
         }
-        [self.display setText:[NSString stringWithFormat:@"%d",self.selfValue]];
         
+        if (preValue != nextValue) {
+            self.selfValue = nextValue;
+            [self storeValue:nextValue];
+            [self.display setText:[NSString stringWithFormat:@"%d",self.selfValue]];
+        }
     }
+    
     [self.display sizeToFit];
     [self checkBehavior];
+}
+
+-(void)storeValue:(int)value {
+    [[NSUserDefaults standardUserDefaults] setObject:[[NSNumber alloc] initWithInt:value] forKey:self.container.entity.entityid];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(UIColor*)colorWithHexString:(NSString*)hex
