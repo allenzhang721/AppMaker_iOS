@@ -37,7 +37,6 @@
 //    UIScrollView
 }
 
-
 @property (nonatomic , assign) BOOL activePush; //Aug 26, 2016
 @property (nonatomic , copy) NSString *pushID; // Aug 26, 2016
 

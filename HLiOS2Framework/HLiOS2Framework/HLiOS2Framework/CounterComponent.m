@@ -10,6 +10,7 @@
 #import "CounterEntity.h"
 #import "HLBehaviorEntity.h"
 #import "HLContainer.h"
+#import "HLGobalBookID.h"
 #import "HLPageController.h"
 
 @implementation CounterComponent
@@ -36,6 +37,17 @@ static int totalCount = -1;
             {
                 totalCount = ce.minValue;
             }
+            
+            int v =[[[NSUserDefaults standardUserDefaults] valueForKey:[HLGobalBookID share].bookID] intValue];
+            if (v != nil) {
+                totalCount = v;
+            } else {
+                if (totalCount == -1)
+                {
+                    totalCount = ce.minValue;
+                }
+            }
+            
             [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
             
         }
@@ -111,6 +123,7 @@ static int totalCount = -1;
     if (self.isGlobal == YES)
     {
         totalCount = ce.minValue;
+        [self storeTotalCount];
         [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
     }
     else
@@ -134,6 +147,8 @@ static int totalCount = -1;
         {
             totalCount = ((CounterEntity*)self.container.entity).maxValue;
         }
+        
+        [self storeTotalCount];
         
         NSLog(@"final = %d",totalCount);
         [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
@@ -168,6 +183,7 @@ static int totalCount = -1;
         {
             totalCount = ((CounterEntity*)self.container.entity).minValue;
         }
+        [self storeTotalCount];
         [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
         
     }
@@ -193,6 +209,11 @@ static int totalCount = -1;
 
 -(void)storeValue:(int)value {
     [[NSUserDefaults standardUserDefaults] setObject:[[NSNumber alloc] initWithInt:value] forKey:self.container.entity.entityid];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(void)storeTotalCount {
+    [[NSUserDefaults standardUserDefaults] setObject:[[NSNumber alloc] initWithInt:totalCount] forKey:[HLGobalBookID share].bookID ];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

@@ -101,6 +101,8 @@
 		2C11CE491D924A2B00E9C29E /* HLTextInputEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C11CE471D924A2B00E9C29E /* HLTextInputEntity.m */; };
 		2C11CE4C1D924BB000E9C29E /* HLTextInputComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C11CE4A1D924BB000E9C29E /* HLTextInputComponent.h */; };
 		2C11CE4D1D924BB000E9C29E /* HLTextInputComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C11CE4B1D924BB000E9C29E /* HLTextInputComponent.m */; };
+		2C2097BB1D95396D00C5135E /* HLGobalBookID.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C2097B91D95396D00C5135E /* HLGobalBookID.h */; };
+		2C2097BC1D95396D00C5135E /* HLGobalBookID.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2097BA1D95396D00C5135E /* HLGobalBookID.m */; };
 		2C54BB6A1D704333007320BA /* PushController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C54BB681D704333007320BA /* PushController.h */; };
 		2C54BB6B1D704333007320BA /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C54BB691D704333007320BA /* PushController.m */; };
 		2C6118A91D76BFF600AB8350 /* PushCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C6118A71D76BFF600AB8350 /* PushCell.h */; };
@@ -668,6 +670,8 @@
 		2C11CE471D924A2B00E9C29E /* HLTextInputEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTextInputEntity.m; sourceTree = "<group>"; };
 		2C11CE4A1D924BB000E9C29E /* HLTextInputComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTextInputComponent.h; sourceTree = "<group>"; };
 		2C11CE4B1D924BB000E9C29E /* HLTextInputComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTextInputComponent.m; sourceTree = "<group>"; };
+		2C2097B91D95396D00C5135E /* HLGobalBookID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLGobalBookID.h; sourceTree = "<group>"; };
+		2C2097BA1D95396D00C5135E /* HLGobalBookID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLGobalBookID.m; sourceTree = "<group>"; };
 		2C54BB681D704333007320BA /* PushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushController.h; sourceTree = "<group>"; };
 		2C54BB691D704333007320BA /* PushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushController.m; sourceTree = "<group>"; };
 		2C6118A61D76BD4400AB8350 /* PushCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushCell.xib; sourceTree = "<group>"; };
@@ -3400,6 +3404,8 @@
 				C3FCF5B71772A2BD0086B321 /* HLBookDecoder.m */,
 				6AB217E8171AD7C10020CFE8 /* HLBookEntity.h */,
 				6AB217E9171AD7C10020CFE8 /* HLBookEntity.m */,
+				2C2097B91D95396D00C5135E /* HLGobalBookID.h */,
+				2C2097BA1D95396D00C5135E /* HLGobalBookID.m */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -4056,6 +4062,7 @@
 				C3FCF52F17729E720086B321 /* Chapter.h in Headers */,
 				C3FCF53117729E720086B321 /* ChapterListViewController.h in Headers */,
 				C3FCF53317729E720086B321 /* EPub.h in Headers */,
+				2C2097BB1D95396D00C5135E /* HLGobalBookID.h in Headers */,
 				C3FCF53517729E720086B321 /* SearchResult.h in Headers */,
 				C3FCF53717729E720086B321 /* SearchResultsViewController.h in Headers */,
 				C3FCF53917729E720086B321 /* GTMDefines.h in Headers */,
@@ -4535,6 +4542,7 @@
 				C3FCF50B17729E1F0086B321 /* HLReaderContentView.m in Sources */,
 				C3FCF50D17729E1F0086B321 /* HLReaderContentPage.m in Sources */,
 				C3FCF50F17729E1F0086B321 /* HLReaderContentTile.m in Sources */,
+				2C2097BC1D95396D00C5135E /* HLGobalBookID.m in Sources */,
 				C3FCF51117729E1F0086B321 /* HLThumbsViewController.m in Sources */,
 				C3FCF51317729E1F0086B321 /* HLThumbsMainToolbar.m in Sources */,
 				C3FCF52A17729E720086B321 /* EPubViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import "HLPageDecoder.h"
 #import "HLXMLManager.h"
 #import "CommonFunc.h"
+#import "HLGobalBookID.h"
 static HLXMLManager* xmlManager;
 static NSString* const myDataPath = @"book.dat";
 static NSString* const anotherDataPath = @"hash.dat";
@@ -106,6 +107,8 @@ static NSString* const anotherDataPath = @"hash.dat";
             {
                 TBXMLElement *bookid = [EMTBXML childElementNamed:@"ID" parentElement:bookInfo];
                 bookEntity.bookid = [EMTBXML textForElement:bookid];
+                [HLGobalBookID share].bookID = [bookEntity.bookid copy];
+                
             }
             //Mr.chen,2014-9-10
             /*
