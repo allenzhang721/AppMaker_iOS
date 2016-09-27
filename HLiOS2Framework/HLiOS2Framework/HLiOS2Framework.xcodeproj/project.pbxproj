@@ -105,6 +105,10 @@
 		2C2097BC1D95396D00C5135E /* HLGobalBookID.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2097BA1D95396D00C5135E /* HLGobalBookID.m */; };
 		2C54BB6A1D704333007320BA /* PushController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C54BB681D704333007320BA /* PushController.h */; };
 		2C54BB6B1D704333007320BA /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C54BB691D704333007320BA /* PushController.m */; };
+		2C57A7F21D98CF6500F886EE /* HLYoutubeComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C57A7F01D98CF6500F886EE /* HLYoutubeComponent.h */; };
+		2C57A7F31D98CF6500F886EE /* HLYoutubeComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C57A7F11D98CF6500F886EE /* HLYoutubeComponent.m */; };
+		2C57A7F61D98CF8F00F886EE /* HLYoutubeEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C57A7F41D98CF8F00F886EE /* HLYoutubeEntity.h */; };
+		2C57A7F71D98CF8F00F886EE /* HLYoutubeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C57A7F51D98CF8F00F886EE /* HLYoutubeEntity.m */; };
 		2C6118A91D76BFF600AB8350 /* PushCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C6118A71D76BFF600AB8350 /* PushCell.h */; };
 		2C6118AA1D76BFF600AB8350 /* PushCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6118A81D76BFF600AB8350 /* PushCell.m */; };
 		2C6118AB1D76C1E100AB8350 /* PushCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6118A61D76BD4400AB8350 /* PushCell.xib */; };
@@ -674,6 +678,10 @@
 		2C2097BA1D95396D00C5135E /* HLGobalBookID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLGobalBookID.m; sourceTree = "<group>"; };
 		2C54BB681D704333007320BA /* PushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushController.h; sourceTree = "<group>"; };
 		2C54BB691D704333007320BA /* PushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushController.m; sourceTree = "<group>"; };
+		2C57A7F01D98CF6500F886EE /* HLYoutubeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLYoutubeComponent.h; sourceTree = "<group>"; };
+		2C57A7F11D98CF6500F886EE /* HLYoutubeComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLYoutubeComponent.m; sourceTree = "<group>"; };
+		2C57A7F41D98CF8F00F886EE /* HLYoutubeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLYoutubeEntity.h; sourceTree = "<group>"; };
+		2C57A7F51D98CF8F00F886EE /* HLYoutubeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLYoutubeEntity.m; sourceTree = "<group>"; };
 		2C6118A61D76BD4400AB8350 /* PushCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushCell.xib; sourceTree = "<group>"; };
 		2C6118A71D76BFF600AB8350 /* PushCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushCell.h; sourceTree = "<group>"; };
 		2C6118A81D76BFF600AB8350 /* PushCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushCell.m; sourceTree = "<group>"; };
@@ -1419,6 +1427,17 @@
 			name = TextInputComponent;
 			sourceTree = "<group>";
 		};
+		2C57A7EF1D98CF3400F886EE /* YoutubeComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2C57A7F41D98CF8F00F886EE /* HLYoutubeEntity.h */,
+				2C57A7F51D98CF8F00F886EE /* HLYoutubeEntity.m */,
+				2C57A7F01D98CF6500F886EE /* HLYoutubeComponent.h */,
+				2C57A7F11D98CF6500F886EE /* HLYoutubeComponent.m */,
+			);
+			name = YoutubeComponent;
+			sourceTree = "<group>";
+		};
 		2C6118A51D76BCA000AB8350 /* PushHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -2053,6 +2072,7 @@
 		6AB214F2171ABDBF0020CFE8 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2C57A7EF1D98CF3400F886EE /* YoutubeComponent */,
 				2C11CE451D924A0500E9C29E /* TextInputComponent */,
 				6AB214F3171ABDC50020CFE8 /* Base */,
 				6AB215E8171AD09A0020CFE8 /* AudioComponent */,
@@ -3993,6 +4013,7 @@
 				29CF1F10196A65E50079F372 /* PhotosResizeComponent.h in Headers */,
 				6A6A2C83172579580096335A /* ImageSliderComponent.h in Headers */,
 				6A6A2C91172626650096335A /* CounterEntity.h in Headers */,
+				2C57A7F61D98CF8F00F886EE /* HLYoutubeEntity.h in Headers */,
 				29EFBAB61881338B00D3A2C3 /* HLSliderPageController.h in Headers */,
 				6A6A2C9517262E460096335A /* CounterComponent.h in Headers */,
 				6A6A2C9C17263A190096335A /* TimerEntity.h in Headers */,
@@ -4073,6 +4094,7 @@
 				C3FCF54517729E8C0086B321 /* HLioapi.h in Headers */,
 				C3FCF54617729E8C0086B321 /* HLmztools.h in Headers */,
 				C3FCF54717729E8C0086B321 /* HLunzip.h in Headers */,
+				2C57A7F21D98CF6500F886EE /* HLYoutubeComponent.h in Headers */,
 				C3FCF54817729E8C0086B321 /* HLzip.h in Headers */,
 				C3FCF54917729E8C0086B321 /* HLZipArchive.h in Headers */,
 				C3FCF57917729F410086B321 /* PDFComponent.h in Headers */,
@@ -4373,6 +4395,7 @@
 				6AB21571171AC0140020CFE8 /* PuzzleViewContorller.m in Sources */,
 				6AB21575171AC0230020CFE8 /* PuzzlePiecesEntity.m in Sources */,
 				6AB21582171ACD8A0020CFE8 /* PaintComponent.m in Sources */,
+				2C57A7F31D98CF6500F886EE /* HLYoutubeComponent.m in Sources */,
 				6AB21583171ACD8A0020CFE8 /* PaintViewController.m in Sources */,
 				6AB21584171ACD8A0020CFE8 /* MoveAnimation.m in Sources */,
 				6AB21585171ACD8A0020CFE8 /* MoveAnimationReverse.m in Sources */,
@@ -4590,6 +4613,7 @@
 				C3D740671777E5C900B18E71 /* CXMLNode_CreationExtensions.m in Sources */,
 				29EFBAA31881316E00D3A2C3 /* HLPageController.m in Sources */,
 				C3D740691777E5C900B18E71 /* CXMLNode_PrivateExtensions.m in Sources */,
+				2C57A7F71D98CF8F00F886EE /* HLYoutubeEntity.m in Sources */,
 				C3D7406B1777E5C900B18E71 /* CXMLNode_XPathExtensions.m in Sources */,
 				C3B847D21779A1730042C129 /* HLSliderContainerController.m in Sources */,
 				C3130B1A17869EBE00995421 /* SliceEntity.m in Sources */,
@@ -4787,6 +4811,7 @@
 		6AB2144D171AB6920020CFE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "";
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/MoueeiOS2Framework.dst;
@@ -4794,6 +4819,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/../../SAC2/HLRealTimeTest2\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HLiOS2Framework/HLiOS2Framework-Prefix.pch";
@@ -4820,6 +4846,7 @@
 		6AB2144E171AB6920020CFE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
@@ -4828,6 +4855,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/../../SAC2/HLRealTimeTest2\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HLiOS2Framework/HLiOS2Framework-Prefix.pch";

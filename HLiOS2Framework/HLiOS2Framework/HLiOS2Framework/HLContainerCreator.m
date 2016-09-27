@@ -44,17 +44,24 @@
 #import "PhotosResizeEntity.h"
 #import "AutoScrollableEntity.h"
 #import "LanternSlideEntity.h"
+#import "HLYoutubeEntity.h"
 
 @implementation HLContainerCreator
     
 + (HLContainerEntity *)createEntity:(NSString *)type moduleid:(NSString *)moduleid
     {
+        
+        // Feature - youtube - Emiaostein, 26 Sep 2016
+        if ([type compare:@"HLYouTubeVideoComponent"]== NSOrderedSame)
+        {
+            return [[HLYoutubeEntity alloc] init];
+        }
+        
         // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
         if ([type compare:@"TextInputComponent"]== NSOrderedSame)
         {
             return [[HLTextInputEntity alloc] init];
         }
-        
         
         if ([type compare:@"PlayCase"]== NSOrderedSame)
         {

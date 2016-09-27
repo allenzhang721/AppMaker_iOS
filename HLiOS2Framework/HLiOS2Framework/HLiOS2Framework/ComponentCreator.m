@@ -80,6 +80,8 @@
 #import "AutoScrollableComponent.h"
 #import "LanternSlideComponent.h"
 #import "LanternSlideEntity.h"
+#import "HLYoutubeEntity.h"
+#import "HLYoutubeComponent.h"
 
 @implementation ComponentCreator
 
@@ -87,6 +89,12 @@
 +(Component *) createComponent:(HLContainerEntity *) entity 
 {
     Component *component;
+    
+    if ([entity isKindOfClass:[HLYoutubeEntity class]]) {
+        component = [[HLYoutubeComponent alloc] initWithEntity:entity];
+        return component;
+    }
+    
     if ([entity isKindOfClass:[HLTextInputEntity class]]) {
         component = [[HLTextInputComponent alloc] initWithEntity:entity];
         return component;
