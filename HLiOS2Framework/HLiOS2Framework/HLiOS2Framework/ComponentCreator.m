@@ -82,6 +82,8 @@
 #import "LanternSlideEntity.h"
 #import "HLYoutubeEntity.h"
 #import "HLYoutubeComponent.h"
+#import "HLMapEntity.h"
+#import "HLMapComponent.h"
 
 @implementation ComponentCreator
 
@@ -89,6 +91,11 @@
 +(Component *) createComponent:(HLContainerEntity *) entity 
 {
     Component *component;
+    
+    if ([entity isKindOfClass:[HLMapEntity class]]) {
+        component = [[HLMapComponent alloc] initWithEntity:entity];
+        return component;
+    }
     
     if ([entity isKindOfClass:[HLYoutubeEntity class]]) {
         component = [[HLYoutubeComponent alloc] initWithEntity:entity];

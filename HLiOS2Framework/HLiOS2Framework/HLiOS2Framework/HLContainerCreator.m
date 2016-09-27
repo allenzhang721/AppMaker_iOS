@@ -45,11 +45,18 @@
 #import "AutoScrollableEntity.h"
 #import "LanternSlideEntity.h"
 #import "HLYoutubeEntity.h"
+#import "HLMapEntity.h"
 
 @implementation HLContainerCreator
     
 + (HLContainerEntity *)createEntity:(NSString *)type moduleid:(NSString *)moduleid
     {
+        
+        // Feature - Mapcom.hl.flex.components.objects.hlmap::HLGoogleMapComponent - Emiaostein, 27 Sep 2016
+        if ([type compare:@"HLGoogleMapComponent"]== NSOrderedSame)
+        {
+            return [[HLMapEntity alloc] init];
+        }
         
         // Feature - youtube - Emiaostein, 26 Sep 2016
         if ([type compare:@"HLYouTubeVideoComponent"]== NSOrderedSame)

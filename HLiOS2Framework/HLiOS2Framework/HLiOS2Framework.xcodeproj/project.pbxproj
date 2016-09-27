@@ -112,6 +112,11 @@
 		2C6118A91D76BFF600AB8350 /* PushCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C6118A71D76BFF600AB8350 /* PushCell.h */; };
 		2C6118AA1D76BFF600AB8350 /* PushCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6118A81D76BFF600AB8350 /* PushCell.m */; };
 		2C6118AB1D76C1E100AB8350 /* PushCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C6118A61D76BD4400AB8350 /* PushCell.xib */; };
+		2C74EF2E1D9A4B3C00813EEC /* HLMapEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C74EF2C1D9A4B3C00813EEC /* HLMapEntity.h */; };
+		2C74EF2F1D9A4B3C00813EEC /* HLMapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EF2D1D9A4B3C00813EEC /* HLMapEntity.m */; };
+		2C7E0A721D9A4CD100E3766E /* HLMapComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7E0A701D9A4CD100E3766E /* HLMapComponent.h */; };
+		2C7E0A731D9A4CD100E3766E /* HLMapComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E0A711D9A4CD100E3766E /* HLMapComponent.m */; };
+		2C7E0A7A1D9A4E8400E3766E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A791D9A4E8400E3766E /* MapKit.framework */; };
 		2C99C5501D77DBD3009757C6 /* PushHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C99C54E1D77DBD3009757C6 /* PushHUD.h */; };
 		2C99C5511D77DBD3009757C6 /* PushHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C99C54F1D77DBD3009757C6 /* PushHUD.m */; };
 		6A372327172ABC420097D34A /* SlideCellComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A2C79172575A80096335A /* SlideCellComponent.m */; };
@@ -685,6 +690,11 @@
 		2C6118A61D76BD4400AB8350 /* PushCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushCell.xib; sourceTree = "<group>"; };
 		2C6118A71D76BFF600AB8350 /* PushCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushCell.h; sourceTree = "<group>"; };
 		2C6118A81D76BFF600AB8350 /* PushCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushCell.m; sourceTree = "<group>"; };
+		2C74EF2C1D9A4B3C00813EEC /* HLMapEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLMapEntity.h; sourceTree = "<group>"; };
+		2C74EF2D1D9A4B3C00813EEC /* HLMapEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLMapEntity.m; sourceTree = "<group>"; };
+		2C7E0A701D9A4CD100E3766E /* HLMapComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLMapComponent.h; sourceTree = "<group>"; };
+		2C7E0A711D9A4CD100E3766E /* HLMapComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLMapComponent.m; sourceTree = "<group>"; };
+		2C7E0A791D9A4E8400E3766E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2C99C54E1D77DBD3009757C6 /* PushHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushHUD.h; sourceTree = "<group>"; };
 		2C99C54F1D77DBD3009757C6 /* PushHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushHUD.m; sourceTree = "<group>"; };
 		6A37232C172BA3AF0097D34A /* HTML5Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTML5Entity.h; sourceTree = "<group>"; };
@@ -1327,6 +1337,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7E0A7A1D9A4E8400E3766E /* MapKit.framework in Frameworks */,
 				292C9C521830921E005EFA46 /* StoreKit.framework in Frameworks */,
 				6AB21442171AB6920020CFE8 /* Foundation.framework in Frameworks */,
 			);
@@ -1450,6 +1461,17 @@
 				2C6118A61D76BD4400AB8350 /* PushCell.xib */,
 			);
 			name = PushHUD;
+			sourceTree = "<group>";
+		};
+		2C74EF2B1D9A4AED00813EEC /* MapComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2C74EF2C1D9A4B3C00813EEC /* HLMapEntity.h */,
+				2C74EF2D1D9A4B3C00813EEC /* HLMapEntity.m */,
+				2C7E0A701D9A4CD100E3766E /* HLMapComponent.h */,
+				2C7E0A711D9A4CD100E3766E /* HLMapComponent.m */,
+			);
+			name = MapComponent;
 			sourceTree = "<group>";
 		};
 		6A372329172BA35A0097D34A /* HTLM5Component */ = {
@@ -1611,6 +1633,7 @@
 		6AB21440171AB6920020CFE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C7E0A791D9A4E8400E3766E /* MapKit.framework */,
 				2C0DAB851D66EA2F00670D6A /* libxml2.tbd */,
 				292C9C50183090F5005EFA46 /* StoreKit.framework */,
 				6AB217F5171AD9430020CFE8 /* libxml2.dylib */,
@@ -2072,6 +2095,7 @@
 		6AB214F2171ABDBF0020CFE8 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2C74EF2B1D9A4AED00813EEC /* MapComponent */,
 				2C57A7EF1D98CF3400F886EE /* YoutubeComponent */,
 				2C11CE451D924A0500E9C29E /* TextInputComponent */,
 				6AB214F3171ABDC50020CFE8 /* Base */,
@@ -4126,6 +4150,7 @@
 				C3D740581777E5C900B18E71 /* CXMLDocument_CreationExtensions.h in Headers */,
 				C3D7405A1777E5C900B18E71 /* CXMLDocument_PrivateExtensions.h in Headers */,
 				29283AF31860869600360B07 /* CSSlider.h in Headers */,
+				2C74EF2E1D9A4B3C00813EEC /* HLMapEntity.h in Headers */,
 				292C9C4B18308339005EFA46 /* HLIAPPurchseHandle.h in Headers */,
 				C3D7405C1777E5C900B18E71 /* HLCXMLElement.h in Headers */,
 				C3D7405E1777E5C900B18E71 /* CXMLElement_CreationExtensions.h in Headers */,
@@ -4180,6 +4205,7 @@
 				2C6118A91D76BFF600AB8350 /* PushCell.h in Headers */,
 				C3F375E317DEEBD4001F8F7D /* AutoScrollableComponent.h in Headers */,
 				C3591C8B17E1954400598A8F /* LanternSlideEntity.h in Headers */,
+				2C7E0A721D9A4CD100E3766E /* HLMapComponent.h in Headers */,
 				C3591C8F17E1956200598A8F /* LanternSlideComponent.h in Headers */,
 				C383EC2617E315C900867950 /* HLSlideScrollView.h in Headers */,
 				C38F6C5618166B09004FCDF7 /* SWFPlayerComponent.h in Headers */,
@@ -4350,6 +4376,7 @@
 				6AB214C3171ABD100020CFE8 /* RotateMoveInAnimation.m in Sources */,
 				6AB214C7171ABD290020CFE8 /* ShakeAnimation.m in Sources */,
 				6AB214CB171ABD3C0020CFE8 /* MoveFromTopFadeInAnimation.m in Sources */,
+				2C74EF2F1D9A4B3C00813EEC /* HLMapEntity.m in Sources */,
 				6AB214CF171ABD550020CFE8 /* MoveFromBottomFadeInAnimation.m in Sources */,
 				29CF1EE1196A64D90079F372 /* HLsingleCoverController.m in Sources */,
 				6AB214D3171ABD680020CFE8 /* FadeInAnimation.m in Sources */,
@@ -4552,6 +4579,7 @@
 				C301763B17420A4B00B781C7 /* HLIndesignSliderView.m in Sources */,
 				C3DCDDD71744C0A3003BDAB5 /* CatalogueTableView.m in Sources */,
 				C3DCDDDB1744C0BD003BDAB5 /* HLCollectionTableView.m in Sources */,
+				2C7E0A731D9A4CD100E3766E /* HLMapComponent.m in Sources */,
 				C3DCDDDF1744C144003BDAB5 /* CatalogueTableViewCell.m in Sources */,
 				C3DCDDE31744CBD3003BDAB5 /* HLCollectionTableViewCell.m in Sources */,
 				298219E219558D9E0032C933 /* UIView+GMGridViewAdditions.m in Sources */,

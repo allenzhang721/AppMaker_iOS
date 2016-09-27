@@ -13,6 +13,12 @@
     {
         
         // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
+        if ([className compare:@"com.hl.flex.components.objects.hlmap::HLGoogleMapComponent"] == NSOrderedSame)
+        {
+            return @"HLGoogleMapComponent";
+        }
+        
+        // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
         if ([className compare:@"com.hl.flex.components.objects.hlVideo::HLYouTubeVideoComponent"] == NSOrderedSame)
         {
             return @"HLYouTubeVideoComponent";
