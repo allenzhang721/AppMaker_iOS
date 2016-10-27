@@ -7,18 +7,15 @@
 //
 
 #import "HLContainerEntity.h"
-
-struct TableLayout {
-  float cellWidth;
-  float cellheight;
-  float horGap;
-  float verGap;
-  float top;
-  float bottom;
-  float left;
-  float right;
-};
+#import "HLRequest.h"
+#import "HLTableCellViewModel.h"
+#import "HLTableCellSubBindingModel.h"
+//#import "HLTableCellEntity.h"
 
 @interface HLTableEntity : HLContainerEntity
+
+@property(nonatomic, strong) HLRequest *request;
+@property(nonatomic, strong) HLTableCellViewModel *cellViewModel;
+@property(nonatomic, strong) NSArray<HLTableCellSubBindingModel *> *bindingModels;
 
 @end

@@ -103,6 +103,14 @@
 		2C11CE4D1D924BB000E9C29E /* HLTextInputComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C11CE4B1D924BB000E9C29E /* HLTextInputComponent.m */; };
 		2C2097BB1D95396D00C5135E /* HLGobalBookID.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C2097B91D95396D00C5135E /* HLGobalBookID.h */; };
 		2C2097BC1D95396D00C5135E /* HLGobalBookID.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2097BA1D95396D00C5135E /* HLGobalBookID.m */; };
+		2C3977DA1DC23E0800301017 /* HLTableCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3977D81DC23E0800301017 /* HLTableCellViewModel.h */; };
+		2C3977DB1DC23E0800301017 /* HLTableCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3977D91DC23E0800301017 /* HLTableCellViewModel.m */; };
+		2C3977DE1DC2428700301017 /* HLTableCellSubViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3977DC1DC2428700301017 /* HLTableCellSubViewModel.h */; };
+		2C3977DF1DC2428700301017 /* HLTableCellSubViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3977DD1DC2428700301017 /* HLTableCellSubViewModel.m */; };
+		2C3977E61DC244E700301017 /* HLTableCellSubViewImageModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3977E41DC244E700301017 /* HLTableCellSubViewImageModel.h */; };
+		2C3977E71DC244E700301017 /* HLTableCellSubViewImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3977E51DC244E700301017 /* HLTableCellSubViewImageModel.m */; };
+		2C3977EA1DC244F800301017 /* HLTableCellSubViewTextModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3977E81DC244F800301017 /* HLTableCellSubViewTextModel.h */; };
+		2C3977EB1DC244F800301017 /* HLTableCellSubViewTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3977E91DC244F800301017 /* HLTableCellSubViewTextModel.m */; };
 		2C54BB6A1D704333007320BA /* PushController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C54BB681D704333007320BA /* PushController.h */; };
 		2C54BB6B1D704333007320BA /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C54BB691D704333007320BA /* PushController.m */; };
 		2C57A7F21D98CF6500F886EE /* HLYoutubeComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C57A7F01D98CF6500F886EE /* HLYoutubeComponent.h */; };
@@ -123,10 +131,10 @@
 		2C7F2DE61DBF415D00CC134A /* HLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F2DE41DBF415D00CC134A /* HLRequest.m */; };
 		2C7F2DE91DBF41DE00CC134A /* HLTableComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F2DE71DBF41DE00CC134A /* HLTableComponent.h */; };
 		2C7F2DEA1DBF41DE00CC134A /* HLTableComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F2DE81DBF41DE00CC134A /* HLTableComponent.m */; };
-		2C7F2DED1DBF477900CC134A /* HLTableCellEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F2DEB1DBF477900CC134A /* HLTableCellEntity.h */; };
-		2C7F2DEE1DBF477900CC134A /* HLTableCellEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F2DEC1DBF477900CC134A /* HLTableCellEntity.m */; };
 		2C7F2DF51DBF598800CC134A /* HLTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F2DF31DBF598800CC134A /* HLTableCell.h */; };
 		2C7F2DF61DBF598800CC134A /* HLTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F2DF41DBF598800CC134A /* HLTableCell.m */; };
+		2C7F40761DC25365001C98E7 /* HLTableCellSubBindingModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F40741DC25365001C98E7 /* HLTableCellSubBindingModel.h */; };
+		2C7F40771DC25365001C98E7 /* HLTableCellSubBindingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F40751DC25365001C98E7 /* HLTableCellSubBindingModel.m */; };
 		2C99C5501D77DBD3009757C6 /* PushHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C99C54E1D77DBD3009757C6 /* PushHUD.h */; };
 		2C99C5511D77DBD3009757C6 /* PushHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C99C54F1D77DBD3009757C6 /* PushHUD.m */; };
 		6A372327172ABC420097D34A /* SlideCellComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A2C79172575A80096335A /* SlideCellComponent.m */; };
@@ -691,6 +699,14 @@
 		2C11CE4B1D924BB000E9C29E /* HLTextInputComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTextInputComponent.m; sourceTree = "<group>"; };
 		2C2097B91D95396D00C5135E /* HLGobalBookID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLGobalBookID.h; sourceTree = "<group>"; };
 		2C2097BA1D95396D00C5135E /* HLGobalBookID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLGobalBookID.m; sourceTree = "<group>"; };
+		2C3977D81DC23E0800301017 /* HLTableCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCellViewModel.h; sourceTree = "<group>"; };
+		2C3977D91DC23E0800301017 /* HLTableCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCellViewModel.m; sourceTree = "<group>"; };
+		2C3977DC1DC2428700301017 /* HLTableCellSubViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCellSubViewModel.h; sourceTree = "<group>"; };
+		2C3977DD1DC2428700301017 /* HLTableCellSubViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCellSubViewModel.m; sourceTree = "<group>"; };
+		2C3977E41DC244E700301017 /* HLTableCellSubViewImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCellSubViewImageModel.h; sourceTree = "<group>"; };
+		2C3977E51DC244E700301017 /* HLTableCellSubViewImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCellSubViewImageModel.m; sourceTree = "<group>"; };
+		2C3977E81DC244F800301017 /* HLTableCellSubViewTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCellSubViewTextModel.h; sourceTree = "<group>"; };
+		2C3977E91DC244F800301017 /* HLTableCellSubViewTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCellSubViewTextModel.m; sourceTree = "<group>"; };
 		2C54BB681D704333007320BA /* PushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushController.h; sourceTree = "<group>"; };
 		2C54BB691D704333007320BA /* PushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushController.m; sourceTree = "<group>"; };
 		2C57A7F01D98CF6500F886EE /* HLYoutubeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLYoutubeComponent.h; sourceTree = "<group>"; };
@@ -711,10 +727,10 @@
 		2C7F2DE41DBF415D00CC134A /* HLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLRequest.m; sourceTree = "<group>"; };
 		2C7F2DE71DBF41DE00CC134A /* HLTableComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableComponent.h; sourceTree = "<group>"; };
 		2C7F2DE81DBF41DE00CC134A /* HLTableComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableComponent.m; sourceTree = "<group>"; };
-		2C7F2DEB1DBF477900CC134A /* HLTableCellEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCellEntity.h; sourceTree = "<group>"; };
-		2C7F2DEC1DBF477900CC134A /* HLTableCellEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCellEntity.m; sourceTree = "<group>"; };
 		2C7F2DF31DBF598800CC134A /* HLTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCell.h; sourceTree = "<group>"; };
 		2C7F2DF41DBF598800CC134A /* HLTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCell.m; sourceTree = "<group>"; };
+		2C7F40741DC25365001C98E7 /* HLTableCellSubBindingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCellSubBindingModel.h; sourceTree = "<group>"; };
+		2C7F40751DC25365001C98E7 /* HLTableCellSubBindingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCellSubBindingModel.m; sourceTree = "<group>"; };
 		2C99C54E1D77DBD3009757C6 /* PushHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushHUD.h; sourceTree = "<group>"; };
 		2C99C54F1D77DBD3009757C6 /* PushHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushHUD.m; sourceTree = "<group>"; };
 		6A37232C172BA3AF0097D34A /* HTML5Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTML5Entity.h; sourceTree = "<group>"; };
@@ -1499,8 +1515,16 @@
 			children = (
 				2C7F2DE31DBF415D00CC134A /* HLRequest.h */,
 				2C7F2DE41DBF415D00CC134A /* HLRequest.m */,
-				2C7F2DEB1DBF477900CC134A /* HLTableCellEntity.h */,
-				2C7F2DEC1DBF477900CC134A /* HLTableCellEntity.m */,
+				2C7F40741DC25365001C98E7 /* HLTableCellSubBindingModel.h */,
+				2C7F40751DC25365001C98E7 /* HLTableCellSubBindingModel.m */,
+				2C3977DC1DC2428700301017 /* HLTableCellSubViewModel.h */,
+				2C3977DD1DC2428700301017 /* HLTableCellSubViewModel.m */,
+				2C3977E41DC244E700301017 /* HLTableCellSubViewImageModel.h */,
+				2C3977E51DC244E700301017 /* HLTableCellSubViewImageModel.m */,
+				2C3977E81DC244F800301017 /* HLTableCellSubViewTextModel.h */,
+				2C3977E91DC244F800301017 /* HLTableCellSubViewTextModel.m */,
+				2C3977D81DC23E0800301017 /* HLTableCellViewModel.h */,
+				2C3977D91DC23E0800301017 /* HLTableCellViewModel.m */,
 				2C7F2DDF1DBF40AA00CC134A /* HLTableEntity.h */,
 				2C7F2DE01DBF40AA00CC134A /* HLTableEntity.m */,
 				2C7F2DF31DBF598800CC134A /* HLTableCell.h */,
@@ -1695,12 +1719,12 @@
 				2917616219654E4F00B6A2F0 /* Resources */,
 				29D25FF8183F47530016E0E4 /* LocalizationDefine.h */,
 				C3A28707183DB0670066FC1A /* IAPPurchseHandle */,
+				6AB21797171AD5D30020CFE8 /* Container */,
 				6AB217EC171AD7CA0020CFE8 /* Entity */,
 				6AB217D7171AD7640020CFE8 /* Book */,
 				6AB217C7171AD70D0020CFE8 /* Page */,
 				6AB217A9171AD6130020CFE8 /* PageFlip */,
 				296F9BB718729BC0009F99C5 /* PublicCover */,
-				6AB21797171AD5D30020CFE8 /* Container */,
 				6AB21606171AD1720020CFE8 /* OpenSource */,
 				6AB21602171AD1410020CFE8 /* CoreConfig */,
 				6AB215F1171AD0C30020CFE8 /* Behavior */,
@@ -4068,7 +4092,6 @@
 				6A6A2C72172574DD0096335A /* UIGestureRecognizer+GMGridViewAdditions.h in Headers */,
 				2C54BB6A1D704333007320BA /* PushController.h in Headers */,
 				6A6A2C73172574DD0096335A /* UIView+GMGridViewAdditions.h in Headers */,
-				2C7F2DED1DBF477900CC134A /* HLTableCellEntity.h in Headers */,
 				29CF1F0A196A65A80079F372 /* HLCoverBaseController.h in Headers */,
 				6A6A2C7A172575A80096335A /* SlideCellComponent.h in Headers */,
 				6A6A2C7F172577790096335A /* SlideCell.h in Headers */,
@@ -4121,6 +4144,7 @@
 				C30B4AA7173B9BF800CE6A23 /* ConnectLineEntity.h in Headers */,
 				C3058934173C9E5E00676E05 /* DrawLineView.h in Headers */,
 				29EFBAB41881338B00D3A2C3 /* HLSliderFlipController.h in Headers */,
+				2C3977DA1DC23E0800301017 /* HLTableCellViewModel.h in Headers */,
 				C3058938173C9E6700676E05 /* CALayer+WiggleAnimationAdditions.h in Headers */,
 				C301763A17420A4B00B781C7 /* HLIndesignSliderView.h in Headers */,
 				C3DCDDD61744C0A3003BDAB5 /* CatalogueTableView.h in Headers */,
@@ -4131,6 +4155,7 @@
 				C3FDD47D175EF71E003C4E35 /* HLCurlFlipController.h in Headers */,
 				C3B6217918C9C9DA006A3ADE /* ADButtonView.h in Headers */,
 				C3FCF50017729E1F0086B321 /* HLReaderViewController.h in Headers */,
+				2C3977DE1DC2428700301017 /* HLTableCellSubViewModel.h in Headers */,
 				C3FCF50217729E1F0086B321 /* ReaderConstants.h in Headers */,
 				C3FCF50417729E1F0086B321 /* HLReaderDocument.h in Headers */,
 				C3FCF50617729E1F0086B321 /* HLReaderMainToolbar.h in Headers */,
@@ -4164,6 +4189,7 @@
 				C3FCF54917729E8C0086B321 /* HLZipArchive.h in Headers */,
 				C3FCF57917729F410086B321 /* PDFComponent.h in Headers */,
 				29EFBA981881313700D3A2C3 /* HLPageDecoder.h in Headers */,
+				2C3977E61DC244E700301017 /* HLTableCellSubViewImageModel.h in Headers */,
 				C3FCF57D1772A03C0086B321 /* HLBookController.h in Headers */,
 				C3FCF59E1772A1EC0086B321 /* CGPDFDocument.h in Headers */,
 				C3FCF5A01772A1EC0086B321 /* HLReaderDocumentOutline.h in Headers */,
@@ -4220,6 +4246,7 @@
 				C3EA7411178D3987004961E3 /* PlayAudioCaseComponent.h in Headers */,
 				2C7F2DE51DBF415D00CC134A /* HLRequest.h in Headers */,
 				2945E58618B86650008A7618 /* CommonFunc.h in Headers */,
+				2C3977EA1DC244F800301017 /* HLTableCellSubViewTextModel.h in Headers */,
 				29CF1EDB196A63B10079F372 /* HLConstant.h in Headers */,
 				C3138038179D2D860017FB49 /* VerSliderSelectComponent.h in Headers */,
 				C313803E179D2DAF0017FB49 /* VerSliderSelectEntity.h in Headers */,
@@ -4227,6 +4254,7 @@
 				C3DFBC1E17A64005001EBFB1 /* ScrollCatalogComponent.h in Headers */,
 				C36B3CB617A67290005A51E9 /* RootSliderScrollView.h in Headers */,
 				2C99C5501D77DBD3009757C6 /* PushHUD.h in Headers */,
+				2C7F40761DC25365001C98E7 /* HLTableCellSubBindingModel.h in Headers */,
 				C3E4EF7117B337EF00D8380F /* HorConnectLineComponent.h in Headers */,
 				C3E4EF7617B3380F00D8380F /* HorConnectLineEntity.h in Headers */,
 				C301160717B8BA3100C517D9 /* VerSliderInteractiveEntity.h in Headers */,
@@ -4393,6 +4421,7 @@
 				6AB21463171AB7920020CFE8 /* HLBaseControlPanelViewController.m in Sources */,
 				6AB2146C171AB7B80020CFE8 /* HLXMLItem.m in Sources */,
 				6AB2146D171AB7B80020CFE8 /* HLXMLManager.m in Sources */,
+				2C3977EB1DC244F800301017 /* HLTableCellSubViewTextModel.m in Sources */,
 				6AB21470171AB7CB0020CFE8 /* appMaker.m in Sources */,
 				6AB2147B171AB84E0020CFE8 /* HLLineCoverCell.m in Sources */,
 				6AB2147E171AB85C0020CFE8 /* HLLineCoverNavigationView.m in Sources */,
@@ -4408,6 +4437,7 @@
 				6AB2149F171ABA890020CFE8 /* MoveFromRight.m in Sources */,
 				6AB214A3171ABA9E0020CFE8 /* MoveFromUp.m in Sources */,
 				6AB214A7171ABAB00020CFE8 /* MoveFromRightFadeInAnimation.m in Sources */,
+				2C3977DF1DC2428700301017 /* HLTableCellSubViewModel.m in Sources */,
 				6AB214AB171ABAC30020CFE8 /* MoveFromLeftFadeInAnimation.m in Sources */,
 				6AB214AF171ABCA40020CFE8 /* MovementAnimation.m in Sources */,
 				29EFBA9B1881313700D3A2C3 /* HLPageEntity.m in Sources */,
@@ -4418,6 +4448,7 @@
 				6AB214BF171ABCF90020CFE8 /* RotateAnimation.m in Sources */,
 				6AB214C3171ABD100020CFE8 /* RotateMoveInAnimation.m in Sources */,
 				6AB214C7171ABD290020CFE8 /* ShakeAnimation.m in Sources */,
+				2C7F40771DC25365001C98E7 /* HLTableCellSubBindingModel.m in Sources */,
 				6AB214CB171ABD3C0020CFE8 /* MoveFromTopFadeInAnimation.m in Sources */,
 				2C74EF2F1D9A4B3C00813EEC /* HLMapEntity.m in Sources */,
 				6AB214CF171ABD550020CFE8 /* MoveFromBottomFadeInAnimation.m in Sources */,
@@ -4454,6 +4485,7 @@
 				6AB2153D171ABF370020CFE8 /* ImageEntity.m in Sources */,
 				6AB21542171ABF510020CFE8 /* CameraComponent.m in Sources */,
 				6AB21546171ABF5E0020CFE8 /* CameraEntity.m in Sources */,
+				2C3977DB1DC23E0800301017 /* HLTableCellViewModel.m in Sources */,
 				6AB2154C171ABF800020CFE8 /* SlideCellEntity.m in Sources */,
 				6AB21551171ABF970020CFE8 /* DrawerComponent.m in Sources */,
 				6AB21555171ABFAD0020CFE8 /* DrawerEntity.m in Sources */,
@@ -4621,7 +4653,6 @@
 				C30B4AA8173B9BF800CE6A23 /* ConnectLineEntity.m in Sources */,
 				C3058935173C9E5E00676E05 /* DrawLineView.m in Sources */,
 				C3058939173C9E6700676E05 /* CALayer+WiggleAnimationAdditions.m in Sources */,
-				2C7F2DEE1DBF477900CC134A /* HLTableCellEntity.m in Sources */,
 				C301763B17420A4B00B781C7 /* HLIndesignSliderView.m in Sources */,
 				C3DCDDD71744C0A3003BDAB5 /* CatalogueTableView.m in Sources */,
 				C3DCDDDB1744C0BD003BDAB5 /* HLCollectionTableView.m in Sources */,
@@ -4714,6 +4745,7 @@
 				C302F96917BC836200F0950F /* ButtonContainerEntity.m in Sources */,
 				C39A9C1E17C213D6002A01E0 /* HLCoreTextNode.m in Sources */,
 				C39A9C2717C21CBF002A01E0 /* FTCoreTextView.m in Sources */,
+				2C3977E71DC244E700301017 /* HLTableCellSubViewImageModel.m in Sources */,
 				C3203C0B17C5EAEA00A7FC4D /* HLPageControl.m in Sources */,
 				C3EF990417D0466300E21ADA /* PhotosResizeEntity.m in Sources */,
 				2C7F2DF61DBF598800CC134A /* HLTableCell.m in Sources */,

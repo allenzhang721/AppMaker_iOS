@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EMTBXML.h"
 
 @interface HLRequest : NSObject
+
+- (void) decodeXML:(TBXMLElement *)xml;
 
 - (void)resume;
 - (void)cancel;
