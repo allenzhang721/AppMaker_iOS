@@ -117,6 +117,16 @@
 		2C7E0A721D9A4CD100E3766E /* HLMapComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7E0A701D9A4CD100E3766E /* HLMapComponent.h */; };
 		2C7E0A731D9A4CD100E3766E /* HLMapComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E0A711D9A4CD100E3766E /* HLMapComponent.m */; };
 		2C7E0A7A1D9A4E8400E3766E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A791D9A4E8400E3766E /* MapKit.framework */; };
+		2C7F2DE11DBF40AA00CC134A /* HLTableEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F2DDF1DBF40AA00CC134A /* HLTableEntity.h */; };
+		2C7F2DE21DBF40AA00CC134A /* HLTableEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F2DE01DBF40AA00CC134A /* HLTableEntity.m */; };
+		2C7F2DE51DBF415D00CC134A /* HLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F2DE31DBF415D00CC134A /* HLRequest.h */; };
+		2C7F2DE61DBF415D00CC134A /* HLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F2DE41DBF415D00CC134A /* HLRequest.m */; };
+		2C7F2DE91DBF41DE00CC134A /* HLTableComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F2DE71DBF41DE00CC134A /* HLTableComponent.h */; };
+		2C7F2DEA1DBF41DE00CC134A /* HLTableComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F2DE81DBF41DE00CC134A /* HLTableComponent.m */; };
+		2C7F2DED1DBF477900CC134A /* HLTableCellEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F2DEB1DBF477900CC134A /* HLTableCellEntity.h */; };
+		2C7F2DEE1DBF477900CC134A /* HLTableCellEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F2DEC1DBF477900CC134A /* HLTableCellEntity.m */; };
+		2C7F2DF51DBF598800CC134A /* HLTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F2DF31DBF598800CC134A /* HLTableCell.h */; };
+		2C7F2DF61DBF598800CC134A /* HLTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F2DF41DBF598800CC134A /* HLTableCell.m */; };
 		2C99C5501D77DBD3009757C6 /* PushHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C99C54E1D77DBD3009757C6 /* PushHUD.h */; };
 		2C99C5511D77DBD3009757C6 /* PushHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C99C54F1D77DBD3009757C6 /* PushHUD.m */; };
 		6A372327172ABC420097D34A /* SlideCellComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A2C79172575A80096335A /* SlideCellComponent.m */; };
@@ -695,6 +705,16 @@
 		2C7E0A701D9A4CD100E3766E /* HLMapComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLMapComponent.h; sourceTree = "<group>"; };
 		2C7E0A711D9A4CD100E3766E /* HLMapComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLMapComponent.m; sourceTree = "<group>"; };
 		2C7E0A791D9A4E8400E3766E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2C7F2DDF1DBF40AA00CC134A /* HLTableEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableEntity.h; sourceTree = "<group>"; };
+		2C7F2DE01DBF40AA00CC134A /* HLTableEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableEntity.m; sourceTree = "<group>"; };
+		2C7F2DE31DBF415D00CC134A /* HLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLRequest.h; sourceTree = "<group>"; };
+		2C7F2DE41DBF415D00CC134A /* HLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLRequest.m; sourceTree = "<group>"; };
+		2C7F2DE71DBF41DE00CC134A /* HLTableComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableComponent.h; sourceTree = "<group>"; };
+		2C7F2DE81DBF41DE00CC134A /* HLTableComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableComponent.m; sourceTree = "<group>"; };
+		2C7F2DEB1DBF477900CC134A /* HLTableCellEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCellEntity.h; sourceTree = "<group>"; };
+		2C7F2DEC1DBF477900CC134A /* HLTableCellEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCellEntity.m; sourceTree = "<group>"; };
+		2C7F2DF31DBF598800CC134A /* HLTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCell.h; sourceTree = "<group>"; };
+		2C7F2DF41DBF598800CC134A /* HLTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCell.m; sourceTree = "<group>"; };
 		2C99C54E1D77DBD3009757C6 /* PushHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushHUD.h; sourceTree = "<group>"; };
 		2C99C54F1D77DBD3009757C6 /* PushHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushHUD.m; sourceTree = "<group>"; };
 		6A37232C172BA3AF0097D34A /* HTML5Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTML5Entity.h; sourceTree = "<group>"; };
@@ -1474,6 +1494,23 @@
 			name = MapComponent;
 			sourceTree = "<group>";
 		};
+		2C7F2DDE1DBF3F4900CC134A /* TableViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2C7F2DE31DBF415D00CC134A /* HLRequest.h */,
+				2C7F2DE41DBF415D00CC134A /* HLRequest.m */,
+				2C7F2DEB1DBF477900CC134A /* HLTableCellEntity.h */,
+				2C7F2DEC1DBF477900CC134A /* HLTableCellEntity.m */,
+				2C7F2DDF1DBF40AA00CC134A /* HLTableEntity.h */,
+				2C7F2DE01DBF40AA00CC134A /* HLTableEntity.m */,
+				2C7F2DF31DBF598800CC134A /* HLTableCell.h */,
+				2C7F2DF41DBF598800CC134A /* HLTableCell.m */,
+				2C7F2DE71DBF41DE00CC134A /* HLTableComponent.h */,
+				2C7F2DE81DBF41DE00CC134A /* HLTableComponent.m */,
+			);
+			name = TableViewComponent;
+			sourceTree = "<group>";
+		};
 		6A372329172BA35A0097D34A /* HTLM5Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -2095,6 +2132,7 @@
 		6AB214F2171ABDBF0020CFE8 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2C7F2DDE1DBF3F4900CC134A /* TableViewComponent */,
 				2C74EF2B1D9A4AED00813EEC /* MapComponent */,
 				2C57A7EF1D98CF3400F886EE /* YoutubeComponent */,
 				2C11CE451D924A0500E9C29E /* TextInputComponent */,
@@ -4030,6 +4068,7 @@
 				6A6A2C72172574DD0096335A /* UIGestureRecognizer+GMGridViewAdditions.h in Headers */,
 				2C54BB6A1D704333007320BA /* PushController.h in Headers */,
 				6A6A2C73172574DD0096335A /* UIView+GMGridViewAdditions.h in Headers */,
+				2C7F2DED1DBF477900CC134A /* HLTableCellEntity.h in Headers */,
 				29CF1F0A196A65A80079F372 /* HLCoverBaseController.h in Headers */,
 				6A6A2C7A172575A80096335A /* SlideCellComponent.h in Headers */,
 				6A6A2C7F172577790096335A /* SlideCell.h in Headers */,
@@ -4037,6 +4076,7 @@
 				29CF1F10196A65E50079F372 /* PhotosResizeComponent.h in Headers */,
 				6A6A2C83172579580096335A /* ImageSliderComponent.h in Headers */,
 				6A6A2C91172626650096335A /* CounterEntity.h in Headers */,
+				2C7F2DE11DBF40AA00CC134A /* HLTableEntity.h in Headers */,
 				2C57A7F61D98CF8F00F886EE /* HLYoutubeEntity.h in Headers */,
 				29EFBAB61881338B00D3A2C3 /* HLSliderPageController.h in Headers */,
 				6A6A2C9517262E460096335A /* CounterComponent.h in Headers */,
@@ -4052,6 +4092,7 @@
 				6A6A2DCB17268D8C0096335A /* PLCamera.h in Headers */,
 				29EFBAAA1881333600D3A2C3 /* HLFlipBaseController.h in Headers */,
 				6A6A2DCD17268D8C0096335A /* PLConstants.h in Headers */,
+				2C7F2DF51DBF598800CC134A /* HLTableCell.h in Headers */,
 				6A6A2DCE17268D8C0096335A /* PLCube.h in Headers */,
 				6A6A2DD017268D8C0096335A /* PLCylinder.h in Headers */,
 				6A6A2DD217268D8C0096335A /* PLEnums.h in Headers */,
@@ -4177,6 +4218,7 @@
 				29CF1F0C196A65A80079F372 /* HLCoverBaseViewController.h in Headers */,
 				C3EA7404178D37ED004961E3 /* CaseEntity.h in Headers */,
 				C3EA7411178D3987004961E3 /* PlayAudioCaseComponent.h in Headers */,
+				2C7F2DE51DBF415D00CC134A /* HLRequest.h in Headers */,
 				2945E58618B86650008A7618 /* CommonFunc.h in Headers */,
 				29CF1EDB196A63B10079F372 /* HLConstant.h in Headers */,
 				C3138038179D2D860017FB49 /* VerSliderSelectComponent.h in Headers */,
@@ -4206,6 +4248,7 @@
 				C3F375E317DEEBD4001F8F7D /* AutoScrollableComponent.h in Headers */,
 				C3591C8B17E1954400598A8F /* LanternSlideEntity.h in Headers */,
 				2C7E0A721D9A4CD100E3766E /* HLMapComponent.h in Headers */,
+				2C7F2DE91DBF41DE00CC134A /* HLTableComponent.h in Headers */,
 				C3591C8F17E1956200598A8F /* LanternSlideComponent.h in Headers */,
 				C383EC2617E315C900867950 /* HLSlideScrollView.h in Headers */,
 				C38F6C5618166B09004FCDF7 /* SWFPlayerComponent.h in Headers */,
@@ -4403,6 +4446,8 @@
 				6AB2152F171ABF0A0020CFE8 /* QuizEntity.m in Sources */,
 				6AB21530171ABF0A0020CFE8 /* QuestionEntity.m in Sources */,
 				2C11CE491D924A2B00E9C29E /* HLTextInputEntity.m in Sources */,
+				2C7F2DE21DBF40AA00CC134A /* HLTableEntity.m in Sources */,
+				2C7F2DEA1DBF41DE00CC134A /* HLTableComponent.m in Sources */,
 				6AB21531171ABF0A0020CFE8 /* AnswerEntity.m in Sources */,
 				6AB21538171ABF280020CFE8 /* HLImage.m in Sources */,
 				6AB21539171ABF280020CFE8 /* ImageComponent.m in Sources */,
@@ -4576,6 +4621,7 @@
 				C30B4AA8173B9BF800CE6A23 /* ConnectLineEntity.m in Sources */,
 				C3058935173C9E5E00676E05 /* DrawLineView.m in Sources */,
 				C3058939173C9E6700676E05 /* CALayer+WiggleAnimationAdditions.m in Sources */,
+				2C7F2DEE1DBF477900CC134A /* HLTableCellEntity.m in Sources */,
 				C301763B17420A4B00B781C7 /* HLIndesignSliderView.m in Sources */,
 				C3DCDDD71744C0A3003BDAB5 /* CatalogueTableView.m in Sources */,
 				C3DCDDDB1744C0BD003BDAB5 /* HLCollectionTableView.m in Sources */,
@@ -4601,6 +4647,7 @@
 				C3FCF52E17729E720086B321 /* AePubReaderAppDelegate.m in Sources */,
 				29283AF41860869600360B07 /* CSSlider.m in Sources */,
 				29EFBABF188133BB00D3A2C3 /* HLCurverFlipController.m in Sources */,
+				2C7F2DE61DBF415D00CC134A /* HLRequest.m in Sources */,
 				C3FCF53017729E720086B321 /* Chapter.m in Sources */,
 				C3FCF53217729E720086B321 /* ChapterListViewController.m in Sources */,
 				C3FCF53417729E720086B321 /* EPub.m in Sources */,
@@ -4669,6 +4716,7 @@
 				C39A9C2717C21CBF002A01E0 /* FTCoreTextView.m in Sources */,
 				C3203C0B17C5EAEA00A7FC4D /* HLPageControl.m in Sources */,
 				C3EF990417D0466300E21ADA /* PhotosResizeEntity.m in Sources */,
+				2C7F2DF61DBF598800CC134A /* HLTableCell.m in Sources */,
 				C3EF990717D0478400E21ADA /* HLPushPopPressView.m in Sources */,
 				C3799C1817D9E13600A9BA8B /* HLMBProgressHUD.m in Sources */,
 				C3F375E017DEEBAA001F8F7D /* AutoScrollableEntity.m in Sources */,
@@ -4845,9 +4893,11 @@
 				DSTROOT = /tmp/MoueeiOS2Framework.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/HLRealTimeTest2",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
 					"\"$(SRCROOT)/../../SAC2/HLRealTimeTest2\"",
+					"$(SRCROOT)/HLRealTimeTest2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HLiOS2Framework/HLiOS2Framework-Prefix.pch";
@@ -4881,9 +4931,11 @@
 				DSTROOT = /tmp/MoueeiOS2Framework.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/HLRealTimeTest2",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
 					"\"$(SRCROOT)/../../SAC2/HLRealTimeTest2\"",
+					"$(SRCROOT)/HLRealTimeTest2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HLiOS2Framework/HLiOS2Framework-Prefix.pch";

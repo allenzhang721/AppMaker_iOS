@@ -1908,7 +1908,9 @@
 				DEVELOPMENT_TEAM = H7HX4A2DL8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/HLRealTimeTest2",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RealTime2-bhqaamhkvvmozxfbfgaodvbhztgc/Build/Products/Debug-iphoneos",
+					"$(SRCROOT)/HLRealTimeTest2",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Connection",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Core",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Extend/GooglePlusSDK",
@@ -1934,7 +1936,6 @@
 					"$(PROJECT_DIR)/HLRealTimeTest2/ShareSDK_v2.5.1/Extend",
 					"$(PROJECT_DIR)/HLRealTimeTest2/ShareSDK_v2.5.1",
 					"$(PROJECT_DIR)/HLRealTimeTest2/ShareSDK_v2.5.1/UI",
-					"$(PROJECT_DIR)/HLRealTimeTest2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
@@ -1960,6 +1961,7 @@
 					/Users/hoshisakaichen/OutSourcing,
 					work,
 					"copy/newHLIOS/tags/Development_BugFixed/HLiOS2Framework/HLiOS2Framework/build/Release-iphoneos",
+					"$(SRCROOT)HLRealTimeTest2",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1983,7 +1985,9 @@
 				DEVELOPMENT_TEAM = H7HX4A2DL8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/HLRealTimeTest2",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RealTime2-bhqaamhkvvmozxfbfgaodvbhztgc/Build/Products/Debug-iphoneos",
+					"$(SRCROOT)/HLRealTimeTest2",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Connection",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Core",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Extend/GooglePlusSDK",
@@ -2009,7 +2013,6 @@
 					"$(PROJECT_DIR)/HLRealTimeTest2/ShareSDK_v2.5.1/Extend",
 					"$(PROJECT_DIR)/HLRealTimeTest2/ShareSDK_v2.5.1",
 					"$(PROJECT_DIR)/HLRealTimeTest2/ShareSDK_v2.5.1/UI",
-					"$(PROJECT_DIR)/HLRealTimeTest2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
@@ -2035,6 +2038,7 @@
 					/Users/hoshisakaichen/OutSourcing,
 					work,
 					"copy/newHLIOS/tags/Development_BugFixed/HLiOS2Framework/HLiOS2Framework/build/Release-iphoneos",
+					"$(SRCROOT)HLRealTimeTest2",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
