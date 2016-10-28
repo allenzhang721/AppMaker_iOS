@@ -29,7 +29,7 @@
     self.comType = [EMTBXML textForElement:t];
   }
   
-  TBXMLElement *ID = [EMTBXML childElementNamed:@"ID" parentElement:cellCom];
+  TBXMLElement *ID = [EMTBXML childElementNamed:@"ComponentID" parentElement:cellCom];
   if (ID) {
     self.comID = [EMTBXML textForElement:ID];
   }

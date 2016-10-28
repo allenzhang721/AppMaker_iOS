@@ -8,6 +8,7 @@
 
 #import "HLTableEntity.h"
 #import "HLRequest.h"
+#import "HLTableCellSubViewTextModel.h"
 
 
 @implementation HLTableEntity
@@ -36,50 +37,50 @@
   TBXMLElement *cell = [EMTBXML childElementNamed:@"CellXML"  parentElement:data];
   TBXMLElement *cellModel = [EMTBXML childElementNamed:@"CellModel" parentElement:data];
   
-  _request = [[HLRequest alloc] init];
+  self.request = [[HLRequest alloc] init];
   [_request decodeXML:request];
   
-  _cellViewModel = [[HLTableCellViewModel alloc] init];
+  self.cellViewModel = [[HLTableCellViewModel alloc] init];
   [_cellViewModel decodeXML:cell];
   
   TBXMLElement *w = [EMTBXML childElementNamed:@"CellWidth" parentElement:data];
   if (w) {
-    _cellViewModel.cellWidth = [[EMTBXML textForElement:w] floatValue];
+    self.cellViewModel.cellWidth = [[EMTBXML textForElement:w] floatValue];
   }
   
   TBXMLElement *h = [EMTBXML childElementNamed:@"CellHeight" parentElement:data];
   if (h) {
-     _cellViewModel.cellheight = [[EMTBXML textForElement:h] floatValue];
+     self.cellViewModel.cellheight = [[EMTBXML textForElement:h] floatValue];
   }
   
   TBXMLElement *hor = [EMTBXML childElementNamed:@"HorGap" parentElement:data];
   if (hor) {
-    _cellViewModel.horGap = [[EMTBXML textForElement:hor] floatValue];
+    self.cellViewModel.horGap = [[EMTBXML textForElement:hor] floatValue];
   }
   
   TBXMLElement *ver = [EMTBXML childElementNamed:@"VerGap" parentElement:data];
   if (ver) {
-    _cellViewModel.verGap = [[EMTBXML textForElement:ver] floatValue];
+    self.cellViewModel.verGap = [[EMTBXML textForElement:ver] floatValue];
   }
   
   TBXMLElement *t = [EMTBXML childElementNamed:@"TopOff" parentElement:data];
   if (t) {
-    _cellViewModel.top = [[EMTBXML textForElement:t] floatValue];
+    self.cellViewModel.top = [[EMTBXML textForElement:t] floatValue];
   }
   
   TBXMLElement *b = [EMTBXML childElementNamed:@"BottomOff" parentElement:data];
   if (b) {
-    _cellViewModel.bottom = [[EMTBXML textForElement:b] floatValue];
+    self.cellViewModel.bottom = [[EMTBXML textForElement:b] floatValue];
   }
   
   TBXMLElement *l = [EMTBXML childElementNamed:@"LeftOff" parentElement:data];
   if (l) {
-    _cellViewModel.left = [[EMTBXML textForElement:l] floatValue];
+    self.cellViewModel.left = [[EMTBXML textForElement:l] floatValue];
   }
   
   TBXMLElement *r = [EMTBXML childElementNamed:@"RightOff" parentElement:data];
   if (r) {
-    _cellViewModel.right = [[EMTBXML textForElement:r] floatValue];
+    self.cellViewModel.right = [[EMTBXML textForElement:r] floatValue];
   }
   
   
@@ -96,9 +97,27 @@
     model = [EMTBXML nextSiblingNamed:@"Model" searchFromElement:model];
   }
   
-  _bindingModels = bindModels;
+  self.bindingModels = bindModels;
   
   [pool release];
+}
+
+-(void)scale:(float)x y:(float)y {
+  
+  _cellViewModel.cellWidth *= x;
+  _cellViewModel.cellheight *= y;
+  
+  for (HLTableCellSubViewModel * sm in _cellViewModel.subViewModels) {
+    sm.x *= x;
+    sm.y *= y;
+    sm.width *= x;
+    sm.height *= y;
+    
+    if ([sm isKindOfClass:[HLTableCellSubViewTextModel class]]) {
+      ((HLTableCellSubViewTextModel *)sm).fontSize *= y;
+    }
+  }
+  
 }
 
 

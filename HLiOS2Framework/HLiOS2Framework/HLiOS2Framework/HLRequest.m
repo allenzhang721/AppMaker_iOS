@@ -10,12 +10,7 @@
 #import "EMTBXML.h"
 
 @implementation HLRequest {
-  
-  NSString *_header;
-  NSString *_url;
-  NSString *_requestType;
-  NSString *_responseType;
-  NSArray<NSDictionary<NSString *, NSString *> *> *_parameters;
+
 }
 
 /*
@@ -49,23 +44,47 @@
   
   TBXMLElement *header = [EMTBXML childElementNamed:@"RequestHeader" parentElement:xml];
   if (header) {
-    _header = [EMTBXML textForElement:header];
+    self.header = [EMTBXML textForElement:header];
   }
   
   TBXMLElement *url = [EMTBXML childElementNamed:@"RequestURL" parentElement:xml];
   if (url) {
-    _url = [EMTBXML textForElement:url];
+    self.url = [EMTBXML textForElement:url];
   }
   
-  TBXMLElement *requestType = [EMTBXML childElementNamed:@"RequestType" parentElement:xml];
+  TBXMLElement *requestType = [EMTBXML childElementNamed:@"RequestMethod" parentElement:xml];
   if (requestType) {
-    _requestType = [EMTBXML textForElement:requestType];
+    self.requestType = [EMTBXML textForElement:requestType];
   }
   
   TBXMLElement *responseType = [EMTBXML childElementNamed:@"ResponseType" parentElement:xml];
   if (responseType) {
-    _responseType = [EMTBXML textForElement:responseType];
+    self.responseType = [EMTBXML textForElement:responseType];
   }
+  
+  NSMutableArray<NSDictionary<NSString *, NSString *> *> *paras = [@[] mutableCopy];
+  
+  TBXMLElement *parameters = [EMTBXML childElementNamed:@"RequestParameters" parentElement:xml];
+  TBXMLElement *parameter = [EMTBXML childElementNamed:@"RequestParameter" parentElement:parameters];
+  
+  while (parameter != nil) {
+    
+    NSMutableDictionary<NSString *, NSString *> *para = [@{} mutableCopy];
+    
+    TBXMLElement *paraName = [EMTBXML childElementNamed:@"ParamName" parentElement:parameter];
+    TBXMLElement *paramValue = [EMTBXML childElementNamed:@"ParamValue" parentElement:parameter];
+    if (paraName != nil && paramValue != nil) {
+      NSString *n = [EMTBXML textForElement:paraName];
+      NSString *v = [EMTBXML textForElement:paramValue];
+      
+      [para setObject:v forKey:n];
+      [paras addObject:para];
+    }
+    parameter = [EMTBXML nextSiblingNamed:@"RequestParameter" searchFromElement:parameter];
+  }
+  
+  _parameters = paras;
+  
   
   [pool release];
   

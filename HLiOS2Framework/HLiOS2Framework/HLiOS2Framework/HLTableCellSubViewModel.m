@@ -24,37 +24,37 @@
   
   TBXMLElement *I = [EMTBXML childElementNamed:@"ID" parentElement:cellContainer];
   if (I) {
-    _ID = [EMTBXML textForElement:I];
+    self.ID = [EMTBXML textForElement:I];
   }
   
   TBXMLElement *h = [EMTBXML childElementNamed:@"Height" parentElement:cellContainer];
   if (I) {
-    _height = [[EMTBXML textForElement:h] floatValue];
+    self.height = [[EMTBXML textForElement:h] floatValue];
   }
   
   TBXMLElement *w = [EMTBXML childElementNamed:@"Width" parentElement:cellContainer];
   if (w) {
-    _width = [[EMTBXML textForElement:w] floatValue];
+    self.width = [[EMTBXML textForElement:w] floatValue];
   }
   
   TBXMLElement *r = [EMTBXML childElementNamed:@"Rotation" parentElement:cellContainer];
   if (r) {
-    _rotation = [[EMTBXML textForElement:r] floatValue];
+    self.rotation = [[EMTBXML textForElement:r] floatValue];
   }
   
   TBXMLElement *x = [EMTBXML childElementNamed:@"X" parentElement:cellContainer];
   if (x) {
-    _x = [[EMTBXML textForElement:x] floatValue];
+    self.x = [[EMTBXML textForElement:x] floatValue];
   }
   
   TBXMLElement *y = [EMTBXML childElementNamed:@"Y" parentElement:cellContainer];
   if (y) {
-    _y = [[EMTBXML textForElement:y] floatValue];
+    self.y = [[EMTBXML textForElement:y] floatValue];
   }
   
   TBXMLElement *a = [EMTBXML childElementNamed:@"Alpha" parentElement:cellContainer];
   if (a) {
-    _alpha = [[EMTBXML textForElement:a] floatValue];
+    self.alpha = [[EMTBXML textForElement:a] floatValue];
   }
 }
 

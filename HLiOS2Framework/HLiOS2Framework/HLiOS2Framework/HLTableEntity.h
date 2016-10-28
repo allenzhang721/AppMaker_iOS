@@ -18,4 +18,6 @@
 @property(nonatomic, strong) HLTableCellViewModel *cellViewModel;
 @property(nonatomic, strong) NSArray<HLTableCellSubBindingModel *> *bindingModels;
 
+-(void)scale:(float)x y:(float)y;
+
 @end

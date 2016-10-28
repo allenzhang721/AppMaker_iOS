@@ -24,27 +24,27 @@
   
   TBXMLElement *I = [EMTBXML childElementNamed:@"ModelID" parentElement:xml];
   if (I) {
-    _modelID = [EMTBXML textForElement:I];
+    self.modelID = [EMTBXML textForElement:I];
   }
   
   TBXMLElement *n = [EMTBXML childElementNamed:@"ModelName" parentElement:xml];
   if (n) {
-    _modelName = [EMTBXML textForElement:n];
+    self.modelName = [EMTBXML textForElement:n];
   }
   
   TBXMLElement *t = [EMTBXML childElementNamed:@"ModelType" parentElement:xml];
   if (t) {
-    _modelType = [EMTBXML textForElement:t];
+    self.modelType = [EMTBXML textForElement:t];
   }
   
   TBXMLElement *k = [EMTBXML childElementNamed:@"ModelKey" parentElement:xml];
   if (k) {
-    _modelKey = [EMTBXML textForElement:k];
+    self.modelKey = [EMTBXML textForElement:k];
   }
   
   TBXMLElement *p = [EMTBXML childElementNamed:@"ModelParent" parentElement:xml];
   if (p) {
-    _modelParent = [EMTBXML textForElement:p];
+    self.modelParent = [EMTBXML textForElement:p];
   }
   
   

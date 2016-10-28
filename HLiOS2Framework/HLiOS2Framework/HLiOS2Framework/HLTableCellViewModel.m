@@ -62,7 +62,7 @@
     subViewModel = [EMTBXML nextSiblingNamed:@"CellContainer" searchFromElement:subViewModel];
   }
   
-  _subViewModels = subViewModels;
+  self.subViewModels = subViewModels;
   
 }
 

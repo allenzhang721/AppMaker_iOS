@@ -18,6 +18,7 @@
 #import "HLLinkageEntity.h"
 #import "AdvanceAnimation.h"
 #import "AdvanceAnimationModel.h"
+#import "HLTableEntity.h"
 
 @implementation HLContainerDecoder
 +(HLContainerEntity *) decode:(TBXMLElement *)container sx:(float)sx sy:(float)sy
@@ -190,6 +191,12 @@
         
         [entity decode:container];
         [entity decodeData:data];
+    
+    if ([entity isKindOfClass:[HLTableEntity class]]) {
+      
+      [(HLTableEntity *)entity scale:sx y:sy];
+    }
+    
         if (entity.saveData) {
             id object = [[NSUserDefaults standardUserDefaults] objectForKey:entity.entityid];
             

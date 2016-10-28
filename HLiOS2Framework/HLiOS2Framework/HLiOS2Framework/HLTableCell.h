@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "HLTableCellViewModel.h"
+#import "HLTableCellSubBindingModel.h"
 
 @interface HLTableCell : UICollectionViewCell
 
 -(void)configWithViewModels:(HLTableCellViewModel *)viewModel;
+-(void)configWithBindingModels:(NSArray<HLTableCellSubBindingModel *> *)bindingModel;
+
+-(void)configWithData:(NSDictionary *)dic;
 
 @end

@@ -9,7 +9,17 @@
 #import "HLTableComponent.h"
 #import "HLTableCell.h"
 
+static NSUInteger count = 2;
+
+@interface HLTableComponent ()
+
+@property(nonatomic, strong) NSArray<NSDictionary<NSString *, id> *> *items;
+
+@end
+
 @implementation HLTableComponent
+
+
 - (id)initWithEntity:(HLContainerEntity *) entity
 {
   self = [super init];
@@ -17,6 +27,7 @@
   {
     self.entity    = (HLTableEntity *)entity;
     //        self.customHeight = true;
+    self.items = @[];
     [self p_setupUI];
   }
   return self;
@@ -37,11 +48,138 @@
   
   self.uicomponent = v;
   
+  [self sendRequest:nil];
+  
+}
+
+- (void)loadData:(NSData *)data {
+  NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//  count = [dic[@"count"] floatValue];
+  
+  NSArray<NSDictionary<NSString *, NSString *> *> *items = (NSArray *)dic[@"list"];
+  
+  self.items = items;
+  
+  [(UICollectionView *)self.uicomponent reloadData];
+}
+
+- (void)sendRequest:(id)sender
+{
+  /* Configure session, choose between:
+   * defaultSessionConfiguration
+   * ephemeralSessionConfiguration
+   * backgroundSessionConfigurationWithIdentifier:
+   And set session-wide properties, such as: HTTPAdditionalHeaders,
+   HTTPCookieAcceptPolicy, requestCachePolicy or timeoutIntervalForRequest.
+   */
+  
+//  _entity.request.header = @"http://";
+//  _entity.request.url = @"cta.curiosapp.com/publish/newPublishList";
+//  _entity.request.requestType = @"POST";
+//  _entity.request.parameters = @[@{@"data": @"{\"userID\":\"\",\"start\":0,\"size\":10}"}];
+//  NSString * s = _entity.request.url;
+  
+  if (_entity.request.url == nil || [_entity.request.url isEqualToString:@""]) {
+    return;
+  }
+  
+  NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+  
+  /* Create session, and optionally set a NSURLSessionDelegate. */
+  NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+  
+  /* Create the Request:
+   Request (POST http://cta.curiosapp.com/publish/newPublishList)
+   */
+  
+  NSURL* URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", _entity.request.header, _entity.request.url]];
+  NSMutableDictionary *URLParams = [@{} mutableCopy];
+  
+  for (NSDictionary *dic in _entity.request.parameters) {
+    for (NSString *key in dic.allKeys) {
+      [URLParams setObject:dic[key] forKey:key];
+    }
+  }
+  
+//  NSDictionary* URLParams = @{
+//                              @"data": @"{\"userID\":\"\",\"start\":0,\"size\":10}",
+//                              };
+  URL = NSURLByAppendingQueryParameters(URL, URLParams);
+  NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+  request.HTTPMethod = _entity.request.requestType;
+  
+  // Headers
+  
+  [request addValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
+  
+  /* Start a new Task */
+  __block typeof(self) ws = self;
+  NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    if (error == nil) {
+      // Success
+      NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+      
+      dispatch_async(dispatch_get_main_queue(), ^{
+        [ws loadData:data];
+      });
+    }
+    else {
+      // Failure
+      NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+    }
+  }];
+  [task resume];
+  [session finishTasksAndInvalidate];
+}
+
+/*
+ * Utils: Add this section before your class implementation
+ */
+
+/**
+ This creates a new query parameters string from the given NSDictionary. For
+ example, if the input is @{@"day":@"Tuesday", @"month":@"January"}, the output
+ string will be @"day=Tuesday&month=January".
+ @param queryParameters The input dictionary.
+ @return The created parameters string.
+ */
+static NSString* NSStringFromQueryParameters(NSDictionary* queryParameters)
+{
+  NSMutableArray* parts = [NSMutableArray array];
+  [queryParameters enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+    NSString *part = [NSString stringWithFormat: @"%@=%@",
+                      [key stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding],
+                      [value stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]
+                      ];
+    [parts addObject:part];
+  }];
+  return [parts componentsJoinedByString: @"&"];
+}
+
+/**
+ Creates a new URL by adding the given query parameters.
+ @param URL The input URL.
+ @param queryParameters The query parameter dictionary to add.
+ @return A new NSURL.
+ */
+static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryParameters)
+{
+  NSString* URLString = [NSString stringWithFormat:@"%@?%@",
+                         [URL absoluteString],
+                         NSStringFromQueryParameters(queryParameters)
+                         ];
+  return [NSURL URLWithString:URLString];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+
+//  if (_items == nil) {
+//    return 10;
+//  } else {
+//    return _items.count;
+//  }
   
-  return 3;
+  return self.items.count;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -52,9 +190,11 @@
   cell.contentView.backgroundColor = [UIColor redColor];
   
   [cell configWithViewModels:_entity.cellViewModel];
+  [cell configWithBindingModels:_entity.bindingModels];
   
-  
-  
+  if (_items != nil && _items.count > 0) {
+    [cell configWithData:_items[indexPath.item]];
+  }
   
   return cell;
 }
