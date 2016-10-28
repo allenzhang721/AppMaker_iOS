@@ -46,12 +46,18 @@
 #import "LanternSlideEntity.h"
 #import "HLYoutubeEntity.h"
 #import "HLMapEntity.h"
-
+#import "HLTableEntity.h"
 @implementation HLContainerCreator
     
 + (HLContainerEntity *)createEntity:(NSString *)type moduleid:(NSString *)moduleid
     {
-        
+      
+        // Feature - com.hl.flex.components.objects.hltableView::HLTableViewComponent - Emiaostein, 27 Sep 2016
+        if ([type compare:@"HLTableViewComponent"]== NSOrderedSame)
+        {
+          return [[HLTableEntity alloc] init];
+        }
+      
         // Feature - Mapcom.hl.flex.components.objects.hlmap::HLGoogleMapComponent - Emiaostein, 27 Sep 2016
         if ([type compare:@"HLGoogleMapComponent"]== NSOrderedSame)
         {
