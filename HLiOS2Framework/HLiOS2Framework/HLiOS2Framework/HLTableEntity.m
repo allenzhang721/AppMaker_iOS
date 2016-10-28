@@ -42,9 +42,52 @@
   _cellViewModel = [[HLTableCellViewModel alloc] init];
   [_cellViewModel decodeXML:cell];
   
+  TBXMLElement *w = [EMTBXML childElementNamed:@"CellWidth" parentElement:data];
+  if (w) {
+    _cellViewModel.cellWidth = [[EMTBXML textForElement:w] floatValue];
+  }
+  
+  TBXMLElement *h = [EMTBXML childElementNamed:@"CellHeight" parentElement:data];
+  if (h) {
+     _cellViewModel.cellheight = [[EMTBXML textForElement:h] floatValue];
+  }
+  
+  TBXMLElement *hor = [EMTBXML childElementNamed:@"HorGap" parentElement:data];
+  if (hor) {
+    _cellViewModel.horGap = [[EMTBXML textForElement:hor] floatValue];
+  }
+  
+  TBXMLElement *ver = [EMTBXML childElementNamed:@"VerGap" parentElement:data];
+  if (ver) {
+    _cellViewModel.verGap = [[EMTBXML textForElement:ver] floatValue];
+  }
+  
+  TBXMLElement *t = [EMTBXML childElementNamed:@"TopOff" parentElement:data];
+  if (t) {
+    _cellViewModel.top = [[EMTBXML textForElement:t] floatValue];
+  }
+  
+  TBXMLElement *b = [EMTBXML childElementNamed:@"BottomOff" parentElement:data];
+  if (b) {
+    _cellViewModel.bottom = [[EMTBXML textForElement:b] floatValue];
+  }
+  
+  TBXMLElement *l = [EMTBXML childElementNamed:@"LeftOff" parentElement:data];
+  if (l) {
+    _cellViewModel.left = [[EMTBXML textForElement:l] floatValue];
+  }
+  
+  TBXMLElement *r = [EMTBXML childElementNamed:@"RightOff" parentElement:data];
+  if (r) {
+    _cellViewModel.right = [[EMTBXML textForElement:r] floatValue];
+  }
+  
+  
+  
+  
   TBXMLElement *models = [EMTBXML childElementNamed:@"Models" parentElement:cellModel];
   TBXMLElement *model = [EMTBXML childElementNamed:@"Model" parentElement:models];
-  NSMutableArray<HLTableCellSubBindingModel *> *bindModels = @[];
+  NSMutableArray<HLTableCellSubBindingModel *> *bindModels = [@[] mutableCopy];
   while (model != NULL) {
     
     HLTableCellSubBindingModel *bindModel = [[HLTableCellSubBindingModel alloc] init];

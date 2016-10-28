@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HLTableCellViewModel.h"
 
 @interface HLTableCell : UICollectionViewCell
+
+-(void)configWithViewModels:(HLTableCellViewModel *)viewModel;
 
 @end

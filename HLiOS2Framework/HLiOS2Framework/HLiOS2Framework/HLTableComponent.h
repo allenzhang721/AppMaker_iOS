@@ -7,9 +7,11 @@
 //
 
 #import "Component.h"
+#import "HLTableEntity.h"
 
-@interface HLTableComponent : Component
+@interface HLTableComponent : Component<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 
+@property(nonatomic, strong) HLTableEntity *entity;
 
 @end

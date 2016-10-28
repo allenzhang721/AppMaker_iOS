@@ -38,49 +38,11 @@
 
 - (void) decodeXML:(TBXMLElement *)xml {
   
-  TBXMLElement *w = [EMTBXML childElementNamed:@"CellWidth" parentElement:xml];
-  if (w) {
-    _cellWidth = [[EMTBXML textForElement:w] floatValue];
-  }
   
-  TBXMLElement *h = [EMTBXML childElementNamed:@"CellHeight" parentElement:xml];
-  if (h) {
-    _cellheight = [[EMTBXML textForElement:h] floatValue];
-  }
-  
-  TBXMLElement *hor = [EMTBXML childElementNamed:@"HorGap" parentElement:xml];
-  if (hor) {
-    _horGap = [[EMTBXML textForElement:hor] floatValue];
-  }
-  
-  TBXMLElement *ver = [EMTBXML childElementNamed:@"VerGap" parentElement:xml];
-  if (ver) {
-    _verGap = [[EMTBXML textForElement:ver] floatValue];
-  }
-  
-  TBXMLElement *t = [EMTBXML childElementNamed:@"TopOff" parentElement:xml];
-  if (t) {
-    _top = [[EMTBXML textForElement:t] floatValue];
-  }
-  
-  TBXMLElement *b = [EMTBXML childElementNamed:@"BottomOff" parentElement:xml];
-  if (b) {
-    _bottom = [[EMTBXML textForElement:b] floatValue];
-  }
-  
-  TBXMLElement *l = [EMTBXML childElementNamed:@"LeftOff" parentElement:xml];
-  if (l) {
-    _left = [[EMTBXML textForElement:l] floatValue];
-  }
-  
-  TBXMLElement *r = [EMTBXML childElementNamed:@"RightOff" parentElement:xml];
-  if (r) {
-    _right = [[EMTBXML textForElement:r] floatValue];
-  }
   
   TBXMLElement *containers = [EMTBXML childElementNamed:@"Cell" parentElement:xml];
   TBXMLElement *subViewModel  = [EMTBXML childElementNamed:@"CellContainer"  parentElement:containers];
-  NSMutableArray<HLTableCellSubViewModel *> *subViewModels = @[];
+  NSMutableArray<HLTableCellSubViewModel *> *subViewModels = [@[] mutableCopy];
   while (subViewModel != nil) {
     
     HLTableCellSubViewModel *subVM;
