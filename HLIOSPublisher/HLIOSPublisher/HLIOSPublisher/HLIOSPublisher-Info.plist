@@ -39,7 +39,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.horner.com.cszwdy.www.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -79,5 +79,18 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Use your Camera.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Use your Location Always.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Use your Location Temporary.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Use your Photo Library.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
