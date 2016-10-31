@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HLTableCellViewModel.h"
 #import "HLTableCellSubBindingModel.h"
+#import <WebImage/UIImageView+WebCache.h>
 
 @interface HLTableCell : UICollectionViewCell
 

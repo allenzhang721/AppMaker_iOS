@@ -31,6 +31,7 @@ struct TableLayout {
 @property(nonatomic, assign) float bottom;
 @property(nonatomic, assign) float left;
 @property(nonatomic, assign) float right;
+@property(nonatomic, strong) NSString *BackgroundColor;
 @property(nonatomic, strong) NSArray<HLTableCellSubViewModel *> *subViewModels;
 
 - (void) decodeXML:(TBXMLElement *)xml;

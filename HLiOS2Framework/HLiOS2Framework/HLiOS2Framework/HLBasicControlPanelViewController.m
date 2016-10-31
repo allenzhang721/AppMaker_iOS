@@ -393,7 +393,9 @@
         }
     }
 //    self.btnExit.frame              = CGRectMake(CGRectGetMaxX(self.btnHome.frame), 0, CGRectGetWidth(self.btnHome.frame), CGRectGetHeight(self.btnHome.frame));
-    self.btnExit.frame = CGRectMake((CGRectGetMidX(rect) - CGRectGetWidth(self.btnExit.frame) * rate/2), 0, CGRectGetWidth(self.btnExit.frame) * rate, CGRectGetHeight(self.btnExit.frame) * rate);
+  CGFloat width = CGRectGetWidth(self.btnExit.frame) * rate;
+  CGFloat height = CGRectGetHeight(self.btnExit.frame) * rate;
+    self.btnExit.frame = CGRectMake(((CGRectGetWidth(rect) / 2 - width/2)), 0, width, height);
     
 //    self.btnExit.frame = CGRectMake(rect.size.width/2 - CGRectGetWidth(self.btnExit.frame), 0, CGRectGetWidth(self.btnExit.frame) * rate, CGRectGetHeight(self.btnExit.frame) *rate);
     self.view.frame                 = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);          //陈星宇，11.27，适配

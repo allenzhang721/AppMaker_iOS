@@ -10,6 +10,7 @@
 #import "HLTableCellSubViewImageModel.h"
 #import "HLTableCellSubViewTextModel.h"
 
+
 @interface HLTableCell ()
 
 @property(nonatomic, assign) HLTableCellViewModel *viewModel;
@@ -34,7 +35,7 @@
       if ([subViewModel isKindOfClass:[HLTableCellSubViewImageModel class]]) {
         CGRect rect = CGRectMake(subViewModel.x, subViewModel.y, subViewModel.width, subViewModel.height);
         UIImageView *imgView = [[UIImageView alloc]initWithFrame:rect];
-        imgView.backgroundColor = [UIColor greenColor];
+//        imgView.backgroundColor = [UIColor greenColor];
         [self.contentView addSubview:imgView];
         imgView.tag = [subViewModel.comID integerValue];
       }
@@ -42,7 +43,7 @@
       if ([subViewModel isKindOfClass:[HLTableCellSubViewTextModel class]]) {
         CGRect rect = CGRectMake(subViewModel.x, subViewModel.y, subViewModel.width, subViewModel.height);
         UILabel *label = [[UILabel alloc]initWithFrame:rect];
-        label.backgroundColor = [UIColor greenColor];
+//        label.backgroundColor = [UIColor greenColor];
         label.font = [UIFont systemFontOfSize:((HLTableCellSubViewTextModel *)subViewModel).fontSize];
         [self.contentView addSubview:label];
         label.tag = [subViewModel.comID integerValue];
@@ -67,6 +68,9 @@
       if ([v isKindOfClass:[UILabel class]]) {
         
         ((UILabel *)v).text = dic[b.modelKey];
+      } else if ([v isKindOfClass:[UIImageView class]]) {
+        NSURL *url = [NSURL URLWithString:dic[b.modelKey]];
+        [((UIImageView *)v) sd_setImageWithURL:url];
       }
     }
   }

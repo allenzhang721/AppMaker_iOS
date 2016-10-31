@@ -83,6 +83,10 @@
     self.cellViewModel.right = [[EMTBXML textForElement:r] floatValue];
   }
   
+  TBXMLElement *color = [EMTBXML childElementNamed:@"BackgroundColor" parentElement:data];
+  if (color) {
+    self.cellViewModel.BackgroundColor = [EMTBXML textForElement:color];
+  }
   
   
   

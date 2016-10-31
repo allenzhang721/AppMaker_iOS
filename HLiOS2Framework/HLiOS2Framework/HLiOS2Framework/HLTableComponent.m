@@ -44,7 +44,7 @@ static NSUInteger count = 2;
   v.delegate = self;
   v.dataSource = self;
   
-  v.backgroundColor = [UIColor blackColor];
+  v.backgroundColor = [self colorWithHexString:_entity.cellViewModel.BackgroundColor];
   
   self.uicomponent = v;
   
@@ -186,8 +186,6 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   
   HLTableCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TableCell" forIndexPath:indexPath];
-  
-  cell.contentView.backgroundColor = [UIColor redColor];
   
   [cell configWithViewModels:_entity.cellViewModel];
   [cell configWithBindingModels:_entity.bindingModels];
