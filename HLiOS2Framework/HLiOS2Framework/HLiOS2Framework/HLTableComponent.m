@@ -11,7 +11,9 @@
 
 static NSUInteger count = 2;
 
-@interface HLTableComponent ()
+@interface HLTableComponent () {
+  NSUInteger defaultCount;
+}
 
 @property(nonatomic, strong) NSArray<NSDictionary<NSString *, id> *> *items;
 
@@ -27,7 +29,7 @@ static NSUInteger count = 2;
   {
     self.entity    = (HLTableEntity *)entity;
     //        self.customHeight = true;
-    self.items = @[];
+    self.items = nil;
     [self p_setupUI];
   }
   return self;
@@ -47,6 +49,8 @@ static NSUInteger count = 2;
   v.backgroundColor = [self colorWithHexString:_entity.cellViewModel.BackgroundColor];
   
   self.uicomponent = v;
+  
+  defaultCount = [_entity.height floatValue] / _entity.cellViewModel.cellheight;
   
   [self sendRequest:nil];
   
@@ -172,14 +176,12 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-
-//  if (_items == nil) {
-//    return 10;
-//  } else {
-//    return _items.count;
-//  }
   
-  return self.items.count;
+  if (_items != nil) {
+    return _items.count;
+  } else {
+    return defaultCount;
+  }
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -187,7 +189,7 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
   
   HLTableCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TableCell" forIndexPath:indexPath];
   
-  [cell configWithViewModels:_entity.cellViewModel];
+  [cell configWithViewModels:_entity.cellViewModel entity:_entity];
   [cell configWithBindingModels:_entity.bindingModels];
   
   if (_items != nil && _items.count > 0) {

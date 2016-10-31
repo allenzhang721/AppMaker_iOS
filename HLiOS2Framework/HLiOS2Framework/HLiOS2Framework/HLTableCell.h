@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "HLTableCellViewModel.h"
 #import "HLTableCellSubBindingModel.h"
+#import "HLContainerEntity.h"
 #import <WebImage/UIImageView+WebCache.h>
 
 @interface HLTableCell : UICollectionViewCell
 
--(void)configWithViewModels:(HLTableCellViewModel *)viewModel;
+-(void)configWithViewModels:(HLTableCellViewModel *)viewModel entity:(HLContainerEntity *)entity;
 -(void)configWithBindingModels:(NSArray<HLTableCellSubBindingModel *> *)bindingModel;
 
 -(void)configWithData:(NSDictionary *)dic;
