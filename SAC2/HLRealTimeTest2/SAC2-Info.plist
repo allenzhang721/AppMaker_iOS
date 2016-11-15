@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Use your Photo Library.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Use your Location Temporary.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Use your Location Always.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Use your Camera.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -29,7 +21,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2</string>
+	<string>1.2.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -45,7 +37,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>9</string>
 	<key>CURRENT_PROJECT_VERSION</key>
 	<string></string>
 	<key>LSApplicationCategoryType</key>
@@ -57,6 +49,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Use your Camera.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Use your Location Always.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Use your Location Temporary.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Use your Photo Library.</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

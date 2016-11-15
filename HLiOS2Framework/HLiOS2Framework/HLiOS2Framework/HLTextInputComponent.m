@@ -24,11 +24,12 @@
 
 // MARK: - Private Method
 - (void)p_setupUI {
-    UITextField *textfiled = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, _entity.width.floatValue, 30)];
+    UITextField *textfiled = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, _entity.width.floatValue, _entity.height.floatValue)];
     
     textfiled.borderStyle = UITextBorderStyleRoundedRect;
     textfiled.placeholder = _entity.placeholder;
     textfiled.text = _entity.text;
+    textfiled.font = [UIFont systemFontOfSize:_entity.fontSize];
     textfiled.textAlignment = _entity.alignment;
     textfiled.textColor = [self colorWithHexString:_entity.fontColor];
     textfiled.borderStyle = _entity.bordVisible ? UITextBorderStyleRoundedRect : UITextBorderStyleNone;

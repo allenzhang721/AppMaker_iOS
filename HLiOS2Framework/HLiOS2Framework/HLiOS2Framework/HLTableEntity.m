@@ -88,10 +88,14 @@
     self.cellViewModel.BackgroundColor = [EMTBXML textForElement:color];
   }
   
-  
-  
   TBXMLElement *models = [EMTBXML childElementNamed:@"Models" parentElement:cellModel];
   TBXMLElement *model = [EMTBXML childElementNamed:@"Model" parentElement:models];
+  
+  TBXMLElement *modelParent = [EMTBXML childElementNamed:@"ModelParent" parentElement:cellModel];
+  if (modelParent) {
+    self.modelParent = [EMTBXML textForElement:modelParent];
+  }
+  
   NSMutableArray<HLTableCellSubBindingModel *> *bindModels = [@[] mutableCopy];
   while (model != NULL) {
     
@@ -102,6 +106,8 @@
   }
   
   self.bindingModels = bindModels;
+  
+  
   
   [pool release];
 }
