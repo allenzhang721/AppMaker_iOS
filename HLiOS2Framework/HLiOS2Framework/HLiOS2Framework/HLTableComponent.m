@@ -16,6 +16,7 @@ static NSUInteger count = 2;
 }
 
 @property(nonatomic, strong) NSArray<NSDictionary<NSString *, id> *> *items;
+@property(nonatomic, assign) BOOL firstRequstSuccess;
 
 @end
 
@@ -29,7 +30,7 @@ static NSUInteger count = 2;
   {
     self.entity    = (HLTableEntity *)entity;
     //        self.customHeight = true;
-    self.items = nil;
+    self.items = @[];
     [self p_setupUI];
   }
   return self;
@@ -52,15 +53,22 @@ static NSUInteger count = 2;
   
   defaultCount = [_entity.height floatValue] / _entity.cellViewModel.cellheight;
   
-  [self sendRequest:nil];
+  if (_firstRequstSuccess == NO) {
+    [self sendRequest:nil];
+  }
   
 }
+
+//- (void)beginView {
+//  [super beginView];
+//  
+//}
 
 - (void)loadData:(NSData *)data {
   NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 //  count = [dic[@"count"] floatValue];
   
-  NSArray<NSDictionary<NSString *, NSString *> *> *items = (NSArray *)dic[@"list"];
+  NSArray<NSDictionary<NSString *, NSString *> *> *items = (NSArray *)[dic valueForKeyPath:_entity.modelParent];
   
   self.items = items;
   
@@ -97,6 +105,8 @@ static NSUInteger count = 2;
    */
   
   NSURL* URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", _entity.request.header, _entity.request.url]];
+  
+  NSLog(@"%@", URL);
   NSMutableDictionary *URLParams = [@{} mutableCopy];
   
   for (NSDictionary *dic in _entity.request.parameters) {
@@ -108,7 +118,9 @@ static NSUInteger count = 2;
 //  NSDictionary* URLParams = @{
 //                              @"data": @"{\"userID\":\"\",\"start\":0,\"size\":10}",
 //                              };
-  URL = NSURLByAppendingQueryParameters(URL, URLParams);
+  if (URLParams.count > 0) {
+    URL = NSURLByAppendingQueryParameters(URL, URLParams);
+  }
   NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
   request.HTTPMethod = _entity.request.requestType;
   
@@ -122,10 +134,19 @@ static NSUInteger count = 2;
     if (error == nil) {
       // Success
       NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+      if ((ws == nil) || !([ws isKindOfClass:[HLTableComponent class]])) {
+        return;
+      }
+      if ((ws != nil) && [ws isKindOfClass:[HLTableComponent class]]) {
       
-      dispatch_async(dispatch_get_main_queue(), ^{
-        [ws loadData:data];
-      });
+        dispatch_async(dispatch_get_main_queue(), ^{
+          if ([ws respondsToSelector:@selector(loadData:)]) {
+            ws.firstRequstSuccess = YES;
+            [ws loadData:data];
+          }
+        });
+      }
+      
     }
     else {
       // Failure
@@ -177,7 +198,7 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
   
-  if (_items != nil) {
+  if (_items != nil && !([_items isKindOfClass:[NSNull class]])) {
     return _items.count;
   } else {
     return defaultCount;
@@ -192,7 +213,7 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
   [cell configWithViewModels:_entity.cellViewModel entity:_entity];
   [cell configWithBindingModels:_entity.bindingModels];
   
-  if (_items != nil && _items.count > 0) {
+  if (_items != nil && !([_items isKindOfClass:[NSNull class]]) && _items.count > 0) {
     [cell configWithData:_items[indexPath.item]];
   }
   
@@ -203,8 +224,13 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
   
-  return CGSizeMake(_entity.cellViewModel.cellWidth, _entity.cellViewModel.cellheight);
+  return CGSizeMake(MIN(_entity.cellViewModel.cellWidth, _entity.width.floatValue), _entity.cellViewModel.cellheight);
   
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+  
+  return UIEdgeInsetsMake(_entity.cellViewModel.top, _entity.cellViewModel.left, _entity.cellViewModel.bottom, _entity.cellViewModel.right);
 }
 
 @end

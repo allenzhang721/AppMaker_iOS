@@ -85,14 +85,21 @@
     for (HLTableCellSubBindingModel *b in _bindingModels) {
       NSLog(@"%@ = %@", b.modelID, dic[b.modelKey]);
       
+      if (b.modelKey == nil) {
+        continue;
+      }
+      
       UIView *v = [self.contentView viewWithTag:[b.modelID integerValue]];
       
-      if ([v isKindOfClass:[UILabel class]]) {
-        
-        ((UILabel *)v).text = dic[b.modelKey];
+      if ([v isKindOfClass:[UITextView class]]) {
+        UITextView *label = (UITextView *)v;
+        if (dic != nil && (b.modelKey != nil && ![b.modelKey isEqualToString:@""])) {
+          label.text = [NSString stringWithFormat:@"%@", dic[b.modelKey]];
+        }
       } else if ([v isKindOfClass:[UIImageView class]]) {
+        UIImageView *imgView = (UIImageView *)v;
         NSURL *url = [NSURL URLWithString:dic[b.modelKey]];
-        [((UIImageView *)v) sd_setImageWithURL:url];
+        [imgView sd_setImageWithURL:url placeholderImage:imgView.image];
       }
     }
   }

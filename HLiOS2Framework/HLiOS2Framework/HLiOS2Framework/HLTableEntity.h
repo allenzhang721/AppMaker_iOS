@@ -17,6 +17,7 @@
 @property(nonatomic, strong) HLRequest *request;
 @property(nonatomic, strong) HLTableCellViewModel *cellViewModel;
 @property(nonatomic, strong) NSArray<HLTableCellSubBindingModel *> *bindingModels;
+@property(nonatomic, strong) NSString *modelParent;
 
 -(void)scale:(float)x y:(float)y;
 
