@@ -37,6 +37,9 @@
 //    UIScrollView
 }
 
+@property (nonatomic , assign) BOOL activePush; //Aug 26, 2016
+@property (nonatomic , copy) NSString *pushID; // Aug 26, 2016
+
 @property (nonatomic , retain) NSString *bookid;   //陈星宇
 @property (nonatomic , retain) NSString *bookType;
 @property (nonatomic , retain) NSString *name;

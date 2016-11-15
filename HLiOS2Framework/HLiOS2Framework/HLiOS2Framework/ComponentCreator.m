@@ -7,6 +7,8 @@
 //
 
 #import "ComponentCreator.h"
+#import "HLTextInputEntity.h"
+#import "HLTextInputComponent.h"
 #import "HLAudioComponent.h"
 #import "VideoEntity.h"
 #import "VideoComponent.h"
@@ -78,6 +80,12 @@
 #import "AutoScrollableComponent.h"
 #import "LanternSlideComponent.h"
 #import "LanternSlideEntity.h"
+#import "HLYoutubeEntity.h"
+#import "HLYoutubeComponent.h"
+#import "HLMapEntity.h"
+#import "HLMapComponent.h"
+#import "HLTableEntity.h"
+#import "HLTableComponent.h"
 
 @implementation ComponentCreator
 
@@ -85,6 +93,27 @@
 +(Component *) createComponent:(HLContainerEntity *) entity 
 {
     Component *component;
+  
+  if ([entity isKindOfClass:[HLTableEntity class]]) {
+    component = [[HLTableComponent alloc] initWithEntity:entity];
+    return component;
+  }
+  
+    if ([entity isKindOfClass:[HLMapEntity class]]) {
+        component = [[HLMapComponent alloc] initWithEntity:entity];
+        return component;
+    }
+    
+    if ([entity isKindOfClass:[HLYoutubeEntity class]]) {
+        component = [[HLYoutubeComponent alloc] initWithEntity:entity];
+        return component;
+    }
+    
+    if ([entity isKindOfClass:[HLTextInputEntity class]]) {
+        component = [[HLTextInputComponent alloc] initWithEntity:entity];
+        return component;
+    }
+    
     if ([entity isKindOfClass:[ImageEntity class]])
     {
         component = [[ImageComponent alloc] initWithEntity:entity];

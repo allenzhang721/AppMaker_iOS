@@ -38,6 +38,13 @@
 		29CF1F13196A66A80079F372 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CF1F12196A66A80079F372 /* images.xcassets */; };
 		29E3EC3819C19BF6005633CA /* libHLiOS2Framework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E3EC3719C19BF6005633CA /* libHLiOS2Framework.a */; };
 		29EC991F196BC5D90089F223 /* TW_images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29EC991E196BC5D90089F223 /* TW_images.xcassets */; };
+		2C57A7F91D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C57A7F81D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework */; };
+		2C57A7FE1D98ECF200F886EE /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C57A7F81D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework */; };
+		2C57A7FF1D98ECF200F886EE /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C57A7F81D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C5DBC6B1DC6164800C175F0 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5DBC6A1DC6164800C175F0 /* WebImage.framework */; };
+		2C5DBC6C1DC6164800C175F0 /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5DBC6A1DC6164800C175F0 /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C7E0A751D9A4E6400E3766E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A741D9A4E6400E3766E /* MapKit.framework */; };
+		2C7E0A7C1D9A557A00E3766E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A7B1D9A557A00E3766E /* CoreLocation.framework */; };
 		2CE398D81D6ABD0C00D699E2 /* SAC2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE398D71D6ABD0C00D699E2 /* SAC2-Info.plist */; };
 		6A05F1AE17241524006D6973 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A05F16317241524006D6973 /* 0.png */; };
 		6A05F1AF17241524006D6973 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A05F16417241524006D6973 /* 1.png */; };
@@ -305,6 +312,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2C57A8031D98ECF200F886EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C57A7FF1D98ECF200F886EE /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */,
+				2C5DBC6C1DC6164800C175F0 /* WebImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		290A297B18D4806A004606D3 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
 		290A297C18D4806A004606D3 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
@@ -347,6 +369,10 @@
 		29CF1F76196AA28B0079F372 /* appMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appMaker.h; sourceTree = "<group>"; };
 		29E3EC3719C19BF6005633CA /* libHLiOS2Framework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHLiOS2Framework.a; path = "../../../../../../../../../OutSourcing work copy/newHLIOS/tags/Development_BugFixed/HLiOS2Framework/HLiOS2Framework/build/Release-iphoneos/libHLiOS2Framework.a"; sourceTree = "<group>"; };
 		29EC991E196BC5D90089F223 /* TW_images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TW_images.xcassets; sourceTree = "<group>"; };
+		2C57A7F81D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
+		2C5DBC6A1DC6164800C175F0 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebImage.framework; sourceTree = "<group>"; };
+		2C7E0A741D9A4E6400E3766E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2C7E0A7B1D9A557A00E3766E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2CBE0A621D6ABE88006D0D3B /* HLiOS2Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HLiOS2Framework.xcodeproj; path = ../../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework.xcodeproj; sourceTree = "<group>"; };
 		2CE398D71D6ABD0C00D699E2 /* SAC2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAC2-Info.plist"; sourceTree = "<group>"; };
 		6A05F16317241524006D6973 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
@@ -687,8 +713,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5DBC6B1DC6164800C175F0 /* WebImage.framework in Frameworks */,
+				2C7E0A7C1D9A557A00E3766E /* CoreLocation.framework in Frameworks */,
+				2C7E0A751D9A4E6400E3766E /* MapKit.framework in Frameworks */,
 				29E3EC3819C19BF6005633CA /* libHLiOS2Framework.a in Frameworks */,
 				6ADEFC1B171F943F00BD80E9 /* UIKit.framework in Frameworks */,
+				2C57A7F91D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework in Frameworks */,
 				291C29C6183092B300C502B6 /* StoreKit.framework in Frameworks */,
 				C362D05D17E2AEA600707440 /* libxml2.dylib in Frameworks */,
 				C3CECBF917D589210032D81C /* libstdc++.dylib in Frameworks */,
@@ -706,6 +736,7 @@
 				6AB6612B17213DBB00EA295F /* ImageIO.framework in Frameworks */,
 				6AB6612917213DAF00EA295F /* AssetsLibrary.framework in Frameworks */,
 				6AB6612717213DA300EA295F /* AVFoundation.framework in Frameworks */,
+				2C57A7FE1D98ECF200F886EE /* YouTubeiOSPlayerHelper.framework in Frameworks */,
 				6AB6612317213D9200EA295F /* MessageUI.framework in Frameworks */,
 				6AB6611F17213D7E00EA295F /* OpenGLES.framework in Frameworks */,
 				6ADEFCEB1720382B00BD80E9 /* libz.dylib in Frameworks */,
@@ -849,6 +880,8 @@
 		6AB661381721752700EA295F /* appMakerSDK */ = {
 			isa = PBXGroup;
 			children = (
+				2C5DBC6A1DC6164800C175F0 /* WebImage.framework */,
+				2C57A7F81D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework */,
 				2917616D19656A3600B6A2F0 /* appMakerResources.bundle */,
 				2917614D1965481500B6A2F0 /* appMakerUI.xcassets */,
 			);
@@ -984,6 +1017,8 @@
 		6ADEFC19171F943F00BD80E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C7E0A7B1D9A557A00E3766E /* CoreLocation.framework */,
+				2C7E0A741D9A4E6400E3766E /* MapKit.framework */,
 				29E3EC3719C19BF6005633CA /* libHLiOS2Framework.a */,
 				C3F972E5186A7C5A004888C0 /* libHLiOS2Framework.a */,
 				291C29C5183092B300C502B6 /* StoreKit.framework */,
@@ -1441,6 +1476,7 @@
 				6ADEFC13171F943F00BD80E9 /* Sources */,
 				6ADEFC14171F943F00BD80E9 /* Frameworks */,
 				6ADEFC15171F943F00BD80E9 /* Resources */,
+				2C57A8031D98ECF200F886EE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1462,7 +1498,8 @@
 				ORGANIZATIONNAME = "北京谋易软件有限责任公司";
 				TargetAttributes = {
 					6ADEFC16171F943F00BD80E9 = {
-						DevelopmentTeam = N8WL2V9VY9;
+						DevelopmentTeam = H7HX4A2DL8;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1873,11 +1910,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: YONGQUAN Zhang (2MBKC2MCEG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H7HX4A2DL8;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/HLRealTimeTest2",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RealTime2-bhqaamhkvvmozxfbfgaodvbhztgc/Build/Products/Debug-iphoneos",
+					"$(SRCROOT)/HLRealTimeTest2",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Connection",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Core",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Extend/GooglePlusSDK",
@@ -1912,6 +1953,7 @@
 				);
 				INFOPLIST_FILE = "HLRealTimeTest2/SAC2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/RealTime2-gobrrewbbcmvbbbdovznsilgtojh/Build/Products/Debug-iphoneos\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
@@ -1927,13 +1969,15 @@
 					/Users/hoshisakaichen/OutSourcing,
 					work,
 					"copy/newHLIOS/tags/Development_BugFixed/HLiOS2Framework/HLiOS2Framework/build/Release-iphoneos",
+					"$(SRCROOT)HLRealTimeTest2",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.botai.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
@@ -1945,11 +1989,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: u-Smart Technology Co., Ltd. (N8WL2V9VY9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H7HX4A2DL8;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/HLRealTimeTest2",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RealTime2-bhqaamhkvvmozxfbfgaodvbhztgc/Build/Products/Debug-iphoneos",
+					"$(SRCROOT)/HLRealTimeTest2",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Connection",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Core",
 					"$(SRCROOT)/HLRealTimeTest2/ShareSDK_v2.5.1/Extend/GooglePlusSDK",
@@ -1984,6 +2032,7 @@
 				);
 				INFOPLIST_FILE = "HLRealTimeTest2/SAC2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/RealTime2-gobrrewbbcmvbbbdovznsilgtojh/Build/Products/Debug-iphoneos\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
@@ -1999,13 +2048,15 @@
 					/Users/hoshisakaichen/OutSourcing,
 					work,
 					"copy/newHLIOS/tags/Development_BugFixed/HLiOS2Framework/HLiOS2Framework/build/Release-iphoneos",
+					"$(SRCROOT)HLRealTimeTest2",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.botai.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;

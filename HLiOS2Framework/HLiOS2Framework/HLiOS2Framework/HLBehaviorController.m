@@ -21,6 +21,11 @@
 @synthesize flipController;
 @synthesize pageController;
 
+- (void) callPhoneNumber:(NSString *)number {
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"tel://%@", number]];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
 -(Boolean) runBehavior:(NSString *)containerid entity:(HLBehaviorEntity *)entity
 {
     if (self.pageController != nil)
@@ -36,6 +41,14 @@
         {
             
             [functionContainer runCaseComponent:entity.functionName];
+            if ([entity.functionName isEqualToString:@"FUNCTION_CALL_PHONENUMBER"])
+            {
+                if (entity.value != nil) {
+                    [self callPhoneNumber:entity.value];
+                }
+                return NO;
+            }
+            
             if ([entity.functionName isEqualToString:@"FUNCTION_PRINT"])
             {
                 if ([functionContainer.component isKindOfClass:[ImageComponent class]])

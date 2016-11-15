@@ -10,6 +10,7 @@
 #import "HLPageDecoder.h"
 #import "HLXMLManager.h"
 #import "CommonFunc.h"
+#import "HLGobalBookID.h"
 static HLXMLManager* xmlManager;
 static NSString* const myDataPath = @"book.dat";
 static NSString* const anotherDataPath = @"hash.dat";
@@ -72,6 +73,17 @@ static NSString* const anotherDataPath = @"hash.dat";
             }
             [HLPageDecoder setAndroidType:isAndroid];
             
+            //Aug 26, 2016
+            if ([EMTBXML childElementNamed:@"ActivePush" parentElement:bookInfo]) {
+                TBXMLElement *activePush = [EMTBXML childElementNamed:@"ActivePush" parentElement:bookInfo];
+                bookEntity.activePush = [[EMTBXML textForElement:activePush] boolValue];
+            }
+            
+            if ([EMTBXML childElementNamed:@"PushID" parentElement:bookInfo]) {
+                TBXMLElement *pushID = [EMTBXML childElementNamed:@"PushID" parentElement:bookInfo];
+                bookEntity.pushID = [EMTBXML textForElement:pushID];
+            }
+            
             //陈星宇,11.13,屏幕适配
             if ([EMTBXML childElementNamed:@"DeviceType" parentElement:bookInfo]) {
                 TBXMLElement *deviceType = [EMTBXML childElementNamed:@"DeviceType" parentElement:bookInfo];
@@ -95,6 +107,8 @@ static NSString* const anotherDataPath = @"hash.dat";
             {
                 TBXMLElement *bookid = [EMTBXML childElementNamed:@"ID" parentElement:bookInfo];
                 bookEntity.bookid = [EMTBXML textForElement:bookid];
+                [HLGobalBookID share].bookID = [bookEntity.bookid copy];
+                
             }
             //Mr.chen,2014-9-10
             /*

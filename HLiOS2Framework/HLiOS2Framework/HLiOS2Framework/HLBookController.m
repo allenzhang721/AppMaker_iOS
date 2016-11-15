@@ -127,6 +127,7 @@
             }
             
             ((HLBasicControlPanelViewController *)self.controlPanelViewController).isPDFType = YES;
+            ((HLBasicControlPanelViewController *)self.controlPanelViewController).activePushBtn = self.entity.activePush;
         }
         
         self.controlPanelViewController.view.frame = frameRect;

@@ -11,6 +11,31 @@
 @implementation HLContainerTypeCreator
 +(NSString *) getContainerType:(NSString *) className
     {
+      
+      // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
+      if ([className compare:@"com.hl.flex.components.objects.hltableView::HLTableViewComponent"] == NSOrderedSame)
+      {
+        return @"HLTableViewComponent";
+      }
+      
+        // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
+        if ([className compare:@"com.hl.flex.components.objects.hlmap::HLGoogleMapComponent"] == NSOrderedSame)
+        {
+            return @"HLGoogleMapComponent";
+        }
+        
+        // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
+        if ([className compare:@"com.hl.flex.components.objects.hlVideo::HLYouTubeVideoComponent"] == NSOrderedSame)
+        {
+            return @"HLYouTubeVideoComponent";
+        }
+        
+        // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
+        if ([className compare:@"com.hl.flex.components.objects.hlTextInput::HLTextInputComponent"] == NSOrderedSame)
+        {
+            return @"TextInputComponent";
+        }
+        
         if ([className compare:@"com.hl.flex.components.objects.hlButton::HLLocalButtonComponent"] == NSOrderedSame)
         {
             return @"UIButtonComponent";

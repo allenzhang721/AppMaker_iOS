@@ -7,6 +7,7 @@
 //
 
 #import "HLContainerCreator.h"
+#import "HLTextInputEntity.h"
 #import "AudioEntity.h"
 #import "VideoEntity.h"
 #import "GifEntity.h"
@@ -43,11 +44,38 @@
 #import "PhotosResizeEntity.h"
 #import "AutoScrollableEntity.h"
 #import "LanternSlideEntity.h"
-
+#import "HLYoutubeEntity.h"
+#import "HLMapEntity.h"
+#import "HLTableEntity.h"
 @implementation HLContainerCreator
     
 + (HLContainerEntity *)createEntity:(NSString *)type moduleid:(NSString *)moduleid
     {
+      
+        // Feature - com.hl.flex.components.objects.hltableView::HLTableViewComponent - Emiaostein, 27 Sep 2016
+        if ([type compare:@"HLTableViewComponent"]== NSOrderedSame)
+        {
+          return [[HLTableEntity alloc] init];
+        }
+      
+        // Feature - Mapcom.hl.flex.components.objects.hlmap::HLGoogleMapComponent - Emiaostein, 27 Sep 2016
+        if ([type compare:@"HLGoogleMapComponent"]== NSOrderedSame)
+        {
+            return [[HLMapEntity alloc] init];
+        }
+        
+        // Feature - youtube - Emiaostein, 26 Sep 2016
+        if ([type compare:@"HLYouTubeVideoComponent"]== NSOrderedSame)
+        {
+            return [[HLYoutubeEntity alloc] init];
+        }
+        
+        // Feature - TextInputComponent - Emiaostein, 21 Sep 2016
+        if ([type compare:@"TextInputComponent"]== NSOrderedSame)
+        {
+            return [[HLTextInputEntity alloc] init];
+        }
+        
         if ([type compare:@"PlayCase"]== NSOrderedSame)
         {
             return [[CaseEntity alloc] init];

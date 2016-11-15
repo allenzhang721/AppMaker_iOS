@@ -11,6 +11,7 @@
 #import "HLBookController.h"
 #import "HLSliderFlipController.h"
 #import "KGModal.h"
+#import "PushHUD.h"
 
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)        //陈星宇，11.27，适配
 
@@ -90,16 +91,7 @@
     self.btnExit.frame              = CGRectMake(0, 0, be.size.width, be.size.height);
     self.btnBgMusic.frame           = CGRectMake(0, 0, bm.size.width, bm.size.height);
     self.btnSearch.frame            = CGRectMake(0, 0, bse.size.width, bse.size.height);
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-//    {
-//        if (bs) self.btnOpenBookSnapshots.frame = CGRectMake(0, 0, bs.size.width/2, bs.size.height/2*(bs.size.height/bs.size.width));
-//        if (bh) self.btnHome.frame              = CGRectMake(0, 0, bh.size.width/2, bh.size.height/2*(bh.size.height/bh.size.width));
-//        if (bn) self.btnNext.frame              = CGRectMake(0, 0, bn.size.width/2, bn.size.height/2*(bn.size.height/bn.size.width));
-//        if (bp) self.btnPre.frame               = CGRectMake(0, 0, bp.size.width/2, bp.size.height/2*(bp.size.height/bp.size.width));
-//        if (be) self.btnExit.frame              = CGRectMake(0, 0, be.size.width/2, be.size.height/2*(be.size.height/be.size.width));
-//        if (bm) self.btnBgMusic.frame           = CGRectMake(0, 0, bm.size.width/2, bm.size.height/1.2*(bm.size.height/bm.size.width));
-////        if (bm) self.btnSearch.frame            = CGRectMake(0, 0, bse.size.width/2, bse.size.height/1.2*(bse.size.height/bse.size.width));
-//    }
+
     [self.view addSubview:self.btnOpenBookSnapshots];
     [self.view addSubview:self.btnHome];
     [self.view addSubview:self.btnNext];
@@ -401,7 +393,9 @@
         }
     }
 //    self.btnExit.frame              = CGRectMake(CGRectGetMaxX(self.btnHome.frame), 0, CGRectGetWidth(self.btnHome.frame), CGRectGetHeight(self.btnHome.frame));
-    self.btnExit.frame = CGRectMake(CGRectGetMidX(rect) - CGRectGetWidth(self.btnExit.frame)/2, 0, CGRectGetWidth(self.btnExit.frame), CGRectGetHeight(self.btnExit.frame));
+  CGFloat width = CGRectGetWidth(self.btnExit.frame) * rate;
+  CGFloat height = CGRectGetHeight(self.btnExit.frame) * rate;
+    self.btnExit.frame = CGRectMake(((CGRectGetWidth(rect) / 2 - width/2)), 0, width, height);
     
 //    self.btnExit.frame = CGRectMake(rect.size.width/2 - CGRectGetWidth(self.btnExit.frame), 0, CGRectGetWidth(self.btnExit.frame) * rate, CGRectGetHeight(self.btnExit.frame) *rate);
     self.view.frame                 = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);          //陈星宇，11.27，适配
@@ -489,7 +483,34 @@
         {
             self.btnSearch.layer.opacity = 1.0;
         }
+        
+        
+        if (_activePushBtn) {
+            // Feature - Push List Button - Emiaostein, Sep 2, 2016
+            UIButton *list = [UIButton buttonWithType:(UIButtonTypeCustom)];
+            UIImage *image = [UIImage imageNamed:@"notification"];
+            list.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+            [list setImage:[UIImage imageNamed:@"notification_selected"] forState:(UIControlStateHighlighted)];
+            [list setImage:[UIImage imageNamed:@"notification"] forState:(UIControlStateNormal)];
+            [list addTarget:self action:@selector(showList) forControlEvents:(UIControlEventTouchUpInside)];
+            [self.view addSubview:list];
+            CGRect f = self.btnOpenBookSnapshots.frame;
+            f.origin.x -= f.size.width;
+            list.frame = f;
+            //        if (_isHideBackBtn) {
+            //            CGRect f = self.btnOpenBookSnapshots.frame;
+            //            list.frame = CGRectMake(CGRectGetMidX(rect) - CGRectGetWidth(self.btnExit.frame)/2, 0, CGRectGetWidth(f), CGRectGetHeight(f));
+            //        } else {
+            //            
+            //        }
+        }
+
+        
     }
+}
+
+- (void) showList {
+    [PushHUD showList];
 }
 
 -(void) refreshPanel:(int)index count:(int)count enableNav:(Boolean )enableNav

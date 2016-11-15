@@ -30,6 +30,7 @@
 }
 
 @property int repeatCount;
+@property (nonatomic , assign) BOOL saveData; // Feature - - Emiaostein, 22 Sep 2016
 @property (nonatomic , assign) NSString *rootPath;
 @property (nonatomic , retain) NSString *name;
 @property (nonatomic , retain) NSString *fileName;
@@ -72,5 +73,7 @@
 -(void) decode:(TBXMLElement *)container;
 
 -(void) decodeData:(TBXMLElement *)data;
+
+-(void) restoreData:(id)object;
 
 @end

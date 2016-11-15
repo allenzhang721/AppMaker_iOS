@@ -2,13 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Indesign_ShowCoSeleDown.png"
+      "filename" : "Indesign_ShowCoSeleDown.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "Indesign_ShowCoSeleDown@2x.png"
+      "filename" : "Indesign_ShowCoSeleDown@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

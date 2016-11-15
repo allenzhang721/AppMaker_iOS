@@ -18,6 +18,7 @@
 #import "HLLinkageEntity.h"
 #import "AdvanceAnimation.h"
 #import "AdvanceAnimationModel.h"
+#import "HLTableEntity.h"
 
 @implementation HLContainerDecoder
 +(HLContainerEntity *) decode:(TBXMLElement *)container sx:(float)sx sy:(float)sy
@@ -53,6 +54,17 @@
         {
             entity.alpha        = [NSNumber numberWithFloat:1];
         }
+        
+        BOOL saveData = NO;
+        if ([EMTBXML childElementNamed:@"IsSaveData" parentElement:container]) {
+            saveData              = [[EMTBXML textForElement:[EMTBXML childElementNamed:@"IsSaveData" parentElement:container]] boolValue];
+            entity.saveData        = saveData;
+        }
+        else
+        {
+            entity.alpha        = [NSNumber numberWithFloat:1];
+        }
+        
         NSString *x                            = [EMTBXML textForElement:[EMTBXML childElementNamed:@"X"        parentElement:container]];
         NSString *y                            = [EMTBXML textForElement:[EMTBXML childElementNamed:@"Y"        parentElement:container]];
         NSString *cwidth                       = [EMTBXML textForElement:[EMTBXML childElementNamed:@"Width"    parentElement:container]];
@@ -179,6 +191,19 @@
         
         [entity decode:container];
         [entity decodeData:data];
+    
+    if ([entity isKindOfClass:[HLTableEntity class]]) {
+      
+      [(HLTableEntity *)entity scale:sx y:sy];
+    }
+    
+        if (entity.saveData) {
+            id object = [[NSUserDefaults standardUserDefaults] objectForKey:entity.entityid];
+            
+            if (object != nil) {
+              [entity restoreData:object];
+            }
+        }
         TBXMLElement *behaviors  = [EMTBXML childElementNamed:@"Behaviors"  parentElement:container];
         if (behaviors != nil)
         {

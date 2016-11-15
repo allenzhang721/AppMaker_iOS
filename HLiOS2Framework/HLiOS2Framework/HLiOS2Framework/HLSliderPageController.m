@@ -831,10 +831,10 @@
 
 -(void) clean
 {
-    self.isBusy = NO;
-    [self.page1Controller clean];
-    [self.page2Controller clean];
-    [self.page3Controller clean];
+  self.isBusy = NO;
+  [self.page1Controller clean];
+  [self.page2Controller clean];
+  [self.page3Controller clean];
 }
 
 -(void) arrangePage

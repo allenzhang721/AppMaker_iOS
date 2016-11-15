@@ -506,8 +506,8 @@
     }
     else
     {
-        [self.currentPageController clean];
-        [self.currentPageController loadPage:self.currentPageController.currentPageEntity];
+//       [self.currentPageController clean];
+//        [self.currentPageController loadPage:self.currentPageController.currentPageEntity];
         self.currentPageController = [self searchCurrentSliderPage];                            //找到当前显示的页
         self.currentPageIndex      = self.currentPageController.pageIndex;
         
@@ -1204,14 +1204,18 @@
     {
         if (self.currentPageIndex > 0 ) //交换位置
         {
+          HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex - 1] path:self.rootPath];
+          if(lp.currentPageEntity == nil || lp.currentPageEntity.entityid != pageEntity.entityid)
+          {
             CGRect fpf    = fp.view.frame;
             fp.view.frame = mp.view.frame;
             mp.view.frame = lp.view.frame;
             lp.view.frame = fpf;
             self.scrollView.contentOffset = CGPointMake(self.currentPageController.view.frame.origin.x, 0);
-            HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex - 1] path:self.rootPath];
+            
             [lp loadPage:pageEntity];
             lp.pageIndex = self.currentPageIndex - 1;
+          }
         }
     }
     else
@@ -1221,15 +1225,22 @@
             int pageCount = [self.sectionPages count]-1; //总页数
             if (self.currentPageIndex < pageCount) //加载后页
             {
-                HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex + 1] path:self.rootPath] ;
+              HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex + 1] path:self.rootPath] ;
+              if(lp.currentPageEntity == nil || lp.currentPageEntity.entityid != pageEntity.entityid)
+              {
                 [lp loadPage:pageEntity];
                 lp.pageIndex = self.currentPageIndex + 1;
+              }
             }
             if (self.currentPageIndex > 0)  //加载前页
             {
-                HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex - 1] path:self.rootPath] ;
+              HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex - 1] path:self.rootPath] ;
+              if(fp.currentPageEntity == nil || fp.currentPageEntity.entityid != pageEntity.entityid)
+              {
                 [fp loadPage:pageEntity];
                 fp.pageIndex = self.currentPageIndex - 1;
+              }
+              
             }
         }
         else
@@ -1239,14 +1250,17 @@
                 int pageCount = [self.sectionPages count]-1;
                 if (self.currentPageIndex < pageCount)  // 还没到最后
                 {
+                  HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex + 1] path:self.rootPath];
+                  if(fp.currentPageEntity == nil || fp.currentPageEntity.entityid != pageEntity.entityid){
                     CGRect lpf = lp.view.frame;
                     lp.view.frame = mp.view.frame;
                     mp.view.frame = fp.view.frame;
                     fp.view.frame = lpf;
                     self.scrollView.contentOffset = CGPointMake(self.currentPageController.view.frame.origin.x, 0);
-                    HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex + 1] path:self.rootPath];
+                    
                     [fp loadPage:pageEntity];
                     fp.pageIndex = self.currentPageIndex +  1;
+                  }
                 }
             }
         }
