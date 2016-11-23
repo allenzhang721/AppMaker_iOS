@@ -69,8 +69,16 @@ static NSUInteger count = 2;
 //  count = [dic[@"count"] floatValue];
   
     NSArray<NSDictionary<NSString *, NSString *> *> *items = nil;
-    if(![_entity.modelParent isEqualToString:@""]){
-        items = (NSArray *)[dic valueForKeyPath:_entity.modelParent];
+    NSString *parent = _entity.modelParent;
+    printf(@" aaa = %@",parent);
+    if(![parent isEqualToString:@""]){
+        @try {
+            items = (NSArray *)[dic valueForKeyPath:parent];
+        } @catch (NSException *exception) {
+            
+        } @finally {
+            
+        }
     }else {
         items = dic;
     }
