@@ -38,7 +38,7 @@
         float dy =  self.view.center.y - self.view.frame.origin.y;
         self.containerRotation = [(NSNumber *)[self.view.layer valueForKeyPath:@"transform.rotation"] floatValue];
         self.animationRotation = self.containerRotation;
-//        self.containerRect = self.view.frame;     //Mr.chen, 06.11.2014, the frame is changed
+        self.containerRect = self.view.frame;     //Mr.chen, 06.11.2014, the frame is changed
         self.animationRect = self.view.frame;
         [self.view.layer setValue:[NSNumber numberWithFloat:0]forKeyPath:@"transform.rotation"];
         if (self.isRevser == YES)
@@ -107,16 +107,16 @@
 
 -(void)reset//modified by Adward 13-12-27
 {
-//    self.view.frame = self.containerRect;      //Mr.chen, 06.11.2014, the frame is changed
+    self.view.frame = self.containerRect;
     [self.view.layer removeAllAnimations];
-    [self.view.layer setValue:[NSNumber numberWithFloat:self.containerRotation] forKeyPath:@"transform.rotation"];
     self.view.layer.opacity = [self.container.entity.alpha floatValue];
+    
+    [self.view.layer setValue:[NSNumber numberWithFloat:self.containerRotation] forKeyPath:@"transform.rotation"];
     self.view.layer.speed      = 1.0;
     self.view.layer.timeOffset = 0.0;
     self.view.layer.beginTime  = 0.0;
     self.isPaused = NO;
     self.isPlaying = NO;
-
 }
 
 @end
