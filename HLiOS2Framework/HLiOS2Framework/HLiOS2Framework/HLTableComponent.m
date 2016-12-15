@@ -68,8 +68,20 @@ static NSUInteger count = 2;
   NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 //  count = [dic[@"count"] floatValue];
   
-  NSArray<NSDictionary<NSString *, NSString *> *> *items = (NSArray *)[dic valueForKeyPath:_entity.modelParent];
-  
+    NSArray<NSDictionary<NSString *, NSString *> *> *items = nil;
+    NSString *parent = _entity.modelParent;
+    printf(@" aaa = %@",parent);
+    if(![parent isEqualToString:@""]){
+        @try {
+            items = (NSArray *)[dic valueForKeyPath:parent];
+        } @catch (NSException *exception) {
+            
+        } @finally {
+            
+        }
+    }else {
+        items = dic;
+    }
   self.items = items;
   
   [(UICollectionView *)self.uicomponent reloadData];
@@ -212,7 +224,6 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
   
   [cell configWithViewModels:_entity.cellViewModel entity:_entity];
   [cell configWithBindingModels:_entity.bindingModels];
-  
   if (_items != nil && !([_items isKindOfClass:[NSNull class]]) && _items.count > 0) {
     [cell configWithData:_items[indexPath.item]];
   }

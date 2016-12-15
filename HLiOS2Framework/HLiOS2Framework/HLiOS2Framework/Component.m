@@ -151,6 +151,11 @@
     return [self.container runBehavior:@"BEHAVIOR_ON_TEXT_CHANGE" object:string];
 }
 
+- (BOOL)onTextDidEndEdit:(NSString *)string {
+  
+  return [self.container runBehavior:@"BEHAVIOR_ON_TEXT_CHANGE_FAILED" object:string];
+}
+
 -(UIColor*)colorWithHexString:(NSString*)hex
 {
     NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
