@@ -263,7 +263,15 @@
                ret = [self.behaviorController runBehavior:self.entity.entityid entity:behavior];
                 return !ret;
             }
+        } else if ([eventName isEqualToString:@"BEHAVIOR_ON_TEXT_CHANGE_FAILED"]&&[behavior.eventName isEqualToString:@"BEHAVIOR_ON_TEXT_CHANGE_FAILED"] && [object isKindOfClass:[NSString class]]) {
+          
+          if (![behavior.behaviorValue isEqualToString:(NSString *)object]) {
+            ret = [self.behaviorController runBehavior:self.entity.entityid entity:behavior];
+            return !ret;
+          }
+          
         }
+      
     }
 }
 

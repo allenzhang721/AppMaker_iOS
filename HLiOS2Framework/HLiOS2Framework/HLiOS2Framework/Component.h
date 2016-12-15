@@ -44,6 +44,7 @@
 -(void) onTouchEndTouchUp;
 -(BOOL) onTapGesture;//adward 3.6
 - (BOOL)onTextDidChanged:(NSString *)string;
+- (BOOL)onTextDidEndEdit:(NSString *)string;
 
 -(UIColor*)colorWithHexString:(NSString*)hex;
 
