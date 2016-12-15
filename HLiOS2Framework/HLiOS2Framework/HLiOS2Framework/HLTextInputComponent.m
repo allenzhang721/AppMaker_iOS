@@ -24,8 +24,10 @@
 
 // MARK: - Private Method
 - (void)p_setupUI {
-    UITextField *textfiled = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, _entity.width.floatValue, _entity.height.floatValue)];
-    
+//    UITextField *textfiled = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, _entity.width.floatValue, _entity.height.floatValue)];
+  UITextField *textfiled = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, _entity.width.floatValue, 30)];
+
+  
     textfiled.borderStyle = UITextBorderStyleRoundedRect;
     textfiled.placeholder = _entity.placeholder;
     textfiled.text = _entity.text;
@@ -38,6 +40,9 @@
     self.uicomponent = textfiled;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChanged:) name:UITextFieldTextDidChangeNotification object:nil];
+  
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEndEdit:) name:UITextFieldTextDidEndEditingNotification object:nil];
+  
 }
 
 - (void)textDidChanged:(NSNotification *)noti {
@@ -45,13 +50,28 @@
     UITextField *textField = self.uicomponent;
     
     if (target == textField) {
-        NSLog(textField.text);
+//        NSLog(textField.text);
         NSString *string = textField.text;
         
         if ([self onTextDidChanged:string]) {
             [textField resignFirstResponder];
         }
     }
+}
+
+- (void)textDidEndEdit:(NSNotification *)noti {
+  UITextField *target = (UITextField *)noti.object;
+  UITextField *textField = self.uicomponent;
+  
+  if (target == textField) {
+//    NSLog(textField.text);
+    NSString *string = textField.text;
+    
+    if ([self onTextDidEndEdit:string]) {
+//      [textField resignFirstResponder];
+    }
+  }
+  
 }
 
 

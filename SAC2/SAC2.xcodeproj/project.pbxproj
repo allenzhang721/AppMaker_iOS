@@ -1498,7 +1498,8 @@
 				ORGANIZATIONNAME = "北京谋易软件有限责任公司";
 				TargetAttributes = {
 					6ADEFC16171F943F00BD80E9 = {
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = H7HX4A2DL8;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1909,9 +1910,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW";
-				CODE_SIGN_IDENTITY = "iPhone Developer: YONGQUAN Zhang (2MBKC2MCEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H7HX4A2DL8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1972,7 +1973,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.botai.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1988,9 +1989,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: u-Smart Technology Co., Ltd. (N8WL2V9VY9)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: u-Smart Technology Co., Ltd. (N8WL2V9VY9)";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H7HX4A2DL8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2051,11 +2052,11 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.botai.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ee973989-9850-4c8c-aa9b-6e8ea38a44c3";
-				PROVISIONING_PROFILE_SPECIFIER = "com.usmarttech.smartApps AppStore";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
