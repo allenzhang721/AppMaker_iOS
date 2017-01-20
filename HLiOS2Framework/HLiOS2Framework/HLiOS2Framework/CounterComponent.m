@@ -17,6 +17,7 @@
 @synthesize display;
 @synthesize isGlobal;
 @synthesize selfValue;
+@synthesize saveData;
 static int totalCount = -1;
 
 - (id)initWithEntity:(HLContainerEntity *) entity
@@ -25,6 +26,12 @@ static int totalCount = -1;
     self = [super init];
     if (self)
     {
+        
+        self.saveData = NO;
+        if (entity.saveData) {
+            self.saveData = YES;
+        }
+        
         self.display = [[[UILabel alloc] init] autorelease];
         display.textAlignment = NSTextAlignmentLeft;
         [self.display setFont:[UIFont systemFontOfSize:ce.fontSize]];
@@ -39,11 +46,17 @@ static int totalCount = -1;
             }
             
             int v =[[[NSUserDefaults standardUserDefaults] valueForKey:[HLGobalBookID share].bookID] intValue];
-            if (v != nil) {
-                totalCount = v;
+            
+            if (entity.saveData) {
+                if (v != nil) {
+                    totalCount = v;
+                } else {
+                    if (totalCount == -1) {
+                        totalCount = ce.minValue;
+                    }
+                }
             } else {
-                if (totalCount == -1)
-                {
+                if (totalCount == -1) {
                     totalCount = ce.minValue;
                 }
             }
@@ -54,12 +67,18 @@ static int totalCount = -1;
         else
         {
 //            self.selfValue = ce.minValue;
-            int v =[[[NSUserDefaults standardUserDefaults] valueForKey:entity.entityid] intValue];
-            if (v != nil) {
-                self.selfValue = v;
+           NSString *ID = [NSString stringWithFormat:@"%@_%@", [HLGobalBookID share].bookID, entity.entityid];
+            if (entity.saveData) {
+                int v =[[[NSUserDefaults standardUserDefaults] valueForKey: ID] intValue];
+                if (v != nil) {
+                    self.selfValue = v;
+                } else {
+                    self.selfValue = ce.minValue;
+                }
             } else {
                 self.selfValue = ce.minValue;
             }
+            
             [self.display setText:[NSString stringWithFormat:@"%d",self.selfValue]];
             
         }
@@ -208,13 +227,18 @@ static int totalCount = -1;
 }
 
 -(void)storeValue:(int)value {
-    [[NSUserDefaults standardUserDefaults] setObject:[[NSNumber alloc] initWithInt:value] forKey:self.container.entity.entityid];
+    if (!saveData) { return; }
+    NSString *ID = [NSString stringWithFormat:@"%@_%@", [HLGobalBookID share].bookID, container.entity.entityid];
+    [[NSUserDefaults standardUserDefaults] setObject:[[NSNumber alloc] initWithInt:value] forKey:ID];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(void)storeTotalCount {
-    [[NSUserDefaults standardUserDefaults] setObject:[[NSNumber alloc] initWithInt:totalCount] forKey:[HLGobalBookID share].bookID ];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+     if (saveData) {
+         [[NSUserDefaults standardUserDefaults] setObject:[[NSNumber alloc] initWithInt:totalCount] forKey:[HLGobalBookID share].bookID ];
+         [[NSUserDefaults standardUserDefaults] synchronize];
+     }
+    
 }
 
 -(UIColor*)colorWithHexString:(NSString*)hex
