@@ -93,6 +93,8 @@
     }
 
     self.bookviewcontroller.view.frame = frameRect;
+    
+    
 
     if ([self.entity.bookType isEqualToString:@"PDF"] || [self.entity.bookType isEqualToString:@"EPUB"])
     {
@@ -127,7 +129,7 @@
             }
             
             ((HLBasicControlPanelViewController *)self.controlPanelViewController).isPDFType = YES;
-            ((HLBasicControlPanelViewController *)self.controlPanelViewController).activePushBtn = self.entity.activePush;
+//            ((HLBasicControlPanelViewController *)self.controlPanelViewController).activePushBtn = self.entity.activePush;
         }
         
         self.controlPanelViewController.view.frame = frameRect;
@@ -145,6 +147,8 @@
         self.bookviewcontroller.view.backgroundColor = [UIColor whiteColor];
         return;
     }
+    
+    
     
     if (!self.bookviewcontroller.publicCoverBackGroundImageView) {
         
@@ -193,6 +197,9 @@
         [HLPageDecoder setHorVerMode:NO];
     }
     
+    // Emiaostein, 2017.1.16
+    ((HLBasicControlPanelViewController *)self.controlPanelViewController).activePushBtn = self.entity.activePush;
+    
 //    CGFloat bookViewWidth = CGRectGetWidth(frameRect);
 //    CGFloat bookViewHeight = CGRectGetHeight(frameRect);
 //    CGFloat entityWidth = self.entity.width;
@@ -233,6 +240,7 @@
     [self.bookviewcontroller.view addSubview:self.bookviewcontroller.publicCoverBackGroundImageView];
     [self.bookviewcontroller.view addSubview:self.flipBaseViewController.view];
     [self.bookviewcontroller.view addSubview:self.controlPanelViewController.view];
+    
 }
 
 

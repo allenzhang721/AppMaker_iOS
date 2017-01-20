@@ -12,6 +12,7 @@
 @property (nonatomic,retain) UILabel *display;
 @property Boolean isGlobal;
 @property int selfValue;
+@property Boolean saveData;
 
 -(void) addCount:(int) value;
 -(void) delCount:(int) value;
