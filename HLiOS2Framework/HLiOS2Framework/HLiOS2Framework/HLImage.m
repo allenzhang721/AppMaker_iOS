@@ -61,11 +61,11 @@
         _responder.responderView = self;                        //陈星宇。11.5，responder统一管理
         
         // Emiaostein, 2017.1.16
-//        UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-//        gesture.delegate             = (id <UIGestureRecognizerDelegate>)self;
-//        [self addGestureRecognizer:gesture];
-//        gesture.cancelsTouchesInView = NO;
-//        [gesture release];
+        UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
+        gesture.delegate             = (id <UIGestureRecognizerDelegate>)self;
+        [self addGestureRecognizer:gesture];
+        gesture.cancelsTouchesInView = YES;
+        [gesture release];
         
         UISwipeGestureRecognizer *upSwip = [[[UISwipeGestureRecognizer alloc] init] autorelease];
         upSwip.direction                 = UISwipeGestureRecognizerDirectionUp;

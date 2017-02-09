@@ -34,4 +34,10 @@
     }
 }
 
+- (void)clean {
+    [super clean];
+    [(YTPlayerView *)self.uicomponent stopVideo];
+    
+}
+
 @end
