@@ -1,2 +1,6 @@
 /* Localized versions of Info.plist keys */
 
+"InputIP" = "Please input your IP address";
+"Cancel" = "Cancel";
+"Done" = "Done";
+"Delete" = "Are you sure to delete it?";

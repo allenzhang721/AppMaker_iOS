@@ -1,2 +1,6 @@
 /* Localized versions of Info.plist keys */
 
+"InputIP" = "请输入IP地址";
+"Cancel" = "取消";
+"Done" = "确定";
+"Delete" = "是否确定删除所选对象？";

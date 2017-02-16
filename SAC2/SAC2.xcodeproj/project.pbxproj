@@ -46,6 +46,7 @@
 		2C7E0A751D9A4E6400E3766E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A741D9A4E6400E3766E /* MapKit.framework */; };
 		2C7E0A7C1D9A557A00E3766E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A7B1D9A557A00E3766E /* CoreLocation.framework */; };
 		2CE398D81D6ABD0C00D699E2 /* SAC2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE398D71D6ABD0C00D699E2 /* SAC2-Info.plist */; };
+		2CE39A911E557663006C7CB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CE39A931E557663006C7CB8 /* Localizable.strings */; };
 		6A05F1AE17241524006D6973 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A05F16317241524006D6973 /* 0.png */; };
 		6A05F1AF17241524006D6973 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A05F16417241524006D6973 /* 1.png */; };
 		6A05F1B017241524006D6973 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A05F16517241524006D6973 /* 2.png */; };
@@ -375,6 +376,13 @@
 		2C7E0A7B1D9A557A00E3766E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2CBE0A621D6ABE88006D0D3B /* HLiOS2Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HLiOS2Framework.xcodeproj; path = ../../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework.xcodeproj; sourceTree = "<group>"; };
 		2CE398D71D6ABD0C00D699E2 /* SAC2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAC2-Info.plist"; sourceTree = "<group>"; };
+		2CE39A871E557191006C7CB8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2CE39A8C1E5571B0006C7CB8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/ViewController_iPhone.xib"; sourceTree = "<group>"; };
+		2CE39A8D1E5571B0006C7CB8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/ViewController_iPad.xib"; sourceTree = "<group>"; };
+		2CE39A8E1E5571B1006C7CB8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2CE39A921E557663006C7CB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2CE39A941E557664006C7CB8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2CE39A951E557666006C7CB8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6A05F16317241524006D6973 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		6A05F16417241524006D6973 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		6A05F16517241524006D6973 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -1082,6 +1090,7 @@
 			isa = PBXGroup;
 			children = (
 				C351E56B18559BC00034AFE5 /* HLRealTimeTest2-Prefix.pch */,
+				2CE39A931E557663006C7CB8 /* Localizable.strings */,
 				2CE398D71D6ABD0C00D699E2 /* SAC2-Info.plist */,
 				6ADEFC23171F943F00BD80E9 /* InfoPlist.strings */,
 				6ADEFC26171F943F00BD80E9 /* main.m */,
@@ -1499,7 +1508,7 @@
 				TargetAttributes = {
 					6ADEFC16171F943F00BD80E9 = {
 						DevelopmentTeam = N8WL2V9VY9;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1510,6 +1519,7 @@
 			knownRegions = (
 				en,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 6ADEFC0E171F943F00BD80E9;
 			productRefGroup = 6ADEFC18171F943F00BD80E9 /* Products */;
@@ -1686,6 +1696,7 @@
 				6A6A2E291727853C0096335A /* iphone_edit@2x.png in Resources */,
 				6A6A2E2A1727853C0096335A /* iphone_eidt_down.png in Resources */,
 				6A6A2E2B1727853C0096335A /* iphone_eidt_down@2x.png in Resources */,
+				2CE39A911E557663006C7CB8 /* Localizable.strings in Resources */,
 				6A6A2E2C1727853C0096335A /* iphone_info_down.png in Resources */,
 				6A6A2E2D1727853C0096335A /* iphone_info_down@2x.png in Resources */,
 				6A6A2E2E1727853C0096335A /* iphone_info.png in Resources */,
@@ -1815,10 +1826,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		2CE39A931E557663006C7CB8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CE39A921E557663006C7CB8 /* en */,
+				2CE39A941E557664006C7CB8 /* zh-Hans */,
+				2CE39A951E557666006C7CB8 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6ADEFC23171F943F00BD80E9 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6ADEFC24171F943F00BD80E9 /* en */,
+				2CE39A871E557191006C7CB8 /* zh-Hans */,
+				2CE39A8E1E5571B1006C7CB8 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1827,6 +1850,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6ADEFC36171F943F00BD80E9 /* en */,
+				2CE39A8C1E5571B0006C7CB8 /* zh-Hant */,
 			);
 			name = ViewController_iPhone.xib;
 			sourceTree = "<group>";
@@ -1835,6 +1859,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6ADEFC39171F943F00BD80E9 /* en */,
+				2CE39A8D1E5571B0006C7CB8 /* zh-Hant */,
 			);
 			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
@@ -1912,7 +1937,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = N8WL2V9VY9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1975,9 +2000,9 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
-				PROVISIONING_PROFILE = "ee973989-9850-4c8c-aa9b-6e8ea38a44c3";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				PROVISIONING_PROFILE_SPECIFIER = "com.usmarttech.smartApps AppStore";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
@@ -1990,8 +2015,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: u-Smart Technology Co., Ltd. (N8WL2V9VY9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: u-Smart Technology Co., Ltd. (N8WL2V9VY9)";
-				DEVELOPMENT_TEAM = N8WL2V9VY9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2054,9 +2079,9 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = SAC2;
-				PROVISIONING_PROFILE = "ee973989-9850-4c8c-aa9b-6e8ea38a44c3";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				PROVISIONING_PROFILE_SPECIFIER = "com.usmarttech.smartApps AppStore";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;

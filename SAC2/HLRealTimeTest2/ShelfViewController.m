@@ -121,7 +121,12 @@
 }
 
 -(void) addBook {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"請輸入IP地址" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    NSString *inputIP = NSLocalizedString(@"InputIP", @"");
+    NSString *donestr = NSLocalizedString(@"Done", @"");
+    NSString *cancelstr = NSLocalizedString(@"Cancel", @"");
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:inputIP message:nil preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addTextFieldWithConfigurationHandler:nil];
     
@@ -133,14 +138,14 @@
     }
     
     __block typeof(textfiled) wt = textfiled;
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:cancelstr style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
         [wt resignFirstResponder];
     }];
     
     
     __block typeof(self) ws = self;
     __block typeof(alert) walert = alert;
-    UIAlertAction *done = [UIAlertAction actionWithTitle:@"確定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *done = [UIAlertAction actionWithTitle:donestr style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         NSString *IP = walert.textFields[0].text;
         
         [wt resignFirstResponder];
@@ -219,13 +224,16 @@
 
 -(void) showAlertRemoveBookAt:(NSUInteger)i {
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否確定刪除所選對象？" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+    NSString *delete = NSLocalizedString(@"Delete", @"");
+    NSString *donestr = NSLocalizedString(@"Done", @"");
+    NSString *cancelstr = NSLocalizedString(@"Cancel", @"");
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:delete message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:cancelstr style:(UIAlertActionStyleCancel) handler:nil];
     
     __block typeof(self) ws = self;
     __block typeof(alert) walert = alert;
     __block typeof(shelfController) wc = shelfController;
-    UIAlertAction *done = [UIAlertAction actionWithTitle:@"確定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *done = [UIAlertAction actionWithTitle:donestr style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         [wc removeBookAt:i];
     }];
     
