@@ -37,7 +37,6 @@
 		29A3F67718950003002C8E44 /* HeaderViewController_iphone_iOS7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29A3F67618950003002C8E44 /* HeaderViewController_iphone_iOS7.xib */; };
 		29CF1F13196A66A80079F372 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29CF1F12196A66A80079F372 /* images.xcassets */; };
 		29E3EC3819C19BF6005633CA /* libHLiOS2Framework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E3EC3719C19BF6005633CA /* libHLiOS2Framework.a */; };
-		29EC991F196BC5D90089F223 /* TW_images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29EC991E196BC5D90089F223 /* TW_images.xcassets */; };
 		2C57A7F91D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C57A7F81D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework */; };
 		2C57A7FE1D98ECF200F886EE /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C57A7F81D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework */; };
 		2C57A7FF1D98ECF200F886EE /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C57A7F81D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -45,6 +44,7 @@
 		2C5DBC6C1DC6164800C175F0 /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5DBC6A1DC6164800C175F0 /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C7E0A751D9A4E6400E3766E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A741D9A4E6400E3766E /* MapKit.framework */; };
 		2C7E0A7C1D9A557A00E3766E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A7B1D9A557A00E3766E /* CoreLocation.framework */; };
+		2C994C691E56B60000895B30 /* TW-images-3.0.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C994C681E56B60000895B30 /* TW-images-3.0.xcassets */; };
 		2CE398D81D6ABD0C00D699E2 /* SAC2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE398D71D6ABD0C00D699E2 /* SAC2-Info.plist */; };
 		2CE39A911E557663006C7CB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CE39A931E557663006C7CB8 /* Localizable.strings */; };
 		6A05F1AE17241524006D6973 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A05F16317241524006D6973 /* 0.png */; };
@@ -369,11 +369,11 @@
 		29CF1F15196A67D40079F372 /* LocalizationDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationDefine.h; sourceTree = "<group>"; };
 		29CF1F76196AA28B0079F372 /* appMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appMaker.h; sourceTree = "<group>"; };
 		29E3EC3719C19BF6005633CA /* libHLiOS2Framework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHLiOS2Framework.a; path = "../../../../../../../../../OutSourcing work copy/newHLIOS/tags/Development_BugFixed/HLiOS2Framework/HLiOS2Framework/build/Release-iphoneos/libHLiOS2Framework.a"; sourceTree = "<group>"; };
-		29EC991E196BC5D90089F223 /* TW_images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TW_images.xcassets; sourceTree = "<group>"; };
 		2C57A7F81D98DD2600F886EE /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
 		2C5DBC6A1DC6164800C175F0 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebImage.framework; sourceTree = "<group>"; };
 		2C7E0A741D9A4E6400E3766E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2C7E0A7B1D9A557A00E3766E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2C994C681E56B60000895B30 /* TW-images-3.0.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "TW-images-3.0.xcassets"; sourceTree = "<group>"; };
 		2CBE0A621D6ABE88006D0D3B /* HLiOS2Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HLiOS2Framework.xcodeproj; path = ../../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework.xcodeproj; sourceTree = "<group>"; };
 		2CE398D71D6ABD0C00D699E2 /* SAC2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAC2-Info.plist"; sourceTree = "<group>"; };
 		2CE39A871E557191006C7CB8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -1081,7 +1081,7 @@
 				6ADEFC38171F943F00BD80E9 /* ViewController_iPad.xib */,
 				6ADEFC21171F943F00BD80E9 /* Supporting Files */,
 				29CF1F12196A66A80079F372 /* images.xcassets */,
-				29EC991E196BC5D90089F223 /* TW_images.xcassets */,
+				2C994C681E56B60000895B30 /* TW-images-3.0.xcassets */,
 			);
 			path = HLRealTimeTest2;
 			sourceTree = "<group>";
@@ -1630,7 +1630,6 @@
 				6A05F1C617241524006D6973 /* 24.png in Resources */,
 				6A05F1C717241524006D6973 /* 25.png in Resources */,
 				6A05F1C817241524006D6973 /* 26.png in Resources */,
-				29EC991F196BC5D90089F223 /* TW_images.xcassets in Resources */,
 				6A05F1C917241524006D6973 /* 27.png in Resources */,
 				6A05F1CA17241524006D6973 /* 28.png in Resources */,
 				2917614E1965481500B6A2F0 /* appMakerUI.xcassets in Resources */,
@@ -1669,6 +1668,7 @@
 				6A05F1EA17241524006D6973 /* 60.png in Resources */,
 				6A05F1EB17241524006D6973 /* 61.png in Resources */,
 				6A05F1EC17241524006D6973 /* 62.png in Resources */,
+				2C994C691E56B60000895B30 /* TW-images-3.0.xcassets in Resources */,
 				6A05F1ED17241524006D6973 /* 63.png in Resources */,
 				6A05F1EE17241524006D6973 /* 64.png in Resources */,
 				6A05F1EF17241524006D6973 /* 65.png in Resources */,
@@ -1933,8 +1933,8 @@
 		6ADEFC3E171F943F00BD80E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW-3.0";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW3";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -2012,8 +2012,8 @@
 		6ADEFC3F171F943F00BD80E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW-3.0";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW3";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: u-Smart Technology Co., Ltd. (N8WL2V9VY9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
