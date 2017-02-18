@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SAC2
+
+  Created by Emiaostein on 16/02/2017.
+  Copyright © 2017 北京谋易软件有限责任公司. All rights reserved.
+*/
+
+"InputIP" = "Please input your IP address";
+"Cancel" = "Cancel";
+"Done" = "Done";
+"Delete" = "Are you sure to delete it?";

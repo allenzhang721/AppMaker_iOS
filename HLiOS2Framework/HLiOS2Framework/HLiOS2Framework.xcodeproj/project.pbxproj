@@ -700,6 +700,7 @@
 		2C11CE4B1D924BB000E9C29E /* HLTextInputComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTextInputComponent.m; sourceTree = "<group>"; };
 		2C2097B91D95396D00C5135E /* HLGobalBookID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLGobalBookID.h; sourceTree = "<group>"; };
 		2C2097BA1D95396D00C5135E /* HLGobalBookID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLGobalBookID.m; sourceTree = "<group>"; };
+		2C2104EE1E57422200C19F1E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2C3977D81DC23E0800301017 /* HLTableCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCellViewModel.h; sourceTree = "<group>"; };
 		2C3977D91DC23E0800301017 /* HLTableCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCellViewModel.m; sourceTree = "<group>"; };
 		2C3977DC1DC2428700301017 /* HLTableCellSubViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTableCellSubViewModel.h; sourceTree = "<group>"; };
@@ -4788,6 +4789,7 @@
 			children = (
 				2917615A19654DAD00B6A2F0 /* en */,
 				2CE39A8B1E5571B0006C7CB8 /* zh-Hant */,
+				2C2104EE1E57422200C19F1E /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

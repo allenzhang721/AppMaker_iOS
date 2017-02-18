@@ -1,0 +1,65 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2F9A8AD88BE7CBA2C74A1C9E0B9E1D1323A31ED7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F5B4EC300E7199406BA2B2AA6070092FA65DDD89" : 9223372036854775807,
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 9223372036854775807,
+    "8B123162C394A0A0A138779108E4C59DD771865A" : 9223372036854775807,
+    "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : 9223372036854775807,
+    "2F9A8AD88BE7CBA2C74A1C9E0B9E1D1323A31ED7" : 9223372036854775807,
+    "8A29DA7057736C875D47E25C1221D68557445C94" : 9223372036854775807,
+    "3DD768C8AB2D6A2647C9EF99992D3CC5820E77C4" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "438CF87E-2D0D-485D-B677-D917C1669D47",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F5B4EC300E7199406BA2B2AA6070092FA65DDD89" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/PromiseKit\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/Alamofire\/",
+    "8B123162C394A0A0A138779108E4C59DD771865A" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/RxSwift\/",
+    "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/SDWebImage\/",
+    "2F9A8AD88BE7CBA2C74A1C9E0B9E1D1323A31ED7" : "AppMaker_iOS\/",
+    "8A29DA7057736C875D47E25C1221D68557445C94" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/youtube-ios-player-helper\/",
+    "3DD768C8AB2D6A2647C9EF99992D3CC5820E77C4" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/Zip\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Smart App Creator",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Smart App Creator\/Smart App Creator.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/allenzhang721\/AppMaker_iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2F9A8AD88BE7CBA2C74A1C9E0B9E1D1323A31ED7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/marmelroy\/Zip",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3DD768C8AB2D6A2647C9EF99992D3CC5820E77C4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/youtube\/youtube-ios-player-helper",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8A29DA7057736C875D47E25C1221D68557445C94"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ReactiveX\/RxSwift",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8B123162C394A0A0A138779108E4C59DD771865A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rs\/SDWebImage",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E28E36D423EC87798E52E2BF482E9F7A1E6479D6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mxcl\/PromiseKit",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F5B4EC300E7199406BA2B2AA6070092FA65DDD89"
+    }
+  ]
+}

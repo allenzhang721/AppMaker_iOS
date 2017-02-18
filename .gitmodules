@@ -1,0 +1,18 @@
+[submodule "Smart App Creator/Frameworks/RxSwift"]
+	path = Smart App Creator/Frameworks/RxSwift
+	url = https://github.com/ReactiveX/RxSwift
+[submodule "Smart App Creator/Frameworks/youtube-ios-player-helper"]
+	path = Smart App Creator/Frameworks/youtube-ios-player-helper
+	url = https://github.com/youtube/youtube-ios-player-helper
+[submodule "Smart App Creator/Frameworks/SDWebImage"]
+	path = Smart App Creator/Frameworks/SDWebImage
+	url = https://github.com/rs/SDWebImage
+[submodule "Smart App Creator/Frameworks/PromiseKit"]
+	path = Smart App Creator/Frameworks/PromiseKit
+	url = https://github.com/mxcl/PromiseKit
+[submodule "Smart App Creator/Frameworks/Alamofire"]
+	path = Smart App Creator/Frameworks/Alamofire
+	url = https://github.com/Alamofire/Alamofire
+[submodule "Smart App Creator/Frameworks/Zip"]
+	path = Smart App Creator/Frameworks/Zip
+	url = https://github.com/marmelroy/Zip

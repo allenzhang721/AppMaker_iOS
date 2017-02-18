@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SAC2
+
+  Created by Emiaostein on 16/02/2017.
+  Copyright © 2017 北京谋易软件有限责任公司. All rights reserved.
+*/
+
+"InputIP" = "請輸入IP地址";
+"Cancel" = "取消";
+"Done" = "確定";
+"Delete" = "是否確定刪除所選對象？";
