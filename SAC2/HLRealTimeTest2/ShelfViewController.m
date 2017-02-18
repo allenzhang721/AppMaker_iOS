@@ -37,7 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.headerViewController = [[App instance] getHeaderViewController];
-    self.headerViewController.view.frame = CGRectMake(0, 0, self.headerViewController.view.frame.size.width, self.headerViewController.view.frame.size.height);
+    self.headerViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.headerViewController.view.frame.size.height);
     [self.view addSubview:self.headerViewController.view];
     self.headerViewController.delegate = self;
     

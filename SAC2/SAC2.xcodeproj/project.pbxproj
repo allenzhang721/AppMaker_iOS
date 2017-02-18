@@ -45,6 +45,7 @@
 		2C7E0A751D9A4E6400E3766E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A741D9A4E6400E3766E /* MapKit.framework */; };
 		2C7E0A7C1D9A557A00E3766E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0A7B1D9A557A00E3766E /* CoreLocation.framework */; };
 		2C994C691E56B60000895B30 /* TW-images-3.0.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C994C681E56B60000895B30 /* TW-images-3.0.xcassets */; };
+		2CAD39471E58A27D002D7A1A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD39461E58A27D002D7A1A /* Launch Screen.storyboard */; };
 		2CE398D81D6ABD0C00D699E2 /* SAC2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE398D71D6ABD0C00D699E2 /* SAC2-Info.plist */; };
 		2CE39A911E557663006C7CB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CE39A931E557663006C7CB8 /* Localizable.strings */; };
 		6A05F1AE17241524006D6973 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A05F16317241524006D6973 /* 0.png */; };
@@ -374,6 +375,7 @@
 		2C7E0A741D9A4E6400E3766E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2C7E0A7B1D9A557A00E3766E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2C994C681E56B60000895B30 /* TW-images-3.0.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "TW-images-3.0.xcassets"; sourceTree = "<group>"; };
+		2CAD39461E58A27D002D7A1A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2CBE0A621D6ABE88006D0D3B /* HLiOS2Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HLiOS2Framework.xcodeproj; path = ../../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework.xcodeproj; sourceTree = "<group>"; };
 		2CE398D71D6ABD0C00D699E2 /* SAC2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAC2-Info.plist"; sourceTree = "<group>"; };
 		2CE39A871E557191006C7CB8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -1082,6 +1084,7 @@
 				6ADEFC21171F943F00BD80E9 /* Supporting Files */,
 				29CF1F12196A66A80079F372 /* images.xcassets */,
 				2C994C681E56B60000895B30 /* TW-images-3.0.xcassets */,
+				2CAD39461E58A27D002D7A1A /* Launch Screen.storyboard */,
 			);
 			path = HLRealTimeTest2;
 			sourceTree = "<group>";
@@ -1572,6 +1575,7 @@
 				6ADEFC5F171F999300BD80E9 /* ipad_edit@2x.png in Resources */,
 				6ADEFC64171F9B2A00BD80E9 /* ipad_add_down.png in Resources */,
 				6ADEFC65171F9B2A00BD80E9 /* ipad_add_down@2x.png in Resources */,
+				2CAD39471E58A27D002D7A1A /* Launch Screen.storyboard in Resources */,
 				6ADEFC66171F9B2A00BD80E9 /* ipad_add.png in Resources */,
 				6ADEFC67171F9B2A00BD80E9 /* ipad_add@2x.png in Resources */,
 				6ADEFC6C171F9BF000BD80E9 /* ipad_info_down.png in Resources */,
@@ -1871,6 +1875,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1893,7 +1898,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "553E7AE6-CCA4-4B88-B00A-F18B68360A28";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "553E7AE6-CCA4-4B88-B00A-F18B68360A28";
@@ -1906,6 +1911,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1920,7 +1926,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "553E7AE6-CCA4-4B88-B00A-F18B68360A28";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "553E7AE6-CCA4-4B88-B00A-F18B68360A28";
@@ -1934,7 +1940,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW-3.0";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW3";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-5";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -2013,7 +2019,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-TW-3.0";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-TW3";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-5";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: u-Smart Technology Co., Ltd. (N8WL2V9VY9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";

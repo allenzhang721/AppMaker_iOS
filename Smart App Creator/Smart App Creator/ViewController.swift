@@ -152,9 +152,10 @@ extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-//        if let book = manager.book(at: indexPath.item), let url = book.localUrl {
+        if let book = manager.book(at: indexPath.item) {
 //            openBook(at: url)
-//        }
+            appMaker.openBook(withRootViewController: self, bookDirectoryPath: book.bookDirUrl.path, theDelegate: nil, hiddenBackIcon: false, hiddenShareIcon: true)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -212,6 +213,7 @@ class BookModel: NSObject, NSCoding {
     
     var stateChangedHandler: ((State) -> ())?
     var displayName: String {return name.isEmpty ? "Untitled" : name}
+    var bookDirUrl: URL {return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(ID, isDirectory: true)}
     var coverImg: UIImage {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let bookDir = documentsURL.appendingPathComponent(ID, isDirectory: true)
@@ -287,18 +289,16 @@ class BookManager {
         save()
         
         let bookPromise = download(book: bookurl, ID: ID)
-//        let coverPromise = download(cover: coverUrl, ID: ID)
-//        let namePromise = download(bookName: nameUrl, ID: ID)
-        
         let _ = bookPromise.then {[weak self] (success) -> (Promise<Bool>, Promise<Bool>) in
             guard let sf = self else {fatalError()}
             return (Promise(value: success), sf.download(cover: coverUrl, ID: ID))
+            
         }.then { [weak self] (bookSuccess, coverSuccess) -> (Promise<Bool>, Promise<String?>) in
             guard let sf = self else {fatalError()}
             return (Promise(value: bookSuccess), sf.download(bookName: nameUrl, ID: ID))
+            
         }.then {[weak self, weak model] (bookSuccess, name) -> Bool in
             guard let sf = self, let m = model, let i = self?.books.index(where: {$0.ID == m.ID}) else {return false}
-
             if bookSuccess {
                 sf.bookStates[ID] = .done
             } else {
@@ -389,14 +389,14 @@ class BookManager {
                 if response.error == nil, let zipUrl = response.destinationURL {
                     do {
                         try Zip.unzipFile(zipUrl, destination: bookDir, overwrite: true, password: nil, progress: nil)
-                        print("book success")
+//                        print("book success")
                         fullfil(true)
                     } catch {
-                        print("book failture")
+//                        print("book failture")
                         fullfil(false)
                     }
                 } else {
-                    print("book error")
+//                    print("book error")
                     fullfil(false)
                 }
             }
@@ -416,10 +416,10 @@ class BookManager {
             Alamofire.download(url, to: destination).response { response in
 //                print(response)
                 if response.error == nil {
-                    print("cover success")
+//                    print("cover success")
                     fullFill(true)
                 } else {
-                    print("cover fail")
+//                    print("cover fail")
                     fullFill(false)
                 }
             }
@@ -441,15 +441,15 @@ class BookManager {
                 do {
                     if response.error == nil, let nameFileUrl = response.destinationURL {
                          let string = try String(contentsOf: nameFileUrl)
-                        print("name success")
+//                        print("name success")
                         fullFill(string)
                         
                     } else {
-                        print("name failt")
+//                        print("name failt")
                         fullFill(nil)
                     }
                 } catch {
-                    print("name error")
+//                    print("name error")
                     fullFill(nil)
                 }
             }

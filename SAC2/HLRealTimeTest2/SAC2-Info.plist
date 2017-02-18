@@ -57,6 +57,8 @@
 	<string>Use your Location Temporary.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Use your Photo Library.</string>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch Screen</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

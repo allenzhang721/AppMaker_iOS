@@ -115,6 +115,7 @@
     [super viewDidAppear:animated];
     if (self.isFirstLaunch == YES)
     {
+        self.launchViewController.view.frame = self.view.bounds;
         [self.view addSubview:self.launchViewController.view];
         self.isFirstLaunch = NO;
 

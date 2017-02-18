@@ -5,6 +5,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "F5B4EC300E7199406BA2B2AA6070092FA65DDD89" : 9223372036854775807,
+    "BADA5BBA47957E79D23EEC2252C812D67AB5A5CA" : 9223372036854775807,
     "67620B5EFA902936DF04070AF595B76AB0333747" : 9223372036854775807,
     "8B123162C394A0A0A138779108E4C59DD771865A" : 9223372036854775807,
     "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : 9223372036854775807,
@@ -15,6 +16,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "438CF87E-2D0D-485D-B677-D917C1669D47",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "F5B4EC300E7199406BA2B2AA6070092FA65DDD89" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/PromiseKit\/",
+    "BADA5BBA47957E79D23EEC2252C812D67AB5A5CA" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/TouchXML\/",
     "67620B5EFA902936DF04070AF595B76AB0333747" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/Alamofire\/",
     "8B123162C394A0A0A138779108E4C59DD771865A" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/RxSwift\/",
     "E28E36D423EC87798E52E2BF482E9F7A1E6479D6" : "AppMaker_iOS\/Smart%20App%20Creator\/Frameworks\/SDWebImage\/",
@@ -50,6 +52,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ReactiveX\/RxSwift",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8B123162C394A0A0A138779108E4C59DD771865A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TouchCode\/TouchXML",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BADA5BBA47957E79D23EEC2252C812D67AB5A5CA"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rs\/SDWebImage",
