@@ -210,7 +210,7 @@
 
 - (CGSize)GMGridView:(GMGridView *)gridView sizeForItemsInInterfaceOrientation:(UIInterfaceOrientation)orientation
 {
-    return CGSizeMake(160, 230 - 32);      //每个Cell的大小
+    return CGSizeMake(CGRectGetWidth(gridView.bounds)/2, 230 - 32);      //每个Cell的大小
 }
 
 - (NSInteger)numberOfItemsInGMGridView:(GMGridView *)gridView

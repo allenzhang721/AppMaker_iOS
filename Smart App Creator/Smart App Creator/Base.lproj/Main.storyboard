@@ -112,7 +112,7 @@
                             <barButtonItem image="add" id="UGG-3L-trT">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="add:" destination="BYZ-38-t0r" id="XC8-Nz-5Ll"/>
+                                    <action selector="addClick:" destination="BYZ-38-t0r" id="xgA-Mu-lnj"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="1079.2" y="138.98050974512745"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="pGs-9G-CfM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DTa-Hx-XVu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DTa-Hx-XVu" customClass="NavigationViewController" customModule="Smart_App_Creator" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Pn0-6W-BRe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

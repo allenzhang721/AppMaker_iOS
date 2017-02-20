@@ -551,7 +551,7 @@
 		C3FCF57917729F410086B321 /* PDFComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FCF57717729F410086B321 /* PDFComponent.h */; };
 		C3FCF57A17729F410086B321 /* PDFComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FCF57817729F410086B321 /* PDFComponent.m */; };
 		C3FCF57D1772A03C0086B321 /* HLBookController.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FCF57B1772A03C0086B321 /* HLBookController.h */; };
-		C3FCF57E1772A03C0086B321 /* HLBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FCF57C1772A03C0086B321 /* HLBookController.m */; };
+		C3FCF57E1772A03C0086B321 /* HLBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FCF57C1772A03C0086B321 /* HLBookController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C3FCF59E1772A1EC0086B321 /* CGPDFDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FCF58A1772A1EB0086B321 /* CGPDFDocument.h */; };
 		C3FCF59F1772A1EC0086B321 /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FCF58B1772A1EB0086B321 /* CGPDFDocument.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C3FCF5A01772A1EC0086B321 /* HLReaderDocumentOutline.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FCF58C1772A1EB0086B321 /* HLReaderDocumentOutline.h */; };

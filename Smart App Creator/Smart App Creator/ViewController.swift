@@ -11,11 +11,36 @@ import PromiseKit
 import Alamofire
 import Zip
 
+extension String {
+    /*
+     "InputIPTitle" = "請輸入IP地址";
+     "Cancel" = "取消";
+     "Done" = "確定";
+     "Delete" = "刪除";
+     "DeleteTitle" = "是否確定刪除所選對象？";
+     "Untitled" = "未命名";
+     */
+    static var cancel: String { return NSLocalizedString("Cancel", comment: "")}
+    static var done: String { return NSLocalizedString("Done", comment: "")}
+    static var delete: String { return NSLocalizedString("Delete", comment: "")}
+    static var untitled: String { return NSLocalizedString("Untitled", comment: "")}
+    static var inputIPTitle: String { return NSLocalizedString("InputIPTitle", comment: "")}
+    static var deleteTitle: String { return NSLocalizedString("DeleteTitle", comment: "")}
+}
+
+class NavigationViewController: UINavigationController {
+    
+    //MARK: Rototation
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {return .portrait}
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var editItem: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     fileprivate let manager = BookManager()
+    fileprivate let maker = appMaker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,19 +58,25 @@ class ViewController: UIViewController {
             }
         }
     }
-    @IBAction func add(_ sender: Any) {
+
+    @IBAction func addClick(_ sender: Any) {
         beganInputIP()
     }
     
     @IBAction func editClick(_ sender: Any) {
+        editOnOff()
+    }
+    
+    private func editOnOff() {
         isEditing = !isEditing
         editItem.tintColor = isEditing ? UIColor(red: 0, green: 0.5, blue: 1.0, alpha: 1) : UIColor.white
         collectionView.reloadData()
     }
+    
     private func beganInputIP() {
-        let doneStr = "Done"
-        let cancelStr = "Cancel"
-        let title = "Input your IP Address"
+        let doneStr = String.done
+        let cancelStr = String.cancel
+        let title = String.inputIPTitle
         
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         alert.addTextField { (field) in
@@ -71,9 +102,9 @@ class ViewController: UIViewController {
     }
     
     fileprivate func beganDelete(at i: Int) {
-        let deleteStr = "Delete"
-        let cancelStr = "Cancel"
-        let title = "Are you sure to delete it?"
+        let deleteStr = String.delete
+        let cancelStr = String.cancel
+        let title = String.deleteTitle
         
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let cancel = UIAlertAction(title: cancelStr, style: .cancel, handler: nil)
@@ -94,7 +125,11 @@ class ViewController: UIViewController {
     }
     
     fileprivate func openBook(at url: URL) {
-        print("Open a book.")
+        maker.openBook(withRootViewController: self,
+                       bookDirectoryPath: url.path,
+                       theDelegate: nil,
+                       hiddenBackIcon: false,
+                       hiddenShareIcon: true)
     }
 }
 
@@ -153,8 +188,7 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         if let book = manager.book(at: indexPath.item) {
-//            openBook(at: url)
-            appMaker.openBook(withRootViewController: self, bookDirectoryPath: book.bookDirUrl.path, theDelegate: nil, hiddenBackIcon: false, hiddenShareIcon: true)
+            openBook(at: book.bookDirUrl)
         }
     }
     
@@ -165,14 +199,11 @@ extension ViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        if let state = manager.state(at: indexPath.item) {
-            if case BookModel.State.done = state {
-                return true
-            }
+        if let state = manager.state(at: indexPath.item), case BookModel.State.done = state {
+            return true
+        } else {
             return false
         }
-        
-        return false
     }
 }
 
@@ -209,11 +240,11 @@ class BookModel: NSObject, NSCoding {
     
     var IP: String
     var ID: String
-    var name: String = ""
+    var name: String = String.untitled
     
     var stateChangedHandler: ((State) -> ())?
-    var displayName: String {return name.isEmpty ? "Untitled" : name}
-    var bookDirUrl: URL {return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(ID, isDirectory: true)}
+    var displayName: String {return name}
+    var bookDirUrl: URL {return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(ID, isDirectory: true).appendingPathComponent("book", isDirectory: true)}
     var coverImg: UIImage {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let bookDir = documentsURL.appendingPathComponent(ID, isDirectory: true)
@@ -312,24 +343,6 @@ class BookManager {
             return true
         }
         
-//
-//        _ = when(fulfilled: bookPromise, coverPromise, namePromise).then {[weak self, weak model] (bookSuccess, coverSuccess, name) -> Bool in
-//            print("All Downlaod End")
-//            guard let sf = self, let m = model, let i = self?.books.index(where: {$0.ID == m.ID}) else {return false}
-//            
-//            if bookSuccess {
-//                sf.bookStates[ID] = .done
-//            } else {
-//                sf.bookStates[ID] = .failture
-//            }
-//            if let name = name {
-//                m.name = name
-//            }
-//            sf.actionHandler?(.update(i))
-//            sf.save()
-//            return true
-//        }
-        
         return true
     }
     
@@ -375,7 +388,6 @@ class BookManager {
     }
     
     private func download(book bookUrl: URL, ID: String) -> Promise<Bool> {
-        
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let bookDir = documentsURL.appendingPathComponent(ID, isDirectory: true)
         let bookZip = bookDir.appendingPathComponent("book").appendingPathExtension("zip")
@@ -385,18 +397,14 @@ class BookManager {
             }
             
             Alamofire.download(bookUrl, to: destination).response { response in
-//                print(response)
                 if response.error == nil, let zipUrl = response.destinationURL {
                     do {
                         try Zip.unzipFile(zipUrl, destination: bookDir, overwrite: true, password: nil, progress: nil)
-//                        print("book success")
                         fullfil(true)
                     } catch {
-//                        print("book failture")
                         fullfil(false)
                     }
                 } else {
-//                    print("book error")
                     fullfil(false)
                 }
             }
@@ -414,12 +422,9 @@ class BookManager {
             }
             
             Alamofire.download(url, to: destination).response { response in
-//                print(response)
                 if response.error == nil {
-//                    print("cover success")
                     fullFill(true)
                 } else {
-//                    print("cover fail")
                     fullFill(false)
                 }
             }
@@ -437,19 +442,15 @@ class BookManager {
             }
             
             Alamofire.download(url, to: destination).response { response in
-//                print(response)
                 do {
                     if response.error == nil, let nameFileUrl = response.destinationURL {
                          let string = try String(contentsOf: nameFileUrl)
-//                        print("name success")
                         fullFill(string)
                         
                     } else {
-//                        print("name failt")
                         fullFill(nil)
                     }
                 } catch {
-//                    print("name error")
                     fullFill(nil)
                 }
             }
@@ -476,7 +477,7 @@ class ShelfCell: UICollectionViewCell {
     var redownloadHandler: (()->())?
     
     var titleText: String {
-        get { return title.text ?? "Smart App Creator" }
+        get { return title.text ?? "Untitled" }
         set { title.text = newValue }
     }
     
@@ -524,7 +525,7 @@ extension UserDefaults {
         }
     }
     static var IP: String? {
-        get { return UserDefaults.standard.value(forKey: DefaultKeys.Keys.IP.rawValue) as? String ?? "192.168.1.103" }
+        get { return UserDefaults.standard.value(forKey: DefaultKeys.Keys.IP.rawValue) as? String ?? "192.168." }
         set { UserDefaults.standard.setValue(newValue, forKey: DefaultKeys.Keys.IP.rawValue)}
     }
 }

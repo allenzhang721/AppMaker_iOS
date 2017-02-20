@@ -6,7 +6,9 @@
   Copyright © 2017 北京谋易软件有限责任公司. All rights reserved.
 */
 
-"InputIP" = "Please input your IP address";
+"InputIPTitle" = "Please input your IP address";
 "Cancel" = "Cancel";
 "Done" = "Done";
-"Delete" = "Are you sure to delete it?";
+"Delete" = "Delete";
+"DeleteTitle" = "Are you sure to delete it?";
+"Untitled" = "Untitled";

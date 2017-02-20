@@ -194,7 +194,7 @@
     }
     
     [self.bookController.bookviewcontroller dismissModalViewControllerAnimated:NO];
-    self.bookController = nil;
+//    self.bookController = nil;
     if ([self.delegate respondsToSelector:@selector(onCloseBook)])
     {
         [self.delegate onCloseBook];

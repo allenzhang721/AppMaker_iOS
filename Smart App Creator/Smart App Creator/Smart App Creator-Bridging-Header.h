@@ -5,3 +5,4 @@
 #import "appMaker.h"
 #import "TouchXML.h"
 #import "ZipArchive.h"
+#import "zip.h"

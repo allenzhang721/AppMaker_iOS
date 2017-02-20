@@ -63,6 +63,7 @@
 		2C4C289A1E5891A7003C5A1F /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28921E5891A7003C5A1F /* unzip.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2C4C289B1E5891A7003C5A1F /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28941E5891A7003C5A1F /* zip.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2C4C289C1E5891A7003C5A1F /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28971E5891A7003C5A1F /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C909F251E5A9B670076933F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C909F241E5A9B670076933F /* libz.tbd */; };
 		2C994C8C1E56D52600895B30 /* SACPublisherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C994C8B1E56D52600895B30 /* SACPublisherTests.swift */; };
 		2C994C971E56D52600895B30 /* SACPublisherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C994C961E56D52600895B30 /* SACPublisherUITests.swift */; };
 		2C994CB21E56DCB500895B30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C994CAA1E56DCB500895B30 /* AppDelegate.swift */; };
@@ -366,6 +367,7 @@
 		2C4C28951E5891A7003C5A1F /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		2C4C28961E5891A7003C5A1F /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		2C4C28971E5891A7003C5A1F /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
+		2C909F241E5A9B670076933F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2C994C731E56D52600895B30 /* Smart App Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart App Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C994C871E56D52600895B30 /* Smart App CreatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart App CreatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C994C8B1E56D52600895B30 /* SACPublisherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SACPublisherTests.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C909F251E5A9B670076933F /* libz.tbd in Frameworks */,
 				2C4C28361E588DF4003C5A1F /* libxml2.tbd in Frameworks */,
 				2C4C27D51E58042E003C5A1F /* Alamofire.framework in Frameworks */,
 				2C4C27BB1E580374003C5A1F /* PromiseKit.framework in Frameworks */,
@@ -440,6 +443,7 @@
 		2C2104C51E57407800C19F1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C909F241E5A9B670076933F /* libz.tbd */,
 				2C4C28351E588DF4003C5A1F /* libxml2.tbd */,
 				2C4C288C1E589149003C5A1F /* UnZip */,
 				2C4C280C1E588DB4003C5A1F /* TouchXML */,
@@ -1191,6 +1195,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart App Creator/Smart App Creator-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1218,6 +1223,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart App Creator/Smart App Creator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

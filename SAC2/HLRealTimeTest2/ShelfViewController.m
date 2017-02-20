@@ -120,6 +120,11 @@
 //	}];
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.shelfGridView.frame = self.view.bounds;
+}
+
 -(void) addBook {
     
     NSString *inputIP = NSLocalizedString(@"InputIP", @"");
