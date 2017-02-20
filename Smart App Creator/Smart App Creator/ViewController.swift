@@ -241,7 +241,6 @@ class BookModel: NSObject, NSCoding {
     var IP: String
     var ID: String
     var name: String = String.untitled
-    
     var stateChangedHandler: ((State) -> ())?
     var displayName: String {return name}
     var bookDirUrl: URL {return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(ID, isDirectory: true).appendingPathComponent("book", isDirectory: true)}
@@ -249,17 +248,11 @@ class BookModel: NSObject, NSCoding {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let bookDir = documentsURL.appendingPathComponent(ID, isDirectory: true)
         let cover = bookDir.appendingPathComponent("cover").appendingPathExtension("png")
-        if let cache = coverCache {
-            return cache
-        }
-        if let image = UIImage(contentsOfFile: cover.path) {
-            coverCache = image
-        }
+        if let cache = coverCache { return cache }
+        if let image = UIImage(contentsOfFile: cover.path) { coverCache = image }
         return coverCache ?? #imageLiteral(resourceName: "default-cover")
     }
-    
     private var coverCache: UIImage?
-    
     
     init(IP: String) {
         self.IP = IP
@@ -515,7 +508,6 @@ class ShelfCell: UICollectionViewCell {
         redownloadHandler?()
     }
 }
-
 
 //MARK: ----- Storage -----
 extension UserDefaults {
