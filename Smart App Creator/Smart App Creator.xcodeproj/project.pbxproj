@@ -33,6 +33,26 @@
 		2C21051E1E57437D00C19F1E /* libHLiOS2Framework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2104D71E5740E600C19F1E /* libHLiOS2Framework.a */; };
 		2C2105271E5745A400C19F1E /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2105261E57459400C19F1E /* YouTubeiOSPlayerHelper.framework */; };
 		2C2105281E5745A400C19F1E /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2105261E57459400C19F1E /* YouTubeiOSPlayerHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C4A25AC1E5AD140003ED5C4 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4A25A31E5AD120003ED5C4 /* Zip.framework */; };
+		2C4A25AD1E5AD140003ED5C4 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4A25A31E5AD120003ED5C4 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C4A25BC1E5AD199003ED5C4 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25B21E5AD199003ED5C4 /* ioapi.c */; };
+		2C4A25BD1E5AD199003ED5C4 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25B41E5AD199003ED5C4 /* mztools.c */; };
+		2C4A25BE1E5AD199003ED5C4 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25B61E5AD199003ED5C4 /* unzip.c */; };
+		2C4A25BF1E5AD199003ED5C4 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25B81E5AD199003ED5C4 /* zip.c */; };
+		2C4A25C01E5AD199003ED5C4 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25BB1E5AD199003ED5C4 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25DD1E5AD280003ED5C4 /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25C31E5AD280003ED5C4 /* CTidy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25DE1E5AD280003ED5C4 /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25C51E5AD280003ED5C4 /* CXHTMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25DF1E5AD280003ED5C4 /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25C71E5AD280003ED5C4 /* CXMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E01E5AD280003ED5C4 /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25C91E5AD280003ED5C4 /* CXMLDocument_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E11E5AD280003ED5C4 /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25CB1E5AD280003ED5C4 /* CXMLDocument_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E21E5AD280003ED5C4 /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25CD1E5AD280003ED5C4 /* CXMLElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E31E5AD280003ED5C4 /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25CF1E5AD280003ED5C4 /* CXMLElement_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E41E5AD280003ED5C4 /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25D11E5AD280003ED5C4 /* CXMLElement_ElementTreeExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E51E5AD280003ED5C4 /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25D31E5AD280003ED5C4 /* CXMLNamespaceNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E61E5AD280003ED5C4 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25D51E5AD280003ED5C4 /* CXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E71E5AD280003ED5C4 /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25D71E5AD280003ED5C4 /* CXMLNode_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E81E5AD280003ED5C4 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25D91E5AD280003ED5C4 /* CXMLNode_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C4A25E91E5AD280003ED5C4 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25DB1E5AD280003ED5C4 /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2C4C276C1E574A0A003C5A1F /* appMakerResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C27681E574A0A003C5A1F /* appMakerResources.bundle */; };
 		2C4C276D1E574A0A003C5A1F /* appMakerUI.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C27691E574A0A003C5A1F /* appMakerUI.xcassets */; };
 		2C4C276F1E574A0A003C5A1F /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C276B1E574A0A003C5A1F /* YouTubeiOSPlayerHelper.framework */; };
@@ -42,27 +62,7 @@
 		2C4C27D71E580B82003C5A1F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C27C81E580421003C5A1F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C4C27DA1E580BAB003C5A1F /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C27B21E580207003C5A1F /* PromiseKit.framework */; };
 		2C4C27DB1E580BAB003C5A1F /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C27B21E580207003C5A1F /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2C4C27F01E580FB8003C5A1F /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C27E71E580FA9003C5A1F /* Zip.framework */; };
-		2C4C27F11E580FB8003C5A1F /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C27E71E580FA9003C5A1F /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C4C28361E588DF4003C5A1F /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C28351E588DF4003C5A1F /* libxml2.tbd */; };
-		2C4C287F1E589066003C5A1F /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28651E589066003C5A1F /* CTidy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28801E589066003C5A1F /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28671E589066003C5A1F /* CXHTMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28811E589066003C5A1F /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28691E589066003C5A1F /* CXMLDocument_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28821E589066003C5A1F /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C286B1E589066003C5A1F /* CXMLDocument_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28831E589066003C5A1F /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C286D1E589066003C5A1F /* CXMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28841E589066003C5A1F /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C286F1E589066003C5A1F /* CXMLElement_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28851E589066003C5A1F /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28711E589066003C5A1F /* CXMLElement_ElementTreeExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28861E589066003C5A1F /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28731E589066003C5A1F /* CXMLElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28871E589066003C5A1F /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28751E589066003C5A1F /* CXMLNamespaceNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28881E589066003C5A1F /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28771E589066003C5A1F /* CXMLNode_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28891E589066003C5A1F /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28791E589066003C5A1F /* CXMLNode_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C288A1E589066003C5A1F /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C287B1E589066003C5A1F /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C288B1E589066003C5A1F /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C287D1E589066003C5A1F /* CXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28981E5891A7003C5A1F /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C288E1E5891A7003C5A1F /* ioapi.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C28991E5891A7003C5A1F /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28901E5891A7003C5A1F /* mztools.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C289A1E5891A7003C5A1F /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28921E5891A7003C5A1F /* unzip.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C289B1E5891A7003C5A1F /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28941E5891A7003C5A1F /* zip.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2C4C289C1E5891A7003C5A1F /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C28971E5891A7003C5A1F /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2C909F251E5A9B670076933F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C909F241E5A9B670076933F /* libz.tbd */; };
 		2C994C8C1E56D52600895B30 /* SACPublisherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C994C8B1E56D52600895B30 /* SACPublisherTests.swift */; };
 		2C994C971E56D52600895B30 /* SACPublisherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C994C961E56D52600895B30 /* SACPublisherUITests.swift */; };
@@ -102,6 +102,48 @@
 			proxyType = 1;
 			remoteGlobalIDString = B3C76A191B975AA700F375B4;
 			remoteInfo = YouTubeiOSPlayerHelper;
+		};
+		2C4A25A21E5AD120003ED5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 347E3A741C1DFFB500A11FD3;
+			remoteInfo = Zip;
+		};
+		2C4A25A41E5AD120003ED5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 347E3A7E1C1DFFB500A11FD3;
+			remoteInfo = ZipTests;
+		};
+		2C4A25A61E5AD120003ED5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 343F50FF1C8DAEEC0028C434;
+			remoteInfo = "Zip OSX";
+		};
+		2C4A25A81E5AD120003ED5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 343F51081C8DAEEC0028C434;
+			remoteInfo = "Zip OSXTests";
+		};
+		2C4A25AA1E5AD120003ED5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 342545B51CE525B200336074;
+			remoteInfo = "Zip tvOS";
+		};
+		2C4A25AE1E5AD140003ED5C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 347E3A731C1DFFB500A11FD3;
+			remoteInfo = Zip;
 		};
 		2C4C27B11E580207003C5A1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -201,48 +243,6 @@
 			remoteGlobalIDString = 63B0AC561D595E1B00FA21D9;
 			remoteInfo = PromiseKit;
 		};
-		2C4C27E61E580FA9003C5A1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C4C27DE1E580FA9003C5A1F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 347E3A741C1DFFB500A11FD3;
-			remoteInfo = Zip;
-		};
-		2C4C27E81E580FA9003C5A1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C4C27DE1E580FA9003C5A1F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 347E3A7E1C1DFFB500A11FD3;
-			remoteInfo = ZipTests;
-		};
-		2C4C27EA1E580FA9003C5A1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C4C27DE1E580FA9003C5A1F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 343F50FF1C8DAEEC0028C434;
-			remoteInfo = "Zip OSX";
-		};
-		2C4C27EC1E580FA9003C5A1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C4C27DE1E580FA9003C5A1F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 343F51081C8DAEEC0028C434;
-			remoteInfo = "Zip OSXTests";
-		};
-		2C4C27EE1E580FA9003C5A1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C4C27DE1E580FA9003C5A1F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 342545B51CE525B200336074;
-			remoteInfo = "Zip tvOS";
-		};
-		2C4C27F21E580FB8003C5A1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C4C27DE1E580FA9003C5A1F /* Zip.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 347E3A731C1DFFB500A11FD3;
-			remoteInfo = Zip;
-		};
 		2C994C881E56D52600895B30 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C994C6B1E56D52600895B30 /* Project object */;
@@ -266,7 +266,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2C4C27F11E580FB8003C5A1F /* Zip.framework in Embed Frameworks */,
+				2C4A25AD1E5AD140003ED5C4 /* Zip.framework in Embed Frameworks */,
 				2C4C27DB1E580BAB003C5A1F /* PromiseKit.framework in Embed Frameworks */,
 				2C2105281E5745A400C19F1E /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */,
 				2C4C27D71E580B82003C5A1F /* Alamofire.framework in Embed Frameworks */,
@@ -320,53 +320,53 @@
 		2C21051C1E57432400C19F1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2C21051F1E57442700C19F1E /* appMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = appMaker.h; sourceTree = "<group>"; };
 		2C2105211E57459400C19F1E /* youtube-ios-player-helper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "youtube-ios-player-helper.xcodeproj"; path = "Frameworks/youtube-ios-player-helper/youtube-ios-player-helper.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Zip.xcodeproj; path = Frameworks/Zip/Zip.xcodeproj; sourceTree = SOURCE_ROOT; };
+		2C4A25B11E5AD199003ED5C4 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		2C4A25B21E5AD199003ED5C4 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		2C4A25B31E5AD199003ED5C4 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		2C4A25B41E5AD199003ED5C4 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		2C4A25B51E5AD199003ED5C4 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		2C4A25B61E5AD199003ED5C4 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		2C4A25B71E5AD199003ED5C4 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		2C4A25B81E5AD199003ED5C4 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		2C4A25B91E5AD199003ED5C4 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		2C4A25BA1E5AD199003ED5C4 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		2C4A25BB1E5AD199003ED5C4 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
+		2C4A25C21E5AD280003ED5C4 /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
+		2C4A25C31E5AD280003ED5C4 /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
+		2C4A25C41E5AD280003ED5C4 /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHTMLDocument.h; sourceTree = "<group>"; };
+		2C4A25C51E5AD280003ED5C4 /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHTMLDocument.m; sourceTree = "<group>"; };
+		2C4A25C61E5AD280003ED5C4 /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		2C4A25C71E5AD280003ED5C4 /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		2C4A25C81E5AD280003ED5C4 /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
+		2C4A25C91E5AD280003ED5C4 /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
+		2C4A25CA1E5AD280003ED5C4 /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		2C4A25CB1E5AD280003ED5C4 /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		2C4A25CC1E5AD280003ED5C4 /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		2C4A25CD1E5AD280003ED5C4 /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		2C4A25CE1E5AD280003ED5C4 /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		2C4A25CF1E5AD280003ED5C4 /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		2C4A25D01E5AD280003ED5C4 /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
+		2C4A25D11E5AD280003ED5C4 /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
+		2C4A25D21E5AD280003ED5C4 /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
+		2C4A25D31E5AD280003ED5C4 /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
+		2C4A25D41E5AD280003ED5C4 /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		2C4A25D51E5AD280003ED5C4 /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		2C4A25D61E5AD280003ED5C4 /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
+		2C4A25D71E5AD280003ED5C4 /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
+		2C4A25D81E5AD280003ED5C4 /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		2C4A25D91E5AD280003ED5C4 /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		2C4A25DA1E5AD280003ED5C4 /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		2C4A25DB1E5AD280003ED5C4 /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		2C4A25DC1E5AD280003ED5C4 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		2C4C27681E574A0A003C5A1F /* appMakerResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = appMakerResources.bundle; sourceTree = "<group>"; };
 		2C4C27691E574A0A003C5A1F /* appMakerUI.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = appMakerUI.xcassets; sourceTree = "<group>"; };
 		2C4C276A1E574A0A003C5A1F /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebImage.framework; sourceTree = "<group>"; };
 		2C4C276B1E574A0A003C5A1F /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
 		2C4C27A91E580206003C5A1F /* PromiseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PromiseKit.xcodeproj; path = Frameworks/PromiseKit/PromiseKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		2C4C27BC1E580420003C5A1F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Frameworks/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
-		2C4C27DE1E580FA9003C5A1F /* Zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Zip.xcodeproj; path = Frameworks/Zip/Zip.xcodeproj; sourceTree = SOURCE_ROOT; };
 		2C4C27F51E5888C9003C5A1F /* Smart App Creator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smart App Creator-Bridging-Header.h"; sourceTree = "<group>"; };
 		2C4C28351E588DF4003C5A1F /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		2C4C28641E589066003C5A1F /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
-		2C4C28651E589066003C5A1F /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
-		2C4C28661E589066003C5A1F /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHTMLDocument.h; sourceTree = "<group>"; };
-		2C4C28671E589066003C5A1F /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHTMLDocument.m; sourceTree = "<group>"; };
-		2C4C28681E589066003C5A1F /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
-		2C4C28691E589066003C5A1F /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
-		2C4C286A1E589066003C5A1F /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
-		2C4C286B1E589066003C5A1F /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
-		2C4C286C1E589066003C5A1F /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
-		2C4C286D1E589066003C5A1F /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
-		2C4C286E1E589066003C5A1F /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
-		2C4C286F1E589066003C5A1F /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
-		2C4C28701E589066003C5A1F /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
-		2C4C28711E589066003C5A1F /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
-		2C4C28721E589066003C5A1F /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
-		2C4C28731E589066003C5A1F /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
-		2C4C28741E589066003C5A1F /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
-		2C4C28751E589066003C5A1F /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
-		2C4C28761E589066003C5A1F /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
-		2C4C28771E589066003C5A1F /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
-		2C4C28781E589066003C5A1F /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
-		2C4C28791E589066003C5A1F /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
-		2C4C287A1E589066003C5A1F /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
-		2C4C287B1E589066003C5A1F /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
-		2C4C287C1E589066003C5A1F /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
-		2C4C287D1E589066003C5A1F /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
-		2C4C287E1E589066003C5A1F /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
-		2C4C288D1E5891A7003C5A1F /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
-		2C4C288E1E5891A7003C5A1F /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
-		2C4C288F1E5891A7003C5A1F /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
-		2C4C28901E5891A7003C5A1F /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
-		2C4C28911E5891A7003C5A1F /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
-		2C4C28921E5891A7003C5A1F /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
-		2C4C28931E5891A7003C5A1F /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
-		2C4C28941E5891A7003C5A1F /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
-		2C4C28951E5891A7003C5A1F /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
-		2C4C28961E5891A7003C5A1F /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
-		2C4C28971E5891A7003C5A1F /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		2C909F241E5A9B670076933F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2C994C731E56D52600895B30 /* Smart App Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart App Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C994C871E56D52600895B30 /* Smart App CreatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart App CreatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -394,7 +394,6 @@
 				2C4C27BB1E580374003C5A1F /* PromiseKit.framework in Frameworks */,
 				2C21051E1E57437D00C19F1E /* libHLiOS2Framework.a in Frameworks */,
 				2C21051D1E57432400C19F1E /* CoreGraphics.framework in Frameworks */,
-				2C4C27F01E580FB8003C5A1F /* Zip.framework in Frameworks */,
 				2C21051B1E57431900C19F1E /* QuartzCore.framework in Frameworks */,
 				2C2105191E57430D00C19F1E /* CoreImage.framework in Frameworks */,
 				2C2105171E57430500C19F1E /* Accelerate.framework in Frameworks */,
@@ -417,6 +416,7 @@
 				2C2104FB1E57429B00C19F1E /* CoreVideo.framework in Frameworks */,
 				2C2104F91E57429500C19F1E /* CoreTelephony.framework in Frameworks */,
 				2C2104F71E57428300C19F1E /* StoreKit.framework in Frameworks */,
+				2C4A25AC1E5AD140003ED5C4 /* Zip.framework in Frameworks */,
 				2C2104F51E57427D00C19F1E /* MapKit.framework in Frameworks */,
 				2C2105271E5745A400C19F1E /* YouTubeiOSPlayerHelper.framework in Frameworks */,
 				2C2104F31E57427600C19F1E /* CoreLocation.framework in Frameworks */,
@@ -445,10 +445,10 @@
 			children = (
 				2C909F241E5A9B670076933F /* libz.tbd */,
 				2C4C28351E588DF4003C5A1F /* libxml2.tbd */,
-				2C4C288C1E589149003C5A1F /* UnZip */,
-				2C4C280C1E588DB4003C5A1F /* TouchXML */,
+				2C4A25C11E5AD280003ED5C4 /* TouchXML */,
+				2C4A25B01E5AD199003ED5C4 /* Unzip */,
 				2C4C27671E574A0A003C5A1F /* appMakerSDK */,
-				2C4C27DE1E580FA9003C5A1F /* Zip.xcodeproj */,
+				2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */,
 				2C4C27BC1E580420003C5A1F /* Alamofire.xcodeproj */,
 				2C4C27A91E580206003C5A1F /* PromiseKit.xcodeproj */,
 				2C2105211E57459400C19F1E /* youtube-ios-player-helper.xcodeproj */,
@@ -497,6 +497,72 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2C4A259B1E5AD120003ED5C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C4A25A31E5AD120003ED5C4 /* Zip.framework */,
+				2C4A25A51E5AD120003ED5C4 /* ZipTests.xctest */,
+				2C4A25A71E5AD120003ED5C4 /* Zip.framework */,
+				2C4A25A91E5AD120003ED5C4 /* Zip OSXTests.xctest */,
+				2C4A25AB1E5AD120003ED5C4 /* Zip.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C4A25B01E5AD199003ED5C4 /* Unzip */ = {
+			isa = PBXGroup;
+			children = (
+				2C4A25B11E5AD199003ED5C4 /* crypt.h */,
+				2C4A25B21E5AD199003ED5C4 /* ioapi.c */,
+				2C4A25B31E5AD199003ED5C4 /* ioapi.h */,
+				2C4A25B41E5AD199003ED5C4 /* mztools.c */,
+				2C4A25B51E5AD199003ED5C4 /* mztools.h */,
+				2C4A25B61E5AD199003ED5C4 /* unzip.c */,
+				2C4A25B71E5AD199003ED5C4 /* unzip.h */,
+				2C4A25B81E5AD199003ED5C4 /* zip.c */,
+				2C4A25B91E5AD199003ED5C4 /* zip.h */,
+				2C4A25BA1E5AD199003ED5C4 /* ZipArchive.h */,
+				2C4A25BB1E5AD199003ED5C4 /* ZipArchive.mm */,
+			);
+			name = Unzip;
+			path = Frameworks/Unzip;
+			sourceTree = SOURCE_ROOT;
+		};
+		2C4A25C11E5AD280003ED5C4 /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				2C4A25C21E5AD280003ED5C4 /* CTidy.h */,
+				2C4A25C31E5AD280003ED5C4 /* CTidy.m */,
+				2C4A25C41E5AD280003ED5C4 /* CXHTMLDocument.h */,
+				2C4A25C51E5AD280003ED5C4 /* CXHTMLDocument.m */,
+				2C4A25C61E5AD280003ED5C4 /* CXMLDocument.h */,
+				2C4A25C71E5AD280003ED5C4 /* CXMLDocument.m */,
+				2C4A25C81E5AD280003ED5C4 /* CXMLDocument_CreationExtensions.h */,
+				2C4A25C91E5AD280003ED5C4 /* CXMLDocument_CreationExtensions.m */,
+				2C4A25CA1E5AD280003ED5C4 /* CXMLDocument_PrivateExtensions.h */,
+				2C4A25CB1E5AD280003ED5C4 /* CXMLDocument_PrivateExtensions.m */,
+				2C4A25CC1E5AD280003ED5C4 /* CXMLElement.h */,
+				2C4A25CD1E5AD280003ED5C4 /* CXMLElement.m */,
+				2C4A25CE1E5AD280003ED5C4 /* CXMLElement_CreationExtensions.h */,
+				2C4A25CF1E5AD280003ED5C4 /* CXMLElement_CreationExtensions.m */,
+				2C4A25D01E5AD280003ED5C4 /* CXMLElement_ElementTreeExtensions.h */,
+				2C4A25D11E5AD280003ED5C4 /* CXMLElement_ElementTreeExtensions.m */,
+				2C4A25D21E5AD280003ED5C4 /* CXMLNamespaceNode.h */,
+				2C4A25D31E5AD280003ED5C4 /* CXMLNamespaceNode.m */,
+				2C4A25D41E5AD280003ED5C4 /* CXMLNode.h */,
+				2C4A25D51E5AD280003ED5C4 /* CXMLNode.m */,
+				2C4A25D61E5AD280003ED5C4 /* CXMLNode_CreationExtensions.h */,
+				2C4A25D71E5AD280003ED5C4 /* CXMLNode_CreationExtensions.m */,
+				2C4A25D81E5AD280003ED5C4 /* CXMLNode_PrivateExtensions.h */,
+				2C4A25D91E5AD280003ED5C4 /* CXMLNode_PrivateExtensions.m */,
+				2C4A25DA1E5AD280003ED5C4 /* CXMLNode_XPathExtensions.h */,
+				2C4A25DB1E5AD280003ED5C4 /* CXMLNode_XPathExtensions.m */,
+				2C4A25DC1E5AD280003ED5C4 /* TouchXML.h */,
+			);
+			name = TouchXML;
+			path = Frameworks/TouchXML;
+			sourceTree = SOURCE_ROOT;
+		};
 		2C4C27671E574A0A003C5A1F /* appMakerSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,70 +598,6 @@
 				2C4C27D41E580421003C5A1F /* Alamofire.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		2C4C27DF1E580FA9003C5A1F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2C4C27E71E580FA9003C5A1F /* Zip.framework */,
-				2C4C27E91E580FA9003C5A1F /* ZipTests.xctest */,
-				2C4C27EB1E580FA9003C5A1F /* Zip.framework */,
-				2C4C27ED1E580FA9003C5A1F /* Zip OSXTests.xctest */,
-				2C4C27EF1E580FA9003C5A1F /* Zip.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		2C4C280C1E588DB4003C5A1F /* TouchXML */ = {
-			isa = PBXGroup;
-			children = (
-				2C4C28641E589066003C5A1F /* CTidy.h */,
-				2C4C28651E589066003C5A1F /* CTidy.m */,
-				2C4C28661E589066003C5A1F /* CXHTMLDocument.h */,
-				2C4C28671E589066003C5A1F /* CXHTMLDocument.m */,
-				2C4C28681E589066003C5A1F /* CXMLDocument_CreationExtensions.h */,
-				2C4C28691E589066003C5A1F /* CXMLDocument_CreationExtensions.m */,
-				2C4C286A1E589066003C5A1F /* CXMLDocument_PrivateExtensions.h */,
-				2C4C286B1E589066003C5A1F /* CXMLDocument_PrivateExtensions.m */,
-				2C4C286C1E589066003C5A1F /* CXMLDocument.h */,
-				2C4C286D1E589066003C5A1F /* CXMLDocument.m */,
-				2C4C286E1E589066003C5A1F /* CXMLElement_CreationExtensions.h */,
-				2C4C286F1E589066003C5A1F /* CXMLElement_CreationExtensions.m */,
-				2C4C28701E589066003C5A1F /* CXMLElement_ElementTreeExtensions.h */,
-				2C4C28711E589066003C5A1F /* CXMLElement_ElementTreeExtensions.m */,
-				2C4C28721E589066003C5A1F /* CXMLElement.h */,
-				2C4C28731E589066003C5A1F /* CXMLElement.m */,
-				2C4C28741E589066003C5A1F /* CXMLNamespaceNode.h */,
-				2C4C28751E589066003C5A1F /* CXMLNamespaceNode.m */,
-				2C4C28761E589066003C5A1F /* CXMLNode_CreationExtensions.h */,
-				2C4C28771E589066003C5A1F /* CXMLNode_CreationExtensions.m */,
-				2C4C28781E589066003C5A1F /* CXMLNode_PrivateExtensions.h */,
-				2C4C28791E589066003C5A1F /* CXMLNode_PrivateExtensions.m */,
-				2C4C287A1E589066003C5A1F /* CXMLNode_XPathExtensions.h */,
-				2C4C287B1E589066003C5A1F /* CXMLNode_XPathExtensions.m */,
-				2C4C287C1E589066003C5A1F /* CXMLNode.h */,
-				2C4C287D1E589066003C5A1F /* CXMLNode.m */,
-				2C4C287E1E589066003C5A1F /* TouchXML.h */,
-			);
-			name = TouchXML;
-			sourceTree = "<group>";
-		};
-		2C4C288C1E589149003C5A1F /* UnZip */ = {
-			isa = PBXGroup;
-			children = (
-				2C4C288D1E5891A7003C5A1F /* crypt.h */,
-				2C4C288E1E5891A7003C5A1F /* ioapi.c */,
-				2C4C288F1E5891A7003C5A1F /* ioapi.h */,
-				2C4C28901E5891A7003C5A1F /* mztools.c */,
-				2C4C28911E5891A7003C5A1F /* mztools.h */,
-				2C4C28921E5891A7003C5A1F /* unzip.c */,
-				2C4C28931E5891A7003C5A1F /* unzip.h */,
-				2C4C28941E5891A7003C5A1F /* zip.c */,
-				2C4C28951E5891A7003C5A1F /* zip.h */,
-				2C4C28961E5891A7003C5A1F /* ZipArchive.h */,
-				2C4C28971E5891A7003C5A1F /* ZipArchive.mm */,
-			);
-			name = UnZip;
 			sourceTree = "<group>";
 		};
 		2C994C6A1E56D52600895B30 = {
@@ -672,7 +674,7 @@
 				2C21052A1E5745A400C19F1E /* PBXTargetDependency */,
 				2C4C27D91E580B82003C5A1F /* PBXTargetDependency */,
 				2C4C27DD1E580BAB003C5A1F /* PBXTargetDependency */,
-				2C4C27F31E580FB8003C5A1F /* PBXTargetDependency */,
+				2C4A25AF1E5AD140003ED5C4 /* PBXTargetDependency */,
 			);
 			name = "Smart App Creator";
 			productName = SACPublisher;
@@ -774,8 +776,8 @@
 					ProjectRef = 2C2105211E57459400C19F1E /* youtube-ios-player-helper.xcodeproj */;
 				},
 				{
-					ProductGroup = 2C4C27DF1E580FA9003C5A1F /* Products */;
-					ProjectRef = 2C4C27DE1E580FA9003C5A1F /* Zip.xcodeproj */;
+					ProductGroup = 2C4A259B1E5AD120003ED5C4 /* Products */;
+					ProjectRef = 2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -807,6 +809,41 @@
 			fileType = wrapper.framework;
 			path = YouTubeiOSPlayerHelper.framework;
 			remoteRef = 2C2105251E57459400C19F1E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C4A25A31E5AD120003ED5C4 /* Zip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Zip.framework;
+			remoteRef = 2C4A25A21E5AD120003ED5C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C4A25A51E5AD120003ED5C4 /* ZipTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZipTests.xctest;
+			remoteRef = 2C4A25A41E5AD120003ED5C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C4A25A71E5AD120003ED5C4 /* Zip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Zip.framework;
+			remoteRef = 2C4A25A61E5AD120003ED5C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C4A25A91E5AD120003ED5C4 /* Zip OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Zip OSXTests.xctest";
+			remoteRef = 2C4A25A81E5AD120003ED5C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C4A25AB1E5AD120003ED5C4 /* Zip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Zip.framework;
+			remoteRef = 2C4A25AA1E5AD120003ED5C4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2C4C27B21E580207003C5A1F /* PromiseKit.framework */ = {
@@ -893,41 +930,6 @@
 			remoteRef = 2C4C27D31E580421003C5A1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2C4C27E71E580FA9003C5A1F /* Zip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Zip.framework;
-			remoteRef = 2C4C27E61E580FA9003C5A1F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2C4C27E91E580FA9003C5A1F /* ZipTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ZipTests.xctest;
-			remoteRef = 2C4C27E81E580FA9003C5A1F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2C4C27EB1E580FA9003C5A1F /* Zip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Zip.framework;
-			remoteRef = 2C4C27EA1E580FA9003C5A1F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2C4C27ED1E580FA9003C5A1F /* Zip OSXTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Zip OSXTests.xctest";
-			remoteRef = 2C4C27EC1E580FA9003C5A1F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2C4C27EF1E580FA9003C5A1F /* Zip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Zip.framework;
-			remoteRef = 2C4C27EE1E580FA9003C5A1F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -966,26 +968,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C4C289A1E5891A7003C5A1F /* unzip.c in Sources */,
-				2C4C28891E589066003C5A1F /* CXMLNode_PrivateExtensions.m in Sources */,
-				2C4C287F1E589066003C5A1F /* CTidy.m in Sources */,
-				2C4C28811E589066003C5A1F /* CXMLDocument_CreationExtensions.m in Sources */,
-				2C4C28881E589066003C5A1F /* CXMLNode_CreationExtensions.m in Sources */,
-				2C4C28841E589066003C5A1F /* CXMLElement_CreationExtensions.m in Sources */,
-				2C4C289B1E5891A7003C5A1F /* zip.c in Sources */,
+				2C4A25BE1E5AD199003ED5C4 /* unzip.c in Sources */,
+				2C4A25DE1E5AD280003ED5C4 /* CXHTMLDocument.m in Sources */,
+				2C4A25E41E5AD280003ED5C4 /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				2C4A25E91E5AD280003ED5C4 /* CXMLNode_XPathExtensions.m in Sources */,
+				2C4A25BF1E5AD199003ED5C4 /* zip.c in Sources */,
 				2C994CB71E56DCB500895B30 /* ViewController.swift in Sources */,
-				2C4C28801E589066003C5A1F /* CXHTMLDocument.m in Sources */,
-				2C4C28991E5891A7003C5A1F /* mztools.c in Sources */,
-				2C4C288A1E589066003C5A1F /* CXMLNode_XPathExtensions.m in Sources */,
-				2C4C28821E589066003C5A1F /* CXMLDocument_PrivateExtensions.m in Sources */,
-				2C4C28861E589066003C5A1F /* CXMLElement.m in Sources */,
-				2C4C28981E5891A7003C5A1F /* ioapi.c in Sources */,
-				2C4C289C1E5891A7003C5A1F /* ZipArchive.mm in Sources */,
+				2C4A25E51E5AD280003ED5C4 /* CXMLNamespaceNode.m in Sources */,
+				2C4A25E61E5AD280003ED5C4 /* CXMLNode.m in Sources */,
+				2C4A25E11E5AD280003ED5C4 /* CXMLDocument_PrivateExtensions.m in Sources */,
+				2C4A25BD1E5AD199003ED5C4 /* mztools.c in Sources */,
+				2C4A25BC1E5AD199003ED5C4 /* ioapi.c in Sources */,
+				2C4A25DF1E5AD280003ED5C4 /* CXMLDocument.m in Sources */,
+				2C4A25E31E5AD280003ED5C4 /* CXMLElement_CreationExtensions.m in Sources */,
+				2C4A25E01E5AD280003ED5C4 /* CXMLDocument_CreationExtensions.m in Sources */,
+				2C4A25C01E5AD199003ED5C4 /* ZipArchive.mm in Sources */,
+				2C4A25E81E5AD280003ED5C4 /* CXMLNode_PrivateExtensions.m in Sources */,
+				2C4A25E71E5AD280003ED5C4 /* CXMLNode_CreationExtensions.m in Sources */,
 				2C994CB21E56DCB500895B30 /* AppDelegate.swift in Sources */,
-				2C4C288B1E589066003C5A1F /* CXMLNode.m in Sources */,
-				2C4C28871E589066003C5A1F /* CXMLNamespaceNode.m in Sources */,
-				2C4C28831E589066003C5A1F /* CXMLDocument.m in Sources */,
-				2C4C28851E589066003C5A1F /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				2C4A25E21E5AD280003ED5C4 /* CXMLElement.m in Sources */,
+				2C4A25DD1E5AD280003ED5C4 /* CTidy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,6 +1015,11 @@
 			name = YouTubeiOSPlayerHelper;
 			targetProxy = 2C2105291E5745A400C19F1E /* PBXContainerItemProxy */;
 		};
+		2C4A25AF1E5AD140003ED5C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Zip;
+			targetProxy = 2C4A25AE1E5AD140003ED5C4 /* PBXContainerItemProxy */;
+		};
 		2C4C27D91E580B82003C5A1F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
@@ -1022,11 +1029,6 @@
 			isa = PBXTargetDependency;
 			name = PromiseKit;
 			targetProxy = 2C4C27DC1E580BAB003C5A1F /* PBXContainerItemProxy */;
-		};
-		2C4C27F31E580FB8003C5A1F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Zip;
-			targetProxy = 2C4C27F21E580FB8003C5A1F /* PBXContainerItemProxy */;
 		};
 		2C994C891E56D52600895B30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

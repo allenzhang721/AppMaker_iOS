@@ -16,6 +16,3 @@
 [submodule "Smart App Creator/Frameworks/Zip"]
 	path = Smart App Creator/Frameworks/Zip
 	url = https://github.com/marmelroy/Zip
-[submodule "Smart App Creator/Frameworks/TouchXML"]
-	path = Smart App Creator/Frameworks/TouchXML
-	url = https://github.com/TouchCode/TouchXML
