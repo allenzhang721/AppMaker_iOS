@@ -1,0 +1,7 @@
+This is Smart Apps Creator 2 viewer.
+
+"Smart Apps Creator" is a browser tool for users previewing their App products directly through their mobile devices.
+
+Users just open the App of "SAC 2" and input the ip address.
+
+Then users can play their App products earily over the mobile devices.

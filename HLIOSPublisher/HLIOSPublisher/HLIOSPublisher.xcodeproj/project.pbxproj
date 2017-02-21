@@ -352,8 +352,7 @@
 				ORGANIZATIONNAME = Emiaostein;
 				TargetAttributes = {
 					29CF1F20196A754E0079F372 = {
-						DevelopmentTeam = H7HX4A2DL8;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					29CF1F44196A754E0079F372 = {
 						DevelopmentTeam = H7HX4A2DL8;
@@ -572,7 +571,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Horner(Beijing)Technology Co.,Ltd";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = H7HX4A2DL8;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HLIOSPublisher/appMakerSDK",
@@ -604,7 +603,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Horner(Beijing)Technology Co.,Ltd";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = H7HX4A2DL8;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HLIOSPublisher/appMakerSDK",
