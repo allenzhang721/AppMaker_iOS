@@ -72,6 +72,8 @@
 		2C994CB51E56DCB500895B30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C994CAE1E56DCB500895B30 /* Main.storyboard */; };
 		2C994CB61E56DCB500895B30 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C994CB01E56DCB500895B30 /* Info.plist */; };
 		2C994CB71E56DCB500895B30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C994CB11E56DCB500895B30 /* ViewController.swift */; };
+		2CDCFE051E71441A0031565A /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDCFE041E71441A0031565A /* WebImage.framework */; };
+		2CDCFE061E71441A0031565A /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDCFE041E71441A0031565A /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -262,11 +264,12 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		2C2104AB1E56DE9000C19F1E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
 				2C4A25AD1E5AD140003ED5C4 /* Zip.framework in Embed Frameworks */,
+				2CDCFE061E71441A0031565A /* WebImage.framework in Embed Frameworks */,
 				2C4C27DB1E580BAB003C5A1F /* PromiseKit.framework in Embed Frameworks */,
 				2C2105281E5745A400C19F1E /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */,
 				2C4C27D71E580B82003C5A1F /* Alamofire.framework in Embed Frameworks */,
@@ -361,7 +364,6 @@
 		2C4A25DC1E5AD280003ED5C4 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		2C4C27681E574A0A003C5A1F /* appMakerResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = appMakerResources.bundle; sourceTree = "<group>"; };
 		2C4C27691E574A0A003C5A1F /* appMakerUI.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = appMakerUI.xcassets; sourceTree = "<group>"; };
-		2C4C276A1E574A0A003C5A1F /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebImage.framework; sourceTree = "<group>"; };
 		2C4C276B1E574A0A003C5A1F /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
 		2C4C27A91E580206003C5A1F /* PromiseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PromiseKit.xcodeproj; path = Frameworks/PromiseKit/PromiseKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		2C4C27BC1E580420003C5A1F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Frameworks/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -381,6 +383,8 @@
 		2C994CAF1E56DCB500895B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C994CB01E56DCB500895B30 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C994CB11E56DCB500895B30 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CDCFDE61E713E860031565A /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebImage.framework; sourceTree = "<group>"; };
+		2CDCFE041E71441A0031565A /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = ../WebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +410,7 @@
 				2C21050B1E5742D400C19F1E /* MessageUI.framework in Frameworks */,
 				2C2105091E5742CA00C19F1E /* CoreMedia.framework in Frameworks */,
 				2C2105071E5742C200C19F1E /* AVFoundation.framework in Frameworks */,
+				2CDCFE051E71441A0031565A /* WebImage.framework in Frameworks */,
 				2C2105051E5742BC00C19F1E /* AssetsLibrary.framework in Frameworks */,
 				2C4C276F1E574A0A003C5A1F /* YouTubeiOSPlayerHelper.framework in Frameworks */,
 				2C2105031E5742B600C19F1E /* ImageIO.framework in Frameworks */,
@@ -453,6 +458,7 @@
 				2C4C27A91E580206003C5A1F /* PromiseKit.xcodeproj */,
 				2C2105211E57459400C19F1E /* youtube-ios-player-helper.xcodeproj */,
 				2C2104D01E5740E500C19F1E /* HLiOS2Framework.xcodeproj */,
+				2CDCFE041E71441A0031565A /* WebImage.framework */,
 				2C21051C1E57432400C19F1E /* CoreGraphics.framework */,
 				2C21051A1E57431900C19F1E /* QuartzCore.framework */,
 				2C2105181E57430D00C19F1E /* CoreImage.framework */,
@@ -566,9 +572,9 @@
 		2C4C27671E574A0A003C5A1F /* appMakerSDK */ = {
 			isa = PBXGroup;
 			children = (
+				2CDCFDE61E713E860031565A /* WebImage.framework */,
 				2C4C27681E574A0A003C5A1F /* appMakerResources.bundle */,
 				2C4C27691E574A0A003C5A1F /* appMakerUI.xcassets */,
-				2C4C276A1E574A0A003C5A1F /* WebImage.framework */,
 				2C4C276B1E574A0A003C5A1F /* YouTubeiOSPlayerHelper.framework */,
 			);
 			path = appMakerSDK;
@@ -1178,11 +1184,21 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
 					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
@@ -1191,7 +1207,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Smart App Creator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart App Creator/Smart App Creator-Bridging-Header.h";
@@ -1209,10 +1225,19 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = N8WL2V9VY9;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
 					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
@@ -1221,7 +1246,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Smart App Creator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ee973989-9850-4c8c-aa9b-6e8ea38a44c3";

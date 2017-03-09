@@ -41,6 +41,8 @@ class ViewController: UIViewController {
     fileprivate let manager = BookManager()
     fileprivate let maker = appMaker()
     
+//    override var prefersStatusBarHidden: Bool {return true}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -137,7 +137,6 @@
 		2C7F40771DC25365001C98E7 /* HLTableCellSubBindingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F40751DC25365001C98E7 /* HLTableCellSubBindingModel.m */; };
 		2C99C5501D77DBD3009757C6 /* PushHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C99C54E1D77DBD3009757C6 /* PushHUD.h */; };
 		2C99C5511D77DBD3009757C6 /* PushHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C99C54F1D77DBD3009757C6 /* PushHUD.m */; };
-		2CDF9EE61DC35E8300EA7FC5 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDF9EE51DC35E8300EA7FC5 /* WebImage.framework */; };
 		6A372327172ABC420097D34A /* SlideCellComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A2C79172575A80096335A /* SlideCellComponent.m */; };
 		6A37232E172BA3AF0097D34A /* HTML5Entity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A37232C172BA3AF0097D34A /* HTML5Entity.h */; };
 		6A37232F172BA3AF0097D34A /* HTML5Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A37232D172BA3AF0097D34A /* HTML5Entity.m */; };
@@ -735,7 +734,6 @@
 		2C7F40751DC25365001C98E7 /* HLTableCellSubBindingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTableCellSubBindingModel.m; sourceTree = "<group>"; };
 		2C99C54E1D77DBD3009757C6 /* PushHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushHUD.h; sourceTree = "<group>"; };
 		2C99C54F1D77DBD3009757C6 /* PushHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushHUD.m; sourceTree = "<group>"; };
-		2CDF9EE51DC35E8300EA7FC5 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = ../../SAC2/HLRealTimeTest2/WebImage.framework; sourceTree = "<group>"; };
 		2CE39A8B1E5571B0006C7CB8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		6A37232C172BA3AF0097D34A /* HTML5Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTML5Entity.h; sourceTree = "<group>"; };
 		6A37232D172BA3AF0097D34A /* HTML5Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTML5Entity.m; sourceTree = "<group>"; };
@@ -1377,7 +1375,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CDF9EE61DC35E8300EA7FC5 /* WebImage.framework in Frameworks */,
 				2C7E0A7A1D9A4E8400E3766E /* MapKit.framework in Frameworks */,
 				292C9C521830921E005EFA46 /* StoreKit.framework in Frameworks */,
 				6AB21442171AB6920020CFE8 /* Foundation.framework in Frameworks */,
@@ -1699,7 +1696,6 @@
 		6AB21440171AB6920020CFE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CDF9EE51DC35E8300EA7FC5 /* WebImage.framework */,
 				2C7E0A791D9A4E8400E3766E /* MapKit.framework */,
 				2C0DAB851D66EA2F00670D6A /* libxml2.tbd */,
 				292C9C50183090F5005EFA46 /* StoreKit.framework */,
