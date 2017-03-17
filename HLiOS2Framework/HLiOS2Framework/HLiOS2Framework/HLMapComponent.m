@@ -30,7 +30,7 @@
     MKMapView *v = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, _entity.width.floatValue, _entity.height.floatValue)];
     self.uicomponent = v;
     
-    
+    NSLog(@"location = %f, %f", _entity.lat, _entity.lng);
     
     /*
      let center = CLLocationCoordinate2D(latitude: 39.9042, longitude: 116.4074)

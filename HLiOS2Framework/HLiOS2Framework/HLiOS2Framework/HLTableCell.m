@@ -60,8 +60,10 @@
         label.scrollEnabled = false;
         label.editable = false;
         label.textContainerInset = UIEdgeInsetsZero;
-//        label.backgroundColor = [UIColor greenColor];
+        label.backgroundColor = [UIColor clearColor];
+          
         label.font = [UIFont systemFontOfSize:((HLTableCellSubViewTextModel *)subViewModel).fontSize];
+        label.textColor = [self colorWithHexString:((HLTableCellSubViewTextModel *)subViewModel).textColorHex];
         if (s.aligent == @"center") {
           label.textAlignment = NSTextAlignmentCenter;
         } else if (s.aligent == @"right") {
@@ -72,6 +74,39 @@
       }
     }
   }
+}
+
+-(UIColor*)colorWithHexString:(NSString*)hex
+{
+    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
+    if ([cString length] < 6) return [UIColor grayColor];
+    
+    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    
+    if ([cString length] != 6) return  [UIColor grayColor];
+    
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithRange:range];
+    
+    range.location = 2;
+    NSString *gString = [cString substringWithRange:range];
+    
+    range.location = 4;
+    NSString *bString = [cString substringWithRange:range];
+    
+    // Scan values
+    unsigned int r, g, b;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    
+    return [UIColor colorWithRed:((float) r / 255.0f)
+                           green:((float) g / 255.0f)
+                            blue:((float) b / 255.0f)
+                           alpha:1.0f];
 }
 
 -(void)configWithBindingModels:(NSArray<HLTableCellSubBindingModel *> *)bindingModel {
@@ -95,6 +130,7 @@
         UITextView *label = (UITextView *)v;
         if (dic != nil && (b.modelKey != nil && ![b.modelKey isEqualToString:@""])) {
           label.text = [NSString stringWithFormat:@"%@", dic[b.modelKey]];
+            
         }
       } else if ([v isKindOfClass:[UIImageView class]]) {
         UIImageView *imgView = (UIImageView *)v;
