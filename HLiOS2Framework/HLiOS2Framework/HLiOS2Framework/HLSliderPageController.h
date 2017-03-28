@@ -32,9 +32,9 @@
 }
 
 @property (nonatomic,retain) HLBookEntity                *bookEntity;
-@property (nonatomic,retain) HLPageController            *page1Controller;
-@property (nonatomic,retain) HLPageController            *page2Controller;
-@property (nonatomic,retain) HLPageController            *page3Controller;
+@property (nonatomic,retain) HLPageController            *page1Controller; // up
+@property (nonatomic,retain) HLPageController            *page2Controller; // mid
+@property (nonatomic,retain) HLPageController            *page3Controller; // down
 @property (nonatomic,retain) UIScrollView              *pageScrollView;
 @property (nonatomic,assign) HLBehaviorController        *behController;
 @property (nonatomic,retain) HLPageEntity                *currentPageEntity;//(陈星宇，10。30，assign －> retain) <- 这么改是错的_(:з」∠)_
@@ -54,6 +54,7 @@
 -(void) setupRootPath:(NSString *) path;
 -(void) stopView;
 -(void) clean;
+-(void) reset; // reset the up, mid, down pages to origin, such as, reset audio, video, view, animation etc.
 
 -(void) changeSize:(CGSize) size;
 -(Boolean) gotoPageWithPageID:(NSString *)pageid animate:(Boolean)animate;

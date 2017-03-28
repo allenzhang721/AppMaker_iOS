@@ -22,6 +22,10 @@
     return self;
 }
 
+- (void)stop {
+    [(YTPlayerView *)self.uicomponent stopVideo];
+}
+
 // MARK: - Private Method
 - (void)p_setupUI {
     

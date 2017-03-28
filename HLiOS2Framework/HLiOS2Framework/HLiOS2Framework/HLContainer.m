@@ -251,6 +251,7 @@
     //    {
     //        [self getComStartPoint];
     //    }
+    Boolean success = NO;
     for (int i = 0; i < [self.entity.behaviors count]; i++) {
         
         HLBehaviorEntity *behavior = [self.entity.behaviors objectAtIndex:i];
@@ -261,18 +262,22 @@
             
             if ([behavior.behaviorValue isEqualToString:(NSString *)object]) {
                ret = [self.behaviorController runBehavior:self.entity.entityid entity:behavior];
-                return !ret;
+                success = YES;
+//                return !ret;
             }
         } else if ([eventName isEqualToString:@"BEHAVIOR_ON_TEXT_CHANGE_FAILED"]&&[behavior.eventName isEqualToString:@"BEHAVIOR_ON_TEXT_CHANGE_FAILED"] && [object isKindOfClass:[NSString class]]) {
           
           if (![behavior.behaviorValue isEqualToString:(NSString *)object]) {
             ret = [self.behaviorController runBehavior:self.entity.entityid entity:behavior];
-            return !ret;
+              success = YES;
+//            return !ret;
           }
           
         }
       
     }
+    
+    return  success;
 }
 
 -(BOOL) runBehavior:(NSString *) eventName

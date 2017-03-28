@@ -96,6 +96,12 @@
     return self;
 }
 
+
+- (void) stop {
+    
+    
+}
+
 -(void) openBook
 {
     [super openBook];
@@ -528,6 +534,14 @@
             [_goBackArray addObject:pageId];
         }
         
+        // Stop the left and right pages - - Emiaostein, 21 Mar 2017
+        NSMutableArray<HLSliderPageController *> *pages = @[page1Controller, page2Controller, page3Controller];
+        for (NSUInteger i = 0; i < 3; i++) {
+            HLSliderPageController *p = [pages objectAtIndex:i];
+            if ( p != currentPageController) {
+                [p reset];
+            }
+        }
 
         [self.currentPageController beginView];
     }

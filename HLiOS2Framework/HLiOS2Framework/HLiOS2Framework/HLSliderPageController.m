@@ -406,6 +406,15 @@
         self.behController.pageController = self.currentPageController;
         self.currentPageController.behaviorController = self.behController;
         
+        NSArray<HLPageController *> *pages = @[page1Controller, page2Controller, page3Controller];
+        for (NSUInteger i = 0; i < 3; i++) {
+            HLPageController *p = [pages objectAtIndex:i];
+            if ( p != currentPageController) {
+                [p stopView];
+            }
+        }
+        
+        
         [self.currentPageController beginView];                                                 //必要步骤3/3
 
         
@@ -1083,6 +1092,13 @@
     
 }
 
+-(void) reset { // reset the up, mid, down pages to origin, such as, reset audio, video, view, animation etc.
+    
+    [page1Controller stopView];
+    [page2Controller stopView];
+    [page3Controller stopView];
+    
+}
 
 
 -(Boolean) checkOrientation:(UIInterfaceOrientation)interfaceOrientation

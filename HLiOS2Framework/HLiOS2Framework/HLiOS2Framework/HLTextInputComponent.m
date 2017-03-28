@@ -29,6 +29,7 @@
 
   
     textfiled.borderStyle = UITextBorderStyleRoundedRect;
+    textfiled.returnKeyType = UIReturnKeyDone;
     textfiled.placeholder = _entity.placeholder;
     textfiled.text = _entity.text;
     textfiled.font = [UIFont systemFontOfSize:_entity.fontSize];
@@ -39,9 +40,9 @@
     
     self.uicomponent = textfiled;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChanged:) name:UITextFieldTextDidChangeNotification object:nil];
-  
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEndEdit:) name:UITextFieldTextDidEndEditingNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChanged:) name:UITextFieldTextDidChangeNotification object:nil];
+//  
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEndEdit:) name:UITextFieldTextDidEndEditingNotification object:nil];
   
 }
 
@@ -54,7 +55,7 @@
         NSString *string = textField.text;
         
         if ([self onTextDidChanged:string]) {
-            [textField resignFirstResponder];
+//            [textField resignFirstResponder];
         }
     }
 }
@@ -72,6 +73,20 @@
     }
   }
   
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+//    UITextField *target = (UITextField *)noti.object;
+//    UITextField *textField = self.uicomponent;
+    
+        //    NSLog(textField.text);
+        NSString *string = textField.text;
+        if ([self onTextDidEndEdit:string]) {
+            //      [textField resignFirstResponder];
+        } else if ([self onTextDidChanged:string]) {
+            
+        }
+    
 }
 
 

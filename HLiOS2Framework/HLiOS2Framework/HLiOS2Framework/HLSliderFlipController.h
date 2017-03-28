@@ -46,9 +46,9 @@ typedef enum {
 }
 
 
-@property (nonatomic,retain) HLSliderPageController *page1Controller;
-@property (nonatomic,retain) HLSliderPageController *page2Controller;
-@property (nonatomic,retain) HLSliderPageController *page3Controller;
+@property (nonatomic,retain) HLSliderPageController *page1Controller; // left
+@property (nonatomic,retain) HLSliderPageController *page2Controller; // current
+@property (nonatomic,retain) HLSliderPageController *page3Controller; // right
 @property (nonatomic,retain) NSMutableArray       *goBackArray;
 @property (nonatomic,assign) HLSliderPageController *currentPageController;
 @property (nonatomic,retain) UIScrollView         *scrollView;
@@ -57,6 +57,7 @@ typedef enum {
 @property Boolean canScroll;
 @property (nonatomic,retain) NSString* subpageid;
 
+- (void) stop;  // stop the   - - Emiaostein, 21 Mar 2017
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;
 
 @end

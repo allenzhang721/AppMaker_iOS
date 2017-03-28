@@ -48,6 +48,8 @@
 
 -(void) clean;
 -(void) beginView;
+-(void) stopView; // Stop - - Emiaostein, 21 Mar 2017
+
 -(void) setup:(CGRect) rect;
     //     >>>>>>
 -(void) setup:(CGRect) rect WithClear:(BOOL)clear;  // 1.2 穿透视图
