@@ -737,7 +737,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = N8WL2V9VY9;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					2C994C861E56D52600895B30 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1226,8 +1226,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = N8WL2V9VY9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1252,8 +1252,8 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "ee973989-9850-4c8c-aa9b-6e8ea38a44c3";
+				PROVISIONING_PROFILE_SPECIFIER = "com.usmarttech.smartApps AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart App Creator/Smart App Creator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
