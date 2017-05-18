@@ -457,20 +457,25 @@
             return NO;
         }
     }
+    
+    
     if (self.entity.isVerHorMode == YES)
     {
         return [self.flipController checkOrientation:interfaceOrientation];
     }
+    
     else
     {
         if ((interfaceOrientation == UIInterfaceOrientationPortrait) || (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown))
         {
             if (self.entity.isVerticalMode == YES)
             {
+            
                 return YES;
             }
             else
             {
+                
                 return NO;
             }
         }
@@ -478,10 +483,12 @@
         {
             if (self.entity.isVerticalMode == NO)
             {
+                
                 return YES;
             }
             else
             {
+                
                 return NO;
             }
         }

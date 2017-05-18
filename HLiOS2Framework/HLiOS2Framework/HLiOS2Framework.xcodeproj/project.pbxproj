@@ -482,7 +482,7 @@
 		C3DFBC1E17A64005001EBFB1 /* ScrollCatalogComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DFBC1C17A64005001EBFB1 /* ScrollCatalogComponent.h */; };
 		C3DFBC1F17A64005001EBFB1 /* ScrollCatalogComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFBC1D17A64005001EBFB1 /* ScrollCatalogComponent.m */; };
 		C3E4EF7117B337EF00D8380F /* HorConnectLineComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E4EF6F17B337EF00D8380F /* HorConnectLineComponent.h */; };
-		C3E4EF7217B337EF00D8380F /* HorConnectLineComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E4EF7017B337EF00D8380F /* HorConnectLineComponent.m */; };
+		C3E4EF7217B337EF00D8380F /* HorConnectLineComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E4EF7017B337EF00D8380F /* HorConnectLineComponent.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C3E4EF7617B3380F00D8380F /* HorConnectLineEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E4EF7417B3380F00D8380F /* HorConnectLineEntity.h */; };
 		C3E4EF7717B3380F00D8380F /* HorConnectLineEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E4EF7517B3380F00D8380F /* HorConnectLineEntity.m */; };
 		C3EA73FE178D3718004961E3 /* CaseComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = C3EA73FC178D3717004961E3 /* CaseComponent.h */; };

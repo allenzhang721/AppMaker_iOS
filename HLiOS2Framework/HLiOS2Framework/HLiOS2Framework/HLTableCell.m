@@ -16,6 +16,7 @@
 
 @property(nonatomic, assign) HLTableCellViewModel *viewModel;
 @property(nonatomic, assign) NSArray<HLTableCellSubBindingModel *> *bindingModels;
+@property(nonatomic, retain) NSDictionary<NSString*, NSNumber *>*bingings;
 
 @end
 
@@ -49,7 +50,7 @@
           imgView.image = [UIImage imageWithContentsOfFile:imgPath];
         }
         [self.contentView addSubview:imgView];
-        imgView.tag = [subViewModel.comID integerValue];
+        imgView.tag = [[subViewModel.comID substringFromIndex:subViewModel.comID.length - 6] integerValue];
       }
       
       if ([subViewModel isKindOfClass:[HLTableCellSubViewTextModel class]]) {
@@ -70,7 +71,7 @@
           label.textAlignment = NSTextAlignmentRight;
         }
         [self.contentView addSubview:label];
-        label.tag = [subViewModel.comID integerValue];
+        label.tag = [[subViewModel.comID substringFromIndex:subViewModel.comID.length - 6]  integerValue];
       }
     }
   }
@@ -114,31 +115,43 @@
   self.bindingModels = bindingModel;
 }
 
--(void)configWithData:(NSDictionary *)dic {
-  
+-(NSString *)configWithData:(NSDictionary *)dic {
+    NSMutableString *content = [@"Good" mutableCopy];
+    
   if (dic != nil && _bindingModels.count > 0) {
+      
     for (HLTableCellSubBindingModel *b in _bindingModels) {
       NSLog(@"%@ = %@", b.modelID, dic[b.modelKey]);
-      
       if (b.modelKey == nil) {
         continue;
       }
       
-      UIView *v = [self.contentView viewWithTag:[b.modelID integerValue]];
+//        [content appendFormat:@"\nmodelID = %@",[b.modelID substringFromIndex:b.modelID.length - 6]];
+      
+      UIView *v = [self.contentView viewWithTag:[[b.modelID substringFromIndex:b.modelID.length - 6]  integerValue]];
       
       if ([v isKindOfClass:[UITextView class]]) {
         UITextView *label = (UITextView *)v;
         if (dic != nil && (b.modelKey != nil && ![b.modelKey isEqualToString:@""])) {
           label.text = [NSString stringWithFormat:@"%@", dic[b.modelKey]];
-            
+//            [content appendFormat:@"%@", [NSString stringWithFormat:@"\nlable = %@", label.text]];
+        } else {
+//            [content appendFormat:@"%@", [NSString stringWithFormat:@"\ntextView modelKey not exist"]];
         }
       } else if ([v isKindOfClass:[UIImageView class]]) {
         UIImageView *imgView = (UIImageView *)v;
         NSURL *url = [NSURL URLWithString:dic[b.modelKey]];
+//          [content appendFormat:@"%@",[NSString stringWithFormat:@"\nimg = %@", url.path]];
         [imgView sd_setImageWithURL:url placeholderImage:imgView.image];
+      } else {
+//          [content appendFormat:@"%@",[NSString stringWithFormat:@"\n v is, %@ not textView and ImageVIew", NSStringFromClass([v class])]];
       }
     }
+  } else {
+//     [content appendFormat:@"%@",@"no bindingModels"];
   }
+//    [content appendFormat:@"\n--------"];
+    return content;
 }
 
 @end

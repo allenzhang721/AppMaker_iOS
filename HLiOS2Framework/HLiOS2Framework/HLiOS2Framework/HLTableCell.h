@@ -17,6 +17,6 @@
 -(void)configWithViewModels:(HLTableCellViewModel *)viewModel entity:(HLContainerEntity *)entity;
 -(void)configWithBindingModels:(NSArray<HLTableCellSubBindingModel *> *)bindingModel;
 
--(void)configWithData:(NSDictionary *)dic;
+-(NSString *)configWithData:(NSDictionary *)dic;
 
 @end

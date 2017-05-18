@@ -19,5 +19,9 @@ class ViewController: UIViewController {
         let bookDir = Bundle.main.bundleURL.appendingPathComponent("book", isDirectory: true)
         appMaker.openBook(withRootViewController: self, bookDirectoryPath: bookDir.path, theDelegate: nil, hiddenBackIcon: true, hiddenShareIcon: true)
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 }
 

@@ -46,6 +46,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        manager.addDemoBook()
+        
         manager.actionHandler = {[weak self] action in
             guard let sf = self else { return }
             switch action {
@@ -133,6 +135,7 @@ class ViewController: UIViewController {
                        hiddenBackIcon: false,
                        hiddenShareIcon: true)
     }
+    
 }
 
 //MARK: CollectonView DataSource
@@ -242,10 +245,14 @@ class BookModel: NSObject, NSCoding {
     
     var IP: String
     var ID: String
+    var isDemo = false
     var name: String = String.untitled
     var stateChangedHandler: ((State) -> ())?
     var displayName: String {return name}
-    var bookDirUrl: URL {return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(ID, isDirectory: true).appendingPathComponent("book", isDirectory: true)}
+    var bookDirUrl: URL {
+        return !isDemo ?
+            FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(ID, isDirectory: true).appendingPathComponent("book", isDirectory: true)
+            : Bundle.main.resourceURL!.appendingPathComponent(name, isDirectory: true)}
     var coverImg: UIImage {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let bookDir = documentsURL.appendingPathComponent(ID, isDirectory: true)
@@ -275,6 +282,8 @@ class BookModel: NSObject, NSCoding {
     }
 }
 
+
+
 class BookManager {
     
     enum UrlType: String {
@@ -298,6 +307,13 @@ class BookManager {
     private var loaded = false
     private var books = [BookModel]()
     private var bookStates: [String: BookModel.State] = [:]
+    
+    func addDemoBook() {
+        
+        let models = BookModel.demoBooks
+        books.insert(contentsOf: models, at: 0)
+        models.forEach{ bookStates[$0.ID] = BookModel.State.done }
+    }
     
     @discardableResult
     func download(fromIP IP: String) -> Bool {
@@ -376,7 +392,7 @@ class BookManager {
         let listUrl = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask).first!.appendingPathComponent("booklist")
         let stateUrl = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask).first!.appendingPathComponent("bookstate")
         if let books = NSKeyedUnarchiver.unarchiveObject(withFile: listUrl.path) as? [BookModel], let states = NSKeyedUnarchiver.unarchiveObject(withFile: stateUrl.path) as? [[String: String]]  {
-            self.books = books
+            self.books.append(contentsOf: books)
             for item in states { bookStates[item.keys.first!] = BookModel.State(rawValue: item.values.first!) }
         }
         loaded = true

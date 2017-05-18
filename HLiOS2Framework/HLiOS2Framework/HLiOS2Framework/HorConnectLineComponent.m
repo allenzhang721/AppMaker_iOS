@@ -166,8 +166,8 @@
     } completion:^(BOOL finished) {
         
     }];
-    self.wiggleLayer = _endImg.layer;
-    [_wiggleLayer bts_startWiggling];
+//    self.wiggleLayer = _endImg.layer;
+//    [_wiggleLayer bts_startWiggling];
 }
 
 - (void)drawLine
@@ -185,46 +185,93 @@
 }
 
 //连线是否正确
-- (BOOL)check
-{
-    if ([[_connectLineEntity.answerArray objectAtIndex:_beginImg.tag] isEqualToString:[_connectLineEntity.idArray objectAtIndex:_endImg.tag]])
-    {
+- (void)connectEnd:(BOOL)correct {
+    if (correct) {
         _rightCount++;
-        int index = _beginImg.tag % 2 == 0 ? _beginImg.tag / 2 : _endImg.tag / 2;
         ((UIImageView *)[_selectTagImgArr objectAtIndex:_beginImg.tag]).highlighted = YES;
         ((UIImageView *)[_selectTagImgArr objectAtIndex:_endImg.tag]).highlighted = YES;
-        [_complentArr addObject:[NSNumber numberWithInt:_beginImg.tag]];
-        [_complentArr addObject:[NSNumber numberWithInt:_endImg.tag]];
-        for (int i = 0; i < [self.container.entity.behaviors count]; i++)
-        {
-            HLBehaviorEntity *behavior = [self.container.entity.behaviors objectAtIndex:i];
-            if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_CONNECT_SIGLE"])
-            {
-                if (index == [behavior.behaviorValue intValue])
-                {
-                    [self.container runBehaviorWithEntity:behavior];
-                }
-            }
-            if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_CONNECT_ALL"] && _rightCount == self.connectLineEntity.sourceArray.count / 2)
-            {
-                [self.container runBehaviorWithEntity:behavior];
-            }
-        }
-        return YES;
-    }
-    else
-    {
+        [_complentArr addObject:[NSNumber numberWithInteger:_beginImg.tag]];
+        [_complentArr addObject:[NSNumber numberWithInteger:_endImg.tag]];
+        
+    } else {
         ((UIImageView *)[_selectTagImgArr objectAtIndex:_beginImg.tag]).highlighted = NO;
         ((UIImageView *)[_selectTagImgArr objectAtIndex:_endImg.tag]).highlighted = NO;
-        
-        for (int i = 0; i < [self.container.entity.behaviors count]; i++)
-        {
+    }
+}
+
+- (int)connectCorrectIndex:(BOOL)correct {
+    if (correct) {
+        return _beginImg.tag % 2 == 0 ? _beginImg.tag / 2 : _endImg.tag / 2;
+    } else {
+        return -1;
+    }
+}
+
+- (void)connectEndRunBehavior:(BOOL)correct atIndex:(int)index {
+    if (index < 0) {
+        return;
+    }
+    
+    if (correct) {
+        for (int i = 0; i < [container.entity.behaviors count]; i++) {
             HLBehaviorEntity *behavior = [self.container.entity.behaviors objectAtIndex:i];
-            if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_CONNECT_SIGLE_ERROR"])
-            {
+            
+            if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_CONNECT_SIGLE"]) {
+                if (index == [behavior.behaviorValue intValue]) {
+                    [self.container runBehaviorWithEntity:behavior];
+                    return;
+                }
+            } else if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_CONNECT_ALL"] && _rightCount == self.connectLineEntity.sourceArray.count / 2) {
                 [self.container runBehaviorWithEntity:behavior];
+                return;
             }
         }
+    } else {
+        for (int i = 0; i < [self.container.entity.behaviors count]; i++) {
+            HLBehaviorEntity *behavior = [self.container.entity.behaviors objectAtIndex:i];
+            if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_CONNECT_SIGLE_ERROR"]) {
+                [self.container runBehaviorWithEntity:behavior];
+                return;
+            }
+        }
+    }
+}
+
+- (BOOL)connectCorrect {
+    if ([[_connectLineEntity.answerArray objectAtIndex:_beginImg.tag] isEqualToString:[_connectLineEntity.idArray objectAtIndex:_endImg.tag]])
+    {
+//        _rightCount++;
+//        int index = _beginImg.tag % 2 == 0 ? _beginImg.tag / 2 : _endImg.tag / 2;
+//        ((UIImageView *)[_selectTagImgArr objectAtIndex:_beginImg.tag]).highlighted = YES;
+//        ((UIImageView *)[_selectTagImgArr objectAtIndex:_endImg.tag]).highlighted = YES;
+//        [_complentArr addObject:[NSNumber numberWithInteger:_beginImg.tag]];
+//        [_complentArr addObject:[NSNumber numberWithInteger:_endImg.tag]];
+//        for (int i = 0; i < [container.entity.behaviors count]; i++) {
+//            HLBehaviorEntity *behavior = [self.container.entity.behaviors objectAtIndex:i];
+//            
+//            if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_CONNECT_SIGLE"]) {
+//                if (index == [behavior.behaviorValue intValue]) {
+//                    [self.container runBehaviorWithEntity:behavior];
+//                }
+//            }
+//            
+//            if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_CONNECT_ALL"] && _rightCount == self.connectLineEntity.sourceArray.count / 2) {
+//                [self.container runBehaviorWithEntity:behavior];
+//            }
+//        }
+        return YES;
+    } else {
+//        ((UIImageView *)[_selectTagImgArr objectAtIndex:_beginImg.tag]).highlighted = NO;
+//        ((UIImageView *)[_selectTagImgArr objectAtIndex:_endImg.tag]).highlighted = NO;
+        
+//        for (int i = 0; i < [self.container.entity.behaviors count]; i++)
+//        {
+//            HLBehaviorEntity *behavior = [self.container.entity.behaviors objectAtIndex:i];
+//            if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_CONNECT_SIGLE_ERROR"])
+//            {
+//                [self.container runBehaviorWithEntity:behavior];
+//            }
+//        }
         return NO;
     }
 }
@@ -322,45 +369,43 @@
     }
 }
 
-- (void)curTouchUp:(CGPoint)point
-{
+- (void)curTouchUp:(CGPoint)point {
     BOOL isOnImg = NO;
-    for (UIImageView *img in _imgView.subviews)
-    {
-        if ([img isKindOfClass:[UIImageView class]] &&  CGRectContainsPoint(img.frame, point))
-        {
+    for (UIImageView *img in _imgView.subviews) {
+        if ([img isKindOfClass:[UIImageView class]] &&  CGRectContainsPoint(img.frame, point)) {
             isOnImg = YES;
             break;
         }
     }
-    if (_beginImg)
-    {
-        [self beginImgRecovered];
-        if (_endImg && isOnImg)//连线完整
-        {
-            if ([self check])//答案正确
-            {
-                [self endImgRecovered];
-                ((UIImageView *)[_selectTagImgArr objectAtIndex:_endImg.tag]).highlighted = YES;
-                _curDrawLineView.userInteractionEnabled = NO;
-            }
-            else//答案错误
-            {
-                [self endImgWrongRecovered];
-                [_curDrawLineView removeFromSuperview];
-            }
-        }
-        else//连线不完整
-        {
-            if (_endImg) {
-                [self endImgRecovered];
-            }
-            [_curDrawLineView removeFromSuperview];
-        }
-        [self drawLine];
+    [self beginImgRecovered];
+    BOOL connectCorrect = [self connectCorrect];
+    int index = [self connectCorrectIndex: connectCorrect];
+    [self connectEnd: connectCorrect];
+    if (_beginImg && _endImg && isOnImg && connectCorrect) { //连线完整
+//        [self beginImgRecovered];
+//        if (){
+//            if ([self connectCorrect]) {//答案正确
+        [self endImgRecovered];
+        ((UIImageView *)[_selectTagImgArr objectAtIndex:_endImg.tag]).highlighted = YES;
+        _curDrawLineView.userInteractionEnabled = NO;
+//            } else {//答案错误
+//                [self endImgWrongRecovered];
+//                [_curDrawLineView removeFromSuperview];
+//            }
+//        } else {//连线不完整
+//            
+//        }
+        
+    } else {
+        [self endImgRecovered];
+        [_curDrawLineView removeFromSuperview];
     }
+    
+    [self drawLine];
     _beginImg = nil;
     _endImg = nil;
+    
+    [self connectEndRunBehavior: connectCorrect atIndex: index];
 }
 
 - (void)dealloc

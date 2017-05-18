@@ -65,27 +65,54 @@ static NSUInteger count = 2;
 //}
 
 - (void)loadData:(NSData *)data {
+//    [self alertResult:@"Will Load Data"];
   NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 //  count = [dic[@"count"] floatValue];
   
     NSArray<NSDictionary<NSString *, NSString *> *> *items = nil;
     NSString *parent = _entity.modelParent;
-    printf(@" aaa = %@",parent);
     if(![parent isEqualToString:@""]){
+//        [self alertResult:@"Parent is Array"];
         @try {
             items = (NSArray *)[dic valueForKeyPath:parent];
+//            [self alertResult:@"Get Parent's Array"];
         } @catch (NSException *exception) {
-            
+//            [self alertResult:@"Get Parent's Array Wrong"];
         } @finally {
-            
         }
     }else {
+//        [self alertResult:@"Parent is Dic"];
+//        [self alertResult:@"Get Parent's Dic"];
         items = dic;
     }
   self.items = items;
   
   [(UICollectionView *)self.uicomponent reloadData];
+    
+//    [self alertResult:@"Did Load Data"];
 }
+
+//- (void)alertResult:(NSString *)result {
+//    
+//    UILabel *label =[uicomponent viewWithTag:666];
+//    
+//    if ( label == nil) {
+//        
+//        UILabel *label = [[UILabel alloc] initWithFrame:(CGRectMake(0, 0, 300, 400))];
+//        label.tag = 666;
+//        label.numberOfLines = 0;
+//        
+//        [uicomponent addSubview:label];
+//    }
+//    
+//    NSString *text = label.text != nil ? label.text : @"";
+//    [label setText:[text stringByAppendingString:[NSString stringWithFormat:@"\n%@", result]]];
+//    
+//    
+////    
+////    [alert addAction:[UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleCancel handler:nil]];
+////    [UIApplication.sharedApplication.keyWindow.rootViewController presentViewController:alert animated:true completion:nil];
+//}
 
 - (void)sendRequest:(id)sender
 {
@@ -154,15 +181,19 @@ static NSUInteger count = 2;
         dispatch_async(dispatch_get_main_queue(), ^{
           if ([ws respondsToSelector:@selector(loadData:)]) {
             ws.firstRequstSuccess = YES;
+//              [ws alertResult:@"Response Success"];
             [ws loadData:data];
+              
+              
           }
         });
       }
-      
     }
     else {
       // Failure
       NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+        
+//        [self alertResult:[error localizedDescription]];
     }
   }];
   [task resume];
@@ -226,6 +257,7 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
   [cell configWithBindingModels:_entity.bindingModels];
   if (_items != nil && !([_items isKindOfClass:[NSNull class]]) && _items.count > 0) {
     [cell configWithData:_items[indexPath.item]];
+//      [self alertResult:[NSString stringWithFormat:@"cell configed: %@", content]];
   }
   
   return cell;

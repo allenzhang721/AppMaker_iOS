@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1509241EC8A5E800EC09CD /* DemoBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1509231EC8A5E800EC09CD /* DemoBooks.swift */; };
 		2C2104E71E57420A00C19F1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C2104E91E57420A00C19F1E /* Localizable.strings */; };
 		2C2104F31E57427600C19F1E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2104F21E57427600C19F1E /* CoreLocation.framework */; };
 		2C2104F51E57427D00C19F1E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2104F41E57427D00C19F1E /* MapKit.framework */; };
@@ -63,6 +64,7 @@
 		2C4C27DA1E580BAB003C5A1F /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C27B21E580207003C5A1F /* PromiseKit.framework */; };
 		2C4C27DB1E580BAB003C5A1F /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C27B21E580207003C5A1F /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C4C28361E588DF4003C5A1F /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4C28351E588DF4003C5A1F /* libxml2.tbd */; };
+		2C675C941ECDAD85003DCD8C /* linebook in Resources */ = {isa = PBXBuildFile; fileRef = 2C675C931ECDAD85003DCD8C /* linebook */; };
 		2C909F251E5A9B670076933F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C909F241E5A9B670076933F /* libz.tbd */; };
 		2C994C8C1E56D52600895B30 /* SACPublisherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C994C8B1E56D52600895B30 /* SACPublisherTests.swift */; };
 		2C994C971E56D52600895B30 /* SACPublisherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C994C961E56D52600895B30 /* SACPublisherUITests.swift */; };
@@ -290,6 +292,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C1509231EC8A5E800EC09CD /* DemoBooks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoBooks.swift; sourceTree = "<group>"; };
 		2C2104D01E5740E500C19F1E /* HLiOS2Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HLiOS2Framework.xcodeproj; path = ../../HLiOS2Framework/HLiOS2Framework/HLiOS2Framework.xcodeproj; sourceTree = "<group>"; };
 		2C2104E81E57420A00C19F1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2C2104EA1E57420C00C19F1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -369,6 +372,7 @@
 		2C4C27BC1E580420003C5A1F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Frameworks/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 		2C4C27F51E5888C9003C5A1F /* Smart App Creator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smart App Creator-Bridging-Header.h"; sourceTree = "<group>"; };
 		2C4C28351E588DF4003C5A1F /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		2C675C931ECDAD85003DCD8C /* linebook */ = {isa = PBXFileReference; lastKnownFileType = folder; path = linebook; sourceTree = "<group>"; };
 		2C909F241E5A9B670076933F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2C994C731E56D52600895B30 /* Smart App Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart App Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C994C871E56D52600895B30 /* Smart App CreatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart App CreatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -648,9 +652,11 @@
 		2C994CA91E56DCB500895B30 /* Smart App Creator */ = {
 			isa = PBXGroup;
 			children = (
+				2C675C931ECDAD85003DCD8C /* linebook */,
 				2C21051F1E57442700C19F1E /* appMaker.h */,
 				2C994CAA1E56DCB500895B30 /* AppDelegate.swift */,
 				2C994CB11E56DCB500895B30 /* ViewController.swift */,
+				2C1509231EC8A5E800EC09CD /* DemoBooks.swift */,
 				2C994CAB1E56DCB500895B30 /* Assets.xcassets */,
 				2C994CAC1E56DCB500895B30 /* LaunchScreen.storyboard */,
 				2C994CAE1E56DCB500895B30 /* Main.storyboard */,
@@ -737,7 +743,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = N8WL2V9VY9;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					2C994C861E56D52600895B30 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -946,6 +952,7 @@
 				2C994CB61E56DCB500895B30 /* Info.plist in Resources */,
 				2C2104E71E57420A00C19F1E /* Localizable.strings in Resources */,
 				2C4C276C1E574A0A003C5A1F /* appMakerResources.bundle in Resources */,
+				2C675C941ECDAD85003DCD8C /* linebook in Resources */,
 				2C994CB51E56DCB500895B30 /* Main.storyboard in Resources */,
 				2C4C276D1E574A0A003C5A1F /* appMakerUI.xcassets in Resources */,
 				2C994CB31E56DCB500895B30 /* Assets.xcassets in Resources */,
@@ -981,6 +988,7 @@
 				2C4A25BF1E5AD199003ED5C4 /* zip.c in Sources */,
 				2C994CB71E56DCB500895B30 /* ViewController.swift in Sources */,
 				2C4A25E51E5AD280003ED5C4 /* CXMLNamespaceNode.m in Sources */,
+				2C1509241EC8A5E800EC09CD /* DemoBooks.swift in Sources */,
 				2C4A25E61E5AD280003ED5C4 /* CXMLNode.m in Sources */,
 				2C4A25E11E5AD280003ED5C4 /* CXMLDocument_PrivateExtensions.m in Sources */,
 				2C4A25BD1E5AD199003ED5C4 /* mztools.c in Sources */,
@@ -1184,8 +1192,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N8WL2V9VY9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1226,7 +1235,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N8WL2V9VY9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1252,8 +1261,8 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Smart\\ App\\ Creator/appMakerSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.smartApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ee973989-9850-4c8c-aa9b-6e8ea38a44c3";
-				PROVISIONING_PROFILE_SPECIFIER = "com.usmarttech.smartApps AppStore";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smart App Creator/Smart App Creator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
