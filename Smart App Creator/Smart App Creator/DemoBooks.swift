@@ -13,8 +13,9 @@ extension BookModel {
         
         let books: [BookModel] =
 //                ["curlFlip","tableView", "book"]
-                ["linebook"]
-                .map{let model = BookModel(IP: ""); model.name = $0; model.isDemo = true; return  model}
+//                ["book","book2"]
+                []
+                .map{let model = BookModel(IP: ""); model.name = $0 as! String; model.isDemo = true; return  model}
         
         return books
     }

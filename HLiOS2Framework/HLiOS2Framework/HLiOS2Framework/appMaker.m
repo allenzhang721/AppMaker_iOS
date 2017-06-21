@@ -43,6 +43,7 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];      //陈星宇，11.22，statusbar日文版会出现
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     [self.bookController setup:CGRectMake(0, 0, screenBounds.size.width, screenBounds.size.height)];        //陈星宇，11.13，适配
+//    [self.rootViewController presentViewController:_bookController.bookviewcontroller animated:false completion:NULL];
     [self.rootViewController presentModalViewController:self.bookController.bookviewcontroller animated:NO];//书架点击的书需要在此弹出
 }
 

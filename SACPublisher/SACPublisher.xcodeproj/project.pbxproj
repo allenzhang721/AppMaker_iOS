@@ -319,7 +319,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = N8WL2V9VY9;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					2C87E3CA1E5C245B005F9C46 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -557,7 +557,7 @@
 				INFOPLIST_FILE = SACPublisher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smartappscreator.fortestone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.front;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SACPublisher/SACPublisher-Bridging-Header.h";
@@ -571,8 +571,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = N8WL2V9VY9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,10 +585,10 @@
 				INFOPLIST_FILE = SACPublisher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.smartappscreator.fortestone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.usmarttech.front;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "ee973989-9850-4c8c-aa9b-6e8ea38a44c3";
+				PROVISIONING_PROFILE_SPECIFIER = "com.usmarttech.smartApps AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "SACPublisher/SACPublisher-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

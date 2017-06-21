@@ -309,8 +309,10 @@ class BookManager {
     private var bookStates: [String: BookModel.State] = [:]
     
     func addDemoBook() {
-        
         let models = BookModel.demoBooks
+        if (models.count <= 0) {
+            return;
+        }
         books.insert(contentsOf: models, at: 0)
         models.forEach{ bookStates[$0.ID] = BookModel.State.done }
     }

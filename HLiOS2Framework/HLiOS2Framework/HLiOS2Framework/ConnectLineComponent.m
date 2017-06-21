@@ -172,8 +172,8 @@
     } completion:^(BOOL finished) {
         
     }];
-    self.wiggleLayer = _endImg.layer;
-    [_wiggleLayer bts_startWiggling];
+//    self.wiggleLayer = _endImg.layer;
+//    [_wiggleLayer bts_startWiggling];
 }
 
 - (void)drawLine
