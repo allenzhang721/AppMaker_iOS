@@ -14,7 +14,7 @@ extension BookModel {
         let books: [BookModel] =
 //                ["curlFlip","tableView", "book"]
 //                ["book","book2"]
-                []
+                ["countbook", "timebook", "tablebook"]
                 .map{let model = BookModel(IP: ""); model.name = $0 as! String; model.isDemo = true; return  model}
         
         return books

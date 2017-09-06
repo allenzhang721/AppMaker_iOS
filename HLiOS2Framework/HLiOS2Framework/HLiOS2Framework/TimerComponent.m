@@ -21,6 +21,8 @@
 
 @end
 
+static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChangedNotification";
+
 @implementation TimerComponent
 
 @synthesize display;
@@ -39,6 +41,7 @@
         [self.display setFont:[UIFont systemFontOfSize:te.fontSize]];
         self.display.textColor  = [self colorWithHexString:te.color];
         self.display.backgroundColor = [UIColor clearColor];
+        self.display.textAlignment = NSTextAlignmentCenter;
         self.uicomponent = self.display;
         [self.uicomponent addGestureRecognizer:[[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapGesture)] autorelease]];//adward 3.6
         self.maxValue     = te.maxValue;
@@ -66,6 +69,10 @@
         else
         {
             self.timeInterval = 1.0;
+        }
+        
+        if (self.isStatic == true) {
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadLastStaticInfo) name:gobalTimerDidChangedNotification object:nil];
         }
             
         [self loadLastStaticInfo];
@@ -434,6 +441,10 @@
         [[NSUserDefaults standardUserDefaults] setObject:timerInfoDic forKey:@"StaticTimerInfo"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+}
+
+- (void)timeDidChanged:(NSNotification *)notifiction {
+    
 }
 
 - (void)dealloc

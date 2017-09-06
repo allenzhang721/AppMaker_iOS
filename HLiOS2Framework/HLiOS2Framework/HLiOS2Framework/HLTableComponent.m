@@ -8,6 +8,7 @@
 
 #import "HLTableComponent.h"
 #import "HLTableCell.h"
+#import "HLBehaviorEntity.h"
 
 static NSUInteger count = 2;
 
@@ -262,6 +263,23 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
   
   return cell;
 }
+
+#pragma MARK: CollectionView Delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    for (int i = 0; i < [_entity.behaviors count]; i++)
+    {
+        HLBehaviorEntity *behavior = [_entity.behaviors objectAtIndex:i];
+        if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_LIST_ITEM_CLICK"])
+        {
+//            if ([self.container runBehaviorWithEntity:behavior])
+//            {
+//                return;
+//            }
+        }
+    }
+}
+
 
 #pragma MARK: CollectionView flow layout
 

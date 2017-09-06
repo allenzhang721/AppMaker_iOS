@@ -352,7 +352,8 @@
 				ORGANIZATIONNAME = Emiaostein;
 				TargetAttributes = {
 					29CF1F20196A754E0079F372 = {
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = N8WL2V9VY9;
+						ProvisioningStyle = Automatic;
 					};
 					29CF1F44196A754E0079F372 = {
 						DevelopmentTeam = H7HX4A2DL8;
@@ -571,7 +572,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Horner(Beijing)Technology Co.,Ltd";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N8WL2V9VY9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HLIOSPublisher/appMakerSDK",
@@ -592,6 +594,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.botai.com.cszwdy.www.HLIOSPublisher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -603,7 +606,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Horner(Beijing)Technology Co.,Ltd";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N8WL2V9VY9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HLIOSPublisher/appMakerSDK",
@@ -624,6 +628,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.botai.com.cszwdy.www.HLIOSPublisher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};

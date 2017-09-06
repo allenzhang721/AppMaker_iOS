@@ -13,6 +13,8 @@
 #import "HLGobalBookID.h"
 #import "HLPageController.h"
 
+static  NSString* const globalNotification = @"GlobalCountDidChangedNotification";
+
 @implementation CounterComponent
 @synthesize display;
 @synthesize isGlobal;
@@ -33,23 +35,25 @@ static int totalCount = -1;
         }
         
         self.display = [[[UILabel alloc] init] autorelease];
-        display.textAlignment = NSTextAlignmentLeft;
+        display.textAlignment = NSTextAlignmentCenter;
         [self.display setFont:[UIFont systemFontOfSize:ce.fontSize]];
         self.display.textColor  = [self colorWithHexString:ce.fontColor];
         self.display.backgroundColor = [UIColor clearColor];
         self.isGlobal = ce.isGlobal;
         if (self.isGlobal == YES)
         {
+            [[NSNotificationCenter defaultCenter] addObserver:self selector: @selector(valueDidChanged:) name:globalNotification object:nil];
+            
             if (totalCount == -1)
             {
                 totalCount = ce.minValue;
             }
             
-            int v =[[[NSUserDefaults standardUserDefaults] valueForKey:[HLGobalBookID share].bookID] intValue];
+            NSNumber *v =[[NSUserDefaults standardUserDefaults] valueForKey:[HLGobalBookID share].bookID];
             
             if (entity.saveData) {
                 if (v != nil) {
-                    totalCount = v;
+                    totalCount = [v intValue];
                 } else {
                     if (totalCount == -1) {
                         totalCount = ce.minValue;
@@ -143,7 +147,10 @@ static int totalCount = -1;
     {
         totalCount = ce.minValue;
         [self storeTotalCount];
-        [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
+//        [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName: globalNotification object: [NSNumber numberWithInteger:totalCount]];
+        
     }
     else
     {
@@ -170,7 +177,10 @@ static int totalCount = -1;
         [self storeTotalCount];
         
         NSLog(@"final = %d",totalCount);
-        [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName: globalNotification object: [NSNumber numberWithInteger:totalCount]];
+        
+//        [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
         
     }
     else
@@ -203,7 +213,10 @@ static int totalCount = -1;
             totalCount = ((CounterEntity*)self.container.entity).minValue;
         }
         [self storeTotalCount];
-        [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName: globalNotification object: [NSNumber numberWithInteger:totalCount]];
+        
+//        [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
         
     }
     else
@@ -224,6 +237,12 @@ static int totalCount = -1;
     
     [self.display sizeToFit];
     [self checkBehavior];
+}
+
+-(void)valueDidChanged:(NSNotification *)notification {
+    int updatedCount = [((NSNumber *)notification.object) intValue];
+    [self.display setText:[NSString stringWithFormat:@"%d",updatedCount]];
+    [self.display sizeToFit];
 }
 
 -(void)storeValue:(int)value {
@@ -277,10 +296,12 @@ static int totalCount = -1;
 +(void) resetGlobal
 {
     totalCount = -1;
+    [[NSNotificationCenter defaultCenter] postNotificationName: globalNotification object: [NSNumber numberWithInteger:totalCount]];
 }
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.display release];
     [self.uicomponent release];
     [super dealloc];

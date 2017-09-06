@@ -27,65 +27,65 @@ static NSString *currentBookType = @"";
         [self.uicomponent addGestureRecognizer:[[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapGesture)] autorelease]];//adward 3.6
     }
     return self;
-
+    
 }
 
 -(void) play
 {
-        cameraView = [[UIView alloc] init] ;
-        UIImage *camImg  = [UIImage imageNamed:@"camera.png"] ;
-        UIImage *camdImg = [UIImage imageNamed:@"camerad.png"] ;
-        UIImage *camsImg = [UIImage imageNamed:@"cameraswitch.png"] ;
-        UIImage *camsdImg = [UIImage imageNamed:@"cameraswitchd.png"] ;
-        UIImage *camss   = [UIImage imageNamed:@"camerastop.png"];
-        cameraSwitchBtn = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
-        snapBtn         = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
-        [snapBtn setImage:camImg forState:UIControlStateNormal];
-        [snapBtn setImage:camdImg forState:UIControlStateHighlighted];
-        [snapBtn setImage:camss forState:UIControlStateSelected];
-        [cameraSwitchBtn setImage:camsImg forState:UIControlStateNormal];
-        [cameraSwitchBtn setImage:camsdImg forState:UIControlStateHighlighted];
-        cameraSwitchBtn.frame = CGRectMake(0, 0, 62, 62);
-        snapBtn.frame         = CGRectMake([cameraEntity.width intValue]  / 2 - 62 /2,[cameraEntity.height intValue] - 62,62,62);
-        [cameraSwitchBtn addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
-        [snapBtn addTarget:self action:@selector(snap) forControlEvents:UIControlEventTouchUpInside];
-        cameraView.frame = CGRectMake(0, 0, [cameraEntity.width intValue], [cameraEntity.height intValue]);
-        
-        [self.uicomponent addSubview:cameraView];
-        [self.uicomponent addSubview:cameraSwitchBtn];
-        [self.uicomponent addSubview:snapBtn];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(teardownAVCapture) name:UIApplicationDidEnterBackgroundNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setLayer) name:AVCaptureSessionDidStartRunningNotification object:nil];
+    cameraView = [[UIView alloc] init] ;
+    UIImage *camImg  = [UIImage imageNamed:@"camera.png"] ;
+    UIImage *camdImg = [UIImage imageNamed:@"camerad.png"] ;
+    UIImage *camsImg = [UIImage imageNamed:@"cameraswitch.png"] ;
+    UIImage *camsdImg = [UIImage imageNamed:@"cameraswitchd.png"] ;
+    UIImage *camss   = [UIImage imageNamed:@"camerastop.png"];
+    cameraSwitchBtn = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    snapBtn         = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    [snapBtn setImage:camImg forState:UIControlStateNormal];
+    [snapBtn setImage:camdImg forState:UIControlStateHighlighted];
+    [snapBtn setImage:camss forState:UIControlStateSelected];
+    [cameraSwitchBtn setImage:camsImg forState:UIControlStateNormal];
+    [cameraSwitchBtn setImage:camsdImg forState:UIControlStateHighlighted];
+    cameraSwitchBtn.frame = CGRectMake(0, 0, 62, 62);
+    snapBtn.frame         = CGRectMake([cameraEntity.width intValue]  / 2 - 62 /2,[cameraEntity.height intValue] - 62,62,62);
+    [cameraSwitchBtn addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
+    [snapBtn addTarget:self action:@selector(snap) forControlEvents:UIControlEventTouchUpInside];
+    cameraView.frame = CGRectMake(0, 0, [cameraEntity.width intValue], [cameraEntity.height intValue]);
+    
+    [self.uicomponent addSubview:cameraView];
+    [self.uicomponent addSubview:cameraSwitchBtn];
+    [self.uicomponent addSubview:snapBtn];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(teardownAVCapture) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setLayer) name:AVCaptureSessionDidStartRunningNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
-
-        NSString *imgFile = [self.cameraEntity.rootPath stringByAppendingPathComponent:self.cameraEntity.entityid];
-        if([HLFileUtility checkFileAtPaht:imgFile] == YES)
+    
+    NSString *imgFile = [self.cameraEntity.rootPath stringByAppendingPathComponent:self.cameraEntity.entityid];
+    if([HLFileUtility checkFileAtPaht:imgFile] == YES)
+    {
+        UIImage *img = [UIImage imageWithContentsOfFile:imgFile];
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        if ([userDefaults valueForKey:self.cameraEntity.entityid] != nil)
         {
-            UIImage *img = [UIImage imageWithContentsOfFile:imgFile];
-            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-            if ([userDefaults valueForKey:self.cameraEntity.entityid] != nil)
-            {
-                NSInteger or = [userDefaults integerForKey:self.cameraEntity.entityid];
-                UIImage * flippedImage = [UIImage imageWithCGImage:img.CGImage scale:photoView.image.scale orientation:or] ;
-                photoView = [[UIImageView alloc] initWithImage:flippedImage];
-            }
-            else
-            {
-                photoView = [[UIImageView alloc] initWithImage:img];
-            }
-            photoView.frame = CGRectMake(0, 0, [cameraEntity.width intValue], [cameraEntity.height intValue]);
-            [self.uicomponent addSubview:photoView];
-            snapBtn.selected = YES;
+            NSInteger or = [userDefaults integerForKey:self.cameraEntity.entityid];
+            UIImage * flippedImage = [UIImage imageWithCGImage:img.CGImage scale:photoView.image.scale orientation:or] ;
+            photoView = [[UIImageView alloc] initWithImage:flippedImage];
         }
-        [self.uicomponent bringSubviewToFront:snapBtn];
-        [self.uicomponent bringSubviewToFront:cameraSwitchBtn];
+        else
+        {
+            photoView = [[UIImageView alloc] initWithImage:img];
+        }
+        photoView.frame = CGRectMake(0, 0, [cameraEntity.width intValue], [cameraEntity.height intValue]);
+        [self.uicomponent addSubview:photoView];
+        snapBtn.selected = YES;
+    }
+    [self.uicomponent bringSubviewToFront:snapBtn];
+    [self.uicomponent bringSubviewToFront:cameraSwitchBtn];
     
     NSError *error = nil;
     session = [AVCaptureSession new];
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
-    require( error == nil, bail );
+//    require( error == nil, bail );
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
         [session setSessionPreset:AVCaptureSessionPresetMedium];
@@ -144,103 +144,103 @@ bail:
         return;
     }
     AVCaptureConnection *stillImageConnection = [stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-	AVCaptureVideoOrientation avcaptureOrientation = previewLayer.orientation;
-	[stillImageConnection setVideoOrientation:avcaptureOrientation];
+    AVCaptureVideoOrientation avcaptureOrientation = previewLayer.orientation;
+    [stillImageConnection setVideoOrientation:avcaptureOrientation];
     [stillImageOutput setOutputSettings:[NSDictionary dictionaryWithObject:AVVideoCodecJPEG forKey:AVVideoCodecKey]];
     [stillImageOutput captureStillImageAsynchronouslyFromConnection:stillImageConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error)
-    {
-        if (error)
-        {
-
-        }
-        else
-        {
-            NSData *jpegData =  [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer] ;
-            UIImage *localImage = [UIImage imageWithData:jpegData] ;
-            if (photoView == nil)
-            {
-                photoView = [[UIImageView alloc] initWithImage:localImage];
-            }
-            else
-            {
-                photoView.image = localImage;
-            }
-            photoView.frame = CGRectMake(0, 0, self.uicomponent.frame.size.width, self.uicomponent.frame.size.height);
-            if (isUsingFrontFacingCamera == YES)
-            {
-                
-                if (previewLayer.orientation == AVCaptureVideoOrientationLandscapeRight)
-                {
-                    UIImage * flippedImage = [UIImage imageWithCGImage:photoView.image.CGImage scale:photoView.image.scale orientation:UIImageOrientationDownMirrored] ;
-                    photoView.image = flippedImage;
-                    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                    [userDefaults setInteger:UIImageOrientationDownMirrored forKey:self.cameraEntity.entityid];
-
-                }
-                if (previewLayer.orientation  == AVCaptureVideoOrientationLandscapeLeft)
-                {
-                    UIImage * flippedImage = [UIImage imageWithCGImage:photoView.image.CGImage scale:photoView.image.scale orientation:UIImageOrientationUpMirrored];
-                    photoView.image = flippedImage;
-                    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                    [userDefaults setInteger:UIImageOrientationUpMirrored forKey:self.cameraEntity.entityid];
-                }
-                if (previewLayer.orientation  == AVCaptureVideoOrientationPortraitUpsideDown)
-                {
-                    
-                    UIImage * flippedImage = [UIImage imageWithCGImage:photoView.image.CGImage scale:photoView.image.scale orientation:UIImageOrientationRightMirrored];
-                    photoView.image = flippedImage;
-                    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                    [userDefaults setInteger:UIImageOrientationRightMirrored forKey:self.cameraEntity.entityid];
-                }
-                if (previewLayer.orientation  == AVCaptureVideoOrientationPortrait)
-                {
-                    UIImage * flippedImage = [UIImage imageWithCGImage:photoView.image.CGImage scale:photoView.image.scale orientation:UIImageOrientationLeftMirrored];
-                    photoView.image = flippedImage;
-                    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                    [userDefaults setInteger:UIImageOrientationLeftMirrored forKey:self.cameraEntity.entityid];
-                }
-            }
-            else
-            {
-                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                [userDefaults removeObjectForKey:self.cameraEntity.entityid];
-            }
-            [self.uicomponent addSubview:photoView];
-            NSString *imgFile = [self.cameraEntity.rootPath stringByAppendingPathComponent:self.cameraEntity.entityid];
-            [jpegData writeToFile:imgFile atomically:YES];
-            [self.uicomponent bringSubviewToFront:snapBtn];
-            [self.uicomponent bringSubviewToFront:cameraSwitchBtn];
-            snapBtn.selected = YES;
-            UIImageWriteToSavedPhotosAlbum(photoView.image, nil, nil, nil);
-        }
-    }
-    ];
+     {
+         if (error)
+         {
+             
+         }
+         else
+         {
+             NSData *jpegData =  [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer] ;
+             UIImage *localImage = [UIImage imageWithData:jpegData] ;
+             if (photoView == nil)
+             {
+                 photoView = [[UIImageView alloc] initWithImage:localImage];
+             }
+             else
+             {
+                 photoView.image = localImage;
+             }
+             photoView.frame = CGRectMake(0, 0, self.uicomponent.frame.size.width, self.uicomponent.frame.size.height);
+             if (isUsingFrontFacingCamera == YES)
+             {
+                 
+                 if (previewLayer.orientation == AVCaptureVideoOrientationLandscapeRight)
+                 {
+                     UIImage * flippedImage = [UIImage imageWithCGImage:photoView.image.CGImage scale:photoView.image.scale orientation:UIImageOrientationDownMirrored] ;
+                     photoView.image = flippedImage;
+                     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                     [userDefaults setInteger:UIImageOrientationDownMirrored forKey:self.cameraEntity.entityid];
+                     
+                 }
+                 if (previewLayer.orientation  == AVCaptureVideoOrientationLandscapeLeft)
+                 {
+                     UIImage * flippedImage = [UIImage imageWithCGImage:photoView.image.CGImage scale:photoView.image.scale orientation:UIImageOrientationUpMirrored];
+                     photoView.image = flippedImage;
+                     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                     [userDefaults setInteger:UIImageOrientationUpMirrored forKey:self.cameraEntity.entityid];
+                 }
+                 if (previewLayer.orientation  == AVCaptureVideoOrientationPortraitUpsideDown)
+                 {
+                     
+                     UIImage * flippedImage = [UIImage imageWithCGImage:photoView.image.CGImage scale:photoView.image.scale orientation:UIImageOrientationRightMirrored];
+                     photoView.image = flippedImage;
+                     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                     [userDefaults setInteger:UIImageOrientationRightMirrored forKey:self.cameraEntity.entityid];
+                 }
+                 if (previewLayer.orientation  == AVCaptureVideoOrientationPortrait)
+                 {
+                     UIImage * flippedImage = [UIImage imageWithCGImage:photoView.image.CGImage scale:photoView.image.scale orientation:UIImageOrientationLeftMirrored];
+                     photoView.image = flippedImage;
+                     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                     [userDefaults setInteger:UIImageOrientationLeftMirrored forKey:self.cameraEntity.entityid];
+                 }
+             }
+             else
+             {
+                 NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                 [userDefaults removeObjectForKey:self.cameraEntity.entityid];
+             }
+             [self.uicomponent addSubview:photoView];
+             NSString *imgFile = [self.cameraEntity.rootPath stringByAppendingPathComponent:self.cameraEntity.entityid];
+             [jpegData writeToFile:imgFile atomically:YES];
+             [self.uicomponent bringSubviewToFront:snapBtn];
+             [self.uicomponent bringSubviewToFront:cameraSwitchBtn];
+             snapBtn.selected = YES;
+             UIImageWriteToSavedPhotosAlbum(photoView.image, nil, nil, nil);
+         }
+     }
+     ];
 }
 
 -(void) switchCamera
 {
     AVCaptureDevicePosition desiredPosition;
-	if (isUsingFrontFacingCamera)
-		desiredPosition = AVCaptureDevicePositionBack;
-	else
-		desiredPosition = AVCaptureDevicePositionFront;
-	
-	for (AVCaptureDevice *d in [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo])
+    if (isUsingFrontFacingCamera)
+        desiredPosition = AVCaptureDevicePositionBack;
+    else
+        desiredPosition = AVCaptureDevicePositionFront;
+    
+    for (AVCaptureDevice *d in [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo])
     {
-		if ([d position] == desiredPosition)
+        if ([d position] == desiredPosition)
         {
-			[[previewLayer session] beginConfiguration];
-			AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:d error:nil];
-			for (AVCaptureInput *oldInput in [[previewLayer session] inputs])
+            [[previewLayer session] beginConfiguration];
+            AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:d error:nil];
+            for (AVCaptureInput *oldInput in [[previewLayer session] inputs])
             {
-				[[previewLayer session] removeInput:oldInput];
-			}
-			[[previewLayer session] addInput:input];
-			[[previewLayer session] commitConfiguration];
-			break;
-		}
-	}
-	isUsingFrontFacingCamera = !isUsingFrontFacingCamera;
+                [[previewLayer session] removeInput:oldInput];
+            }
+            [[previewLayer session] addInput:input];
+            [[previewLayer session] commitConfiguration];
+            break;
+        }
+    }
+    isUsingFrontFacingCamera = !isUsingFrontFacingCamera;
 }
 
 
@@ -274,22 +274,22 @@ bail:
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
-
+    
     [cameraView removeFromSuperview];
     [cameraSwitchBtn removeFromSuperview];
     [snapBtn removeFromSuperview];
     
     [session stopRunning];
     [stillImageOutput release];
-	[previewLayer removeFromSuperlayer];
-	[previewLayer release];
+    [previewLayer removeFromSuperlayer];
+    [previewLayer release];
     [snapBtn removeTarget:self action:@selector(snap) forControlEvents:UIControlEventTouchUpInside];
     [cameraSwitchBtn removeTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
     [photoView release];
     [cameraSwitchBtn release];
     [snapBtn release];
     [cameraView release];
-	self.uicomponent = nil;
+    self.uicomponent = nil;
     [super dealloc];
 }
 
@@ -304,30 +304,31 @@ bail:
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(play) name:UIApplicationWillEnterForegroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
-   [cameraView removeFromSuperview];
-   [cameraSwitchBtn removeFromSuperview];
-   [snapBtn removeFromSuperview];
-
-   [snapBtn removeTarget:self action:@selector(snap) forControlEvents:UIControlEventTouchUpInside];
-   [cameraSwitchBtn removeTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
-
-   [cameraSwitchBtn release];
+    [cameraView removeFromSuperview];
+    [cameraSwitchBtn removeFromSuperview];
+    [snapBtn removeFromSuperview];
+    
+    [snapBtn removeTarget:self action:@selector(snap) forControlEvents:UIControlEventTouchUpInside];
+    [cameraSwitchBtn removeTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cameraSwitchBtn release];
     cameraSwitchBtn = nil;
-   [snapBtn release];
+    [snapBtn release];
     snapBtn = nil;
-   [cameraView release];
+    [cameraView release];
     cameraView = nil;
-   [photoView removeFromSuperview];
-   [photoView release];
+    [photoView removeFromSuperview];
+    [photoView release];
     photoView = nil;
     if ([session isRunning])
     {
         [session stopRunning];
     }
-   [stillImageOutput release];
+    [stillImageOutput release];
     stillImageOutput = nil;
-   [previewLayer removeFromSuperlayer];
-   [previewLayer release];
+    [previewLayer removeFromSuperlayer];
+    [previewLayer release];
     previewLayer = nil;
 }
 @end
+
