@@ -36,6 +36,21 @@
   TBXMLElement *request = [EMTBXML childElementNamed:@"URLRequest"  parentElement:data];
   TBXMLElement *cell = [EMTBXML childElementNamed:@"CellXML"  parentElement:data];
   TBXMLElement *cellModel = [EMTBXML childElementNamed:@"CellModel" parentElement:data];
+    
+    TBXMLElement *IsClickOpenBrowser = [EMTBXML childElementNamed:@"IsClickOpenBrowser" parentElement:data];
+    if (IsClickOpenBrowser) {
+        self.isClickOpenBrowser = [[EMTBXML textForElement:IsClickOpenBrowser] boolValue];
+    } else {
+        self.isClickOpenBrowser = NO;
+    }
+    
+    
+    TBXMLElement *ClikcOpenKey = [EMTBXML childElementNamed:@"ClikcOpenKey" parentElement:data];
+    
+    if (ClikcOpenKey) {
+        self.clikcOpenKey = [EMTBXML textForElement:ClikcOpenKey];
+    }
+    
   
   self.request = [[HLRequest alloc] init];
   [_request decodeXML:request];

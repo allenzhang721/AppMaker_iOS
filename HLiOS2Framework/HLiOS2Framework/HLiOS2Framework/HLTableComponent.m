@@ -260,6 +260,8 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
     [cell configWithData:_items[indexPath.item]];
 //      [self alertResult:[NSString stringWithFormat:@"cell configed: %@", content]];
   }
+    
+    cell.contentView.backgroundColor = [UIColor yellowColor];
   
   return cell;
 }
@@ -267,15 +269,82 @@ static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryPar
 #pragma MARK: CollectionView Delegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [collectionView cellForItemAtIndexPath:indexPath].contentView.backgroundColor = [UIColor redColor];
+    
+    
+    
     for (int i = 0; i < [_entity.behaviors count]; i++)
     {
+        /*
+         2、	列表(Table List)子项点击事件
+         2.1、列表子项点击事件
+         事件名称：BEHAVIOR_ON_LIST_ITEM_CLICK
+         事件属性：为JSON字符  eg： {“key”:”publishID”,”value”:”aaaaa”}，当点击子项(cell中的子元素)对应的数据拥有key值属性((entity.bingdingModels.modelKey)，同时该属性等于 value值时，触发点击事件
+         
+         for example:
+         behavior.behaviorValue = {"value":"2328AB28C0E642709F98F2D0026B3111/page","key":"publishURL"}
+         _items =
+         [
+             {
+             commentCount = 0;
+             likeCount = 2;
+             likeStatus = 0;
+             nickName = "\U6625\U96e8\U6f47\U6f47";
+             previewIconURL = "1A4639AD9A184A329016685F14A23AAE/43732.jpg";
+             publishDate = "2017/02/03 07:47:40";
+             publishDesc = "";
+             publishID = 1A4639AD9A184A329016685F14A23AAE;
+             publishIconURL = "1A4639AD9A184A329016685F14A23AAE/1BC3C.jpg";
+             publishURL = "1A4639AD9A184A329016685F14A23AAE/page";
+             rebuildCount = 0;
+             relationType = 0;
+             sex = 2;
+             shareCount = 0;
+             title = "";
+             userDesc = "";
+             userID = 248964a031a24ba48003a5139e5d1b32;
+             userIconURL = "";
+             }
+         ]
+         
+         
+         2.2、列表任意子项点击事件
+         事件名称：BEHAVIOR_ON_LIST_EACHITEM_CLICK
+         当任意子项被点击时，触发此事件
+         
+         2.3、点击触发通过属性值跳转外链
+         列表中新增两个属性 IsClickOpenBrowser 和 ClikcOpenKey,
+         IsClickOpenBrowser 是布尔型数据， 当为true 的时候
+         当点击子项对应的数据拥有ClikcOpenKey 属性，以此属性为链接跳转。
+         */
         HLBehaviorEntity *behavior = [_entity.behaviors objectAtIndex:i];
         if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_LIST_ITEM_CLICK"])
         {
-//            if ([self.container runBehaviorWithEntity:behavior])
-//            {
-//                return;
-//            }
+            NSString *keyValue = behavior.behaviorValue; // {"value":"2328AB28C0E642709F98F2D0026B3111/page","key":"publishURL"}
+            
+            id dic = [NSJSONSerialization JSONObjectWithData:[keyValue dataUsingEncoding: NSUTF8StringEncoding] options:0 error:NULL];
+            
+            if (dic != NULL) {
+                NSString *key = dic[@"key"];
+                NSString *value = dic[@"value"];
+                if ([_items[indexPath.item][key] isEqualToString:value]) {
+                    [self.container runBehaviorWithEntity:behavior];
+                }
+            }
+        }
+        
+        if ([behavior.eventName isEqualToString:@"BEHAVIOR_ON_LIST_EACHITEM_CLICK"])
+        {
+            [self.container runBehaviorWithEntity:behavior];
+        }
+        
+        if (_entity.isClickOpenBrowser == YES) {
+            NSString *ClikcOpenKeyValue = _items[indexPath.item][_entity.clikcOpenKey];
+            if (ClikcOpenKeyValue != NULL) {
+                NSURL *url = [NSURL URLWithString:ClikcOpenKeyValue];
+                [[UIApplication sharedApplication] openURL:url];
+            }
         }
     }
 }

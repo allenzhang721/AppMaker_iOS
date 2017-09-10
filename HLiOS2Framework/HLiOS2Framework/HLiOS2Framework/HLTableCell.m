@@ -40,24 +40,41 @@
        UIImage *image             = [UIImage imageWithContentsOfFile:self.imagePath];
        */
       
+        
+        // Image
       if ([subViewModel isKindOfClass:[HLTableCellSubViewImageModel class]]) {
+          
         HLTableCellSubViewImageModel *s = (HLTableCellSubViewImageModel *)subViewModel;
+          
         CGRect rect = CGRectMake(subViewModel.x, subViewModel.y, subViewModel.width, subViewModel.height);
         UIImageView *imgView = [[UIImageView alloc]initWithFrame:rect];
+          
 //        imgView.backgroundColor = [UIColor greenColor];
         if (s.imageSrc != nil) {
+            
           NSString *imgPath = [entity.rootPath stringByAppendingPathComponent:s.imageSrc];
           imgView.image = [UIImage imageWithContentsOfFile:imgPath];
         }
         [self.contentView addSubview:imgView];
+          
         imgView.tag = [[subViewModel.comID substringFromIndex:subViewModel.comID.length - 6] integerValue];
+          UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap)];
+          imgView.userInteractionEnabled = true;
+          [imgView addGestureRecognizer:tap];
       }
       
+        
+        // Text Label
       if ([subViewModel isKindOfClass:[HLTableCellSubViewTextModel class]]) {
+          
         HLTableCellSubViewTextModel *s = (HLTableCellSubViewTextModel *)subViewModel;
+          
         CGRect rect = CGRectMake(subViewModel.x, subViewModel.y, subViewModel.width, subViewModel.height);
         UITextView *label = [[UITextView alloc]initWithFrame:rect];
         label.text = s.text;
+          
+//          NSLog(@"s.text = %@", s.text);
+          
         label.scrollEnabled = false;
         label.editable = false;
         label.textContainerInset = UIEdgeInsetsZero;
@@ -76,6 +93,16 @@
     }
   }
 }
+
+- (void)imageTap {
+    
+    
+}
+
+
+
+
+
 
 -(UIColor*)colorWithHexString:(NSString*)hex
 {
@@ -142,7 +169,7 @@
         UIImageView *imgView = (UIImageView *)v;
         NSURL *url = [NSURL URLWithString:dic[b.modelKey]];
 //          [content appendFormat:@"%@",[NSString stringWithFormat:@"\nimg = %@", url.path]];
-        [imgView sd_setImageWithURL:url placeholderImage:imgView.image];
+//        [imgView sd_setImageWithURL:url placeholderImage:imgView.image]; //TODO: Emiaostein 66666
       } else {
 //          [content appendFormat:@"%@",[NSString stringWithFormat:@"\n v is, %@ not textView and ImageVIew", NSStringFromClass([v class])]];
       }

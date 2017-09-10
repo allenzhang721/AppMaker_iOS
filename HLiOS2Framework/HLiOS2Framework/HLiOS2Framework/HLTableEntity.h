@@ -18,6 +18,8 @@
 @property(nonatomic, strong) HLTableCellViewModel *cellViewModel;
 @property(nonatomic, strong) NSArray<HLTableCellSubBindingModel *> *bindingModels;
 @property(nonatomic, strong) NSString *modelParent;
+@property(nonatomic, assign) BOOL isClickOpenBrowser;
+@property(nonatomic, copy) NSString *clikcOpenKey;
 
 -(void)scale:(float)x y:(float)y;
 

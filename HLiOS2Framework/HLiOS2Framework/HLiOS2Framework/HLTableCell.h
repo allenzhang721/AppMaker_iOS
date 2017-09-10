@@ -12,7 +12,11 @@
 #import "HLContainerEntity.h"
 #import <WebImage/UIImageView+WebCache.h>
 
+typedef void(^HLTableCellDelegateHandler)(NSString *key, NSString *value);
+
 @interface HLTableCell : UICollectionViewCell
+
+@property(nonatomic, copy) HLTableCellDelegateHandler handler;
 
 -(void)configWithViewModels:(HLTableCellViewModel *)viewModel entity:(HLContainerEntity *)entity;
 -(void)configWithBindingModels:(NSArray<HLTableCellSubBindingModel *> *)bindingModel;
