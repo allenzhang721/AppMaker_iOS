@@ -13,5 +13,6 @@
 
 
 @property(nonatomic, strong) HLTableEntity *entity;
+@property (nonatomic,assign) UICollectionView *collectionView;
 
 @end

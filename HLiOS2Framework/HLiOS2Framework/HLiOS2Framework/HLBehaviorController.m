@@ -30,7 +30,6 @@
 {
     if (self.pageController != nil)
     {
-        NSLog(@"eventName = %@\nfunctionName = %@\nfunctionObjID = %@\n\n",entity.eventName,entity.functionName,entity.functionObjectID);
         HLContainer *functionContainer = [self.pageController getContainerByID:entity.functionObjectID];
         
         if (functionContainer == nil)
@@ -163,10 +162,8 @@
             
             if ([entity.functionName isEqualToString:@"FUNCTION_COUNTER_PLUS"])
             {
-                NSLog(@"FUNCTION_COUNTER_PLUS");
                 if ([functionContainer.component isKindOfClass:[CounterComponent class]])
                 {
-                    NSLog(@"[entity.value intValue] = %d",[entity.value intValue]);
                     [(CounterComponent*)(functionContainer.component) addCount:[entity.value intValue]];
                 }
                 return NO;

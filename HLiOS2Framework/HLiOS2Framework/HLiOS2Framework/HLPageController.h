@@ -49,6 +49,7 @@
 -(void) clean;
 -(void) beginView;
 -(void) stopView; // Stop - - Emiaostein, 21 Mar 2017
+-(void) resetView;
 
 -(void) setup:(CGRect) rect;
     //     >>>>>>

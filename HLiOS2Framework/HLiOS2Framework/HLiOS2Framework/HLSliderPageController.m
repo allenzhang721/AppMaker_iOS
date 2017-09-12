@@ -1093,11 +1093,15 @@
 }
 
 -(void) reset { // reset the up, mid, down pages to origin, such as, reset audio, video, view, animation etc.
-    
+    page1Controller.isBeginView = false;
+    page2Controller.isBeginView = false;
+    page3Controller.isBeginView = false;
+    [page1Controller resetView];
+    [page2Controller resetView];
+    [page3Controller resetView];
     [page1Controller stopView];
     [page2Controller stopView];
     [page3Controller stopView];
-    
 }
 
 

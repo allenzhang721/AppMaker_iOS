@@ -797,6 +797,18 @@ float AUTOPLAY_DELAY = 2.0f;
     }
 }
 
+-(void) resetView
+{
+    for (int i = 0 ; i < [self.objects count]; i++)
+    {
+        HLContainer *container = [self.objects objectAtIndex:i];
+        if ([container isKindOfClass:[HLContainer class]])
+        {
+            [container.component reset];
+        }
+    }
+}
+
 -(void) stopView
 {
     for (int i = 0 ; i < [self.objects count]; i++)

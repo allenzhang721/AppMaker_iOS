@@ -58,9 +58,6 @@
         [self.contentView addSubview:imgView];
           
         imgView.tag = [[subViewModel.comID substringFromIndex:subViewModel.comID.length - 6] integerValue];
-          UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap)];
-          imgView.userInteractionEnabled = true;
-          [imgView addGestureRecognizer:tap];
       }
       
         
@@ -72,11 +69,10 @@
         CGRect rect = CGRectMake(subViewModel.x, subViewModel.y, subViewModel.width, subViewModel.height);
         UITextView *label = [[UITextView alloc]initWithFrame:rect];
         label.text = s.text;
-          
-//          NSLog(@"s.text = %@", s.text);
-          
+
         label.scrollEnabled = false;
         label.editable = false;
+        label.selectable = false;
         label.textContainerInset = UIEdgeInsetsZero;
         label.backgroundColor = [UIColor clearColor];
           
@@ -93,16 +89,6 @@
     }
   }
 }
-
-- (void)imageTap {
-    
-    
-}
-
-
-
-
-
 
 -(UIColor*)colorWithHexString:(NSString*)hex
 {
@@ -148,7 +134,6 @@
   if (dic != nil && _bindingModels.count > 0) {
       
     for (HLTableCellSubBindingModel *b in _bindingModels) {
-      NSLog(@"%@ = %@", b.modelID, dic[b.modelKey]);
       if (b.modelKey == nil) {
         continue;
       }

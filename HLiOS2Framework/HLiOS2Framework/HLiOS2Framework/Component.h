@@ -35,6 +35,7 @@
 -(void) hide;
 -(void) play;
 -(void) stop;
+-(void) reset;
 -(void) change:(int)index;
 -(void) pause;
 -(void) playAll;

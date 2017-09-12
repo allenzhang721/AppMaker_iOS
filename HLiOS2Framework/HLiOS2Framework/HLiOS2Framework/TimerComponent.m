@@ -17,6 +17,8 @@
     BOOL _isLastStaticPlay;
     BOOL _isPlayOver;
     BOOL _isPaused;
+    BOOL _isClean;
+    BOOL _isBeginView;
 }
 
 @end
@@ -50,7 +52,8 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
         self.mt           = 0;
         self.isDesOrder = te.isDesOrder;
         _isPlayOver = YES;
-        
+        _isBeginView = NO;
+        _isClean = NO;
         if (self.isDesOrder)
         {
             _step = -1;
@@ -70,12 +73,6 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
         {
             self.timeInterval = 1.0;
         }
-        
-        if (self.isStatic == true) {
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadLastStaticInfo) name:gobalTimerDidChangedNotification object:nil];
-        }
-            
-        [self loadLastStaticInfo];
         if (!self.display.text) {
             if (self.isMS == YES)
             {
@@ -104,6 +101,13 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
     
     NSLog(@"timer_maxValue:%d",self.maxValue);
     return self;
+}
+
+-(void) beginView
+{
+    _isBeginView = YES;
+    [self loadLastStaticInfo];
+    [super beginView];
 }
 
 -(UIColor*)colorWithHexString:(NSString*)hex
@@ -174,6 +178,7 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
                     NSDate *lastDate = [staticTimerInfo objectForKey:@"date"];
                     float secDis = [date timeIntervalSinceDate:lastDate];
                     self.mt = [[staticTimerInfo objectForKey:@"mt"] intValue];
+                    [self onTimer];
                     if (self.isDesOrder)
                     {
                         totalTime -= (int)secDis;
@@ -204,20 +209,11 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
             }
             else
             {
-                if (self.containerEntity.isPlayAudioOrVideoAtBegining)
-                {
-                    if (self.isDesOrder)
-                    {
-                        self.mt = 0;
-                        totalTime = self.maxValue;
-                    }
-                    else
-                    {
-                        self.mt = 0;
-                        totalTime = 0;
-                    }
-                    [self play];
-                }
+                [self stopHandler];
+//                if (self.containerEntity.isPlayAudioOrVideoAtBegining)
+//                {
+//                    [self play];
+//                }
             }
         }
     }
@@ -259,6 +255,19 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
     [[NSRunLoop currentRunLoop] run];
 }
 
+-(void) clean{
+    _isClean = true;
+}
+
+-(void) reset{
+    _isClean = true;
+    [self saveTimerInfo];
+    if (self.timer != nil)
+    {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
 
 -(void) pause
 {
@@ -272,6 +281,21 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
 
 -(void) stop
 {
+    if(_isClean)
+    {
+        if(self.isStatic != YES)
+        {
+            [self stopHandler];
+        }
+    }
+    else
+    {
+        [self stopHandler];
+    }
+    _isClean = false;
+}
+
+-(void) stopHandler{
     if (self.timer != nil)
     {
         [self.timer invalidate];
@@ -279,7 +303,7 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
     }
     _isPlayOver = YES;
     _isPaused = NO;
-
+    
     totalTime = 0;
     self.mt = 0;
     if (self.isMS == YES)
@@ -429,7 +453,12 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
         [self.timer invalidate];
         self.timer = nil;
     }
-    if (self.isStatic == YES)
+    [self saveTimerInfo];
+}
+
+-(void) saveTimerInfo
+{
+    if (self.isStatic == YES && _isBeginView == YES)
     {
         
         NSDictionary *timerInfoDic = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -441,10 +470,7 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
         [[NSUserDefaults standardUserDefaults] setObject:timerInfoDic forKey:@"StaticTimerInfo"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-}
-
-- (void)timeDidChanged:(NSNotification *)notifiction {
-    
+    _isBeginView = NO;
 }
 
 - (void)dealloc

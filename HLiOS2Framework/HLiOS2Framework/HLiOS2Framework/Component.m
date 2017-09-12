@@ -65,6 +65,7 @@
 -(void) pause{}
 -(void) play{}
 -(void) stop{}
+-(void) reset{}
 -(void) change:(int)index{}
 -(void) clean{}
 
