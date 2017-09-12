@@ -34,7 +34,6 @@
 		2C21051E1E57437D00C19F1E /* libHLiOS2Framework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2104D71E5740E600C19F1E /* libHLiOS2Framework.a */; };
 		2C2105271E5745A400C19F1E /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2105261E57459400C19F1E /* YouTubeiOSPlayerHelper.framework */; };
 		2C2105281E5745A400C19F1E /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2105261E57459400C19F1E /* YouTubeiOSPlayerHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2C39D61B1F5EF94C00C18BF4 /* tablebook in Resources */ = {isa = PBXBuildFile; fileRef = 2C39D61A1F5EF94C00C18BF4 /* tablebook */; };
 		2C4A25AC1E5AD140003ED5C4 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4A25A31E5AD120003ED5C4 /* Zip.framework */; };
 		2C4A25AD1E5AD140003ED5C4 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4A25A31E5AD120003ED5C4 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C4A25BC1E5AD199003ED5C4 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A25B21E5AD199003ED5C4 /* ioapi.c */; };
@@ -74,7 +73,6 @@
 		2C994CB51E56DCB500895B30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C994CAE1E56DCB500895B30 /* Main.storyboard */; };
 		2C994CB61E56DCB500895B30 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C994CB01E56DCB500895B30 /* Info.plist */; };
 		2C994CB71E56DCB500895B30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C994CB11E56DCB500895B30 /* ViewController.swift */; };
-		2CB254C21F4ED4CD0041EC86 /* countbook in Resources */ = {isa = PBXBuildFile; fileRef = 2CB254C11F4ED4CC0041EC86 /* countbook */; };
 		2CDCFE051E71441A0031565A /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDCFE041E71441A0031565A /* WebImage.framework */; };
 		2CDCFE061E71441A0031565A /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDCFE041E71441A0031565A /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -327,7 +325,6 @@
 		2C21051C1E57432400C19F1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2C21051F1E57442700C19F1E /* appMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = appMaker.h; sourceTree = "<group>"; };
 		2C2105211E57459400C19F1E /* youtube-ios-player-helper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "youtube-ios-player-helper.xcodeproj"; path = "Frameworks/youtube-ios-player-helper/youtube-ios-player-helper.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		2C39D61A1F5EF94C00C18BF4 /* tablebook */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tablebook; sourceTree = "<group>"; };
 		2C4A259A1E5AD120003ED5C4 /* Zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Zip.xcodeproj; path = Frameworks/Zip/Zip.xcodeproj; sourceTree = SOURCE_ROOT; };
 		2C4A25B11E5AD199003ED5C4 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		2C4A25B21E5AD199003ED5C4 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
@@ -388,7 +385,6 @@
 		2C994CAF1E56DCB500895B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C994CB01E56DCB500895B30 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C994CB11E56DCB500895B30 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2CB254C11F4ED4CC0041EC86 /* countbook */ = {isa = PBXFileReference; lastKnownFileType = folder; path = countbook; sourceTree = "<group>"; };
 		2CDCFDE61E713E860031565A /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebImage.framework; sourceTree = "<group>"; };
 		2CDCFE041E71441A0031565A /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = ../WebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -654,8 +650,6 @@
 		2C994CA91E56DCB500895B30 /* Smart App Creator */ = {
 			isa = PBXGroup;
 			children = (
-				2C39D61A1F5EF94C00C18BF4 /* tablebook */,
-				2CB254C11F4ED4CC0041EC86 /* countbook */,
 				2C21051F1E57442700C19F1E /* appMaker.h */,
 				2C994CAA1E56DCB500895B30 /* AppDelegate.swift */,
 				2C994CB11E56DCB500895B30 /* ViewController.swift */,
@@ -957,10 +951,8 @@
 				2C4C276C1E574A0A003C5A1F /* appMakerResources.bundle in Resources */,
 				2C994CB51E56DCB500895B30 /* Main.storyboard in Resources */,
 				2C4C276D1E574A0A003C5A1F /* appMakerUI.xcassets in Resources */,
-				2CB254C21F4ED4CD0041EC86 /* countbook in Resources */,
 				2C994CB31E56DCB500895B30 /* Assets.xcassets in Resources */,
 				2C994CB41E56DCB500895B30 /* LaunchScreen.storyboard in Resources */,
-				2C39D61B1F5EF94C00C18BF4 /* tablebook in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
