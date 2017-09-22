@@ -54,6 +54,7 @@
 
 - (void)beginView
 {
+    isClean = NO;
     [super beginView];
     [self initGrid];
 }

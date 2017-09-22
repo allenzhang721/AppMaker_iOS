@@ -1219,7 +1219,7 @@
         if (self.currentPageIndex > 0 ) //交换位置
         {
           HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex - 1] path:self.rootPath];
-          if(lp.currentPageEntity == nil || lp.currentPageEntity.entityid != pageEntity.entityid)
+          if(lp.currentPageEntity == nil || ![lp.currentPageEntity.entityid isEqualToString:pageEntity.entityid])
           {
             CGRect fpf    = fp.view.frame;
             fp.view.frame = mp.view.frame;
@@ -1240,7 +1240,8 @@
             if (self.currentPageIndex < pageCount) //加载后页
             {
               HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex + 1] path:self.rootPath] ;
-              if(lp.currentPageEntity == nil || lp.currentPageEntity.entityid != pageEntity.entityid)
+                
+              if(lp.currentPageEntity == nil || ![lp.currentPageEntity.entityid isEqualToString:pageEntity.entityid])
               {
                 [lp loadPage:pageEntity];
                 lp.pageIndex = self.currentPageIndex + 1;
@@ -1249,7 +1250,9 @@
             if (self.currentPageIndex > 0)  //加载前页
             {
               HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex - 1] path:self.rootPath] ;
-              if(fp.currentPageEntity == nil || fp.currentPageEntity.entityid != pageEntity.entityid)
+                NSLog(@"aaa = %@ bbb = %@", fp.currentPageEntity.entityid, pageEntity.entityid);
+                
+              if(fp.currentPageEntity == nil && ![fp.currentPageEntity.entityid isEqualToString:pageEntity.entityid])
               {
                 [fp loadPage:pageEntity];
                 fp.pageIndex = self.currentPageIndex - 1;
@@ -1265,7 +1268,7 @@
                 if (self.currentPageIndex < pageCount)  // 还没到最后
                 {
                   HLPageEntity *pageEntity = [HLPageDecoder decode:[self.sectionPages objectAtIndex:self.currentPageIndex + 1] path:self.rootPath];
-                  if(fp.currentPageEntity == nil || fp.currentPageEntity.entityid != pageEntity.entityid){
+                  if(fp.currentPageEntity == nil || ![fp.currentPageEntity.entityid isEqualToString:pageEntity.entityid]){
                     CGRect lpf = lp.view.frame;
                     lp.view.frame = mp.view.frame;
                     mp.view.frame = fp.view.frame;
