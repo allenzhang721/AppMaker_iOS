@@ -82,11 +82,11 @@
         //    NSLog(textField.text);
         NSString *string = textField.text;
         if ([self onTextDidEndEdit:string]) {
-            //      [textField resignFirstResponder];
+            
         } else if ([self onTextDidChanged:string]) {
             
         }
-    
+        [textField resignFirstResponder];
 }
 
 
