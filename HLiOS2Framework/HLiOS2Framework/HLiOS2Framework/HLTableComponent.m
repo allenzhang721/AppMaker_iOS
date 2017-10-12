@@ -65,9 +65,29 @@ static NSUInteger count = 2;
 //  
 //}
 
+-(NSString *) convertStr:(NSString *) value{
+    
+    value = [value stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    value = [value stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    value = [value stringByReplacingOccurrencesOfString:@"&gt;" withString:@">" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    value = [value stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    value = [value stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\"" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    
+    value = [value stringByReplacingOccurrencesOfString:@"&amp" withString:@"&" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    value = [value stringByReplacingOccurrencesOfString:@"&lt" withString:@"<" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    value = [value stringByReplacingOccurrencesOfString:@"&gt" withString:@">" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    value = [value stringByReplacingOccurrencesOfString:@"&apos" withString:@"'" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    value = [value stringByReplacingOccurrencesOfString:@"&quot" withString:@"\"" options:NSRegularExpressionSearch range:NSMakeRange(0, value.length)];
+    
+    return value;
+}
+
 - (void)loadData:(NSData *)data {
 //    [self alertResult:@"Will Load Data"];
-  NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    str = [self convertStr:str];
+    NSData *newData = [str dataUsingEncoding:NSUTF8StringEncoding];
+  NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:newData options:0 error:nil];
 //  count = [dic[@"count"] floatValue];
   
     NSArray<NSDictionary<NSString *, NSString *> *> *items = nil;
