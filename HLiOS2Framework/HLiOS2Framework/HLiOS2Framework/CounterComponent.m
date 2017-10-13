@@ -143,14 +143,22 @@ static int totalCount = -1;
 -(void) reset
 {
     CounterEntity *ce = (CounterEntity *)self.container.entity;
+    if (self.isGlobal == NO)
+    {
+        self.selfValue = ce.minValue;
+        [self.display setText:[NSString stringWithFormat:@"%d",ce.minValue]];
+        [self.display sizeToFit];
+    }
+}
+
+-(void) resetCount
+{
+    CounterEntity *ce = (CounterEntity *)self.container.entity;
     if (self.isGlobal == YES)
     {
         totalCount = ce.minValue;
         [self storeTotalCount];
-//        [self.display setText:[NSString stringWithFormat:@"%d",totalCount]];
-        
         [[NSNotificationCenter defaultCenter] postNotificationName: globalNotification object: [NSNumber numberWithInteger:totalCount]];
-        
     }
     else
     {

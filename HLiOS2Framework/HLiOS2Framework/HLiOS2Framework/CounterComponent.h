@@ -16,7 +16,7 @@
 
 -(void) addCount:(int) value;
 -(void) delCount:(int) value;
--(void) reset;
+-(void) resetCount;
 
 +(void) resetGlobal;
 @end

@@ -182,7 +182,7 @@
             {
                 if ([functionContainer.component isKindOfClass:[CounterComponent class]])
                 {
-                    [(CounterComponent*)(functionContainer.component) reset];
+                    [(CounterComponent*)(functionContainer.component) resetCount];
                 }
                 return NO;
             }
