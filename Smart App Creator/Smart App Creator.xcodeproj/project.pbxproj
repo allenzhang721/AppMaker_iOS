@@ -738,7 +738,7 @@
 				TargetAttributes = {
 					2C994C721E56D52600895B30 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = H7HX4A2DL8;
+						DevelopmentTeam = N8WL2V9VY9;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -1191,7 +1191,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H7HX4A2DL8;
+				DEVELOPMENT_TEAM = N8WL2V9VY9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1234,7 +1234,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: u-Smart Technology Co., Ltd. (N8WL2V9VY9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H7HX4A2DL8;
+				DEVELOPMENT_TEAM = N8WL2V9VY9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
