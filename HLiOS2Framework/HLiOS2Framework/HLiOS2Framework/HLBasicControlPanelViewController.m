@@ -15,6 +15,8 @@
 
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)        //陈星宇，11.27，适配
 
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
 
 @interface HLBasicControlPanelViewController ()
 
@@ -393,9 +395,31 @@
         }
     }
 //    self.btnExit.frame              = CGRectMake(CGRectGetMaxX(self.btnHome.frame), 0, CGRectGetWidth(self.btnHome.frame), CGRectGetHeight(self.btnHome.frame));
-  CGFloat width = CGRectGetWidth(self.btnExit.frame) * rate;
-  CGFloat height = CGRectGetHeight(self.btnExit.frame) * rate;
-    self.btnExit.frame = CGRectMake(((CGRectGetWidth(rect) / 2 - width/2)), 0, width, height);
+    CGFloat width = CGRectGetWidth(self.btnOpenBookSnapshots.frame); //* rate;
+    CGFloat height = CGRectGetHeight(self.btnOpenBookSnapshots.frame); //* rate;
+    if(iPhoneX){
+        UIDeviceOrientation s = [[UIDevice currentDevice] orientation];
+        BOOL isLands = false;
+        switch (s) {
+            case UIDeviceOrientationLandscapeRight:
+            case UIDeviceOrientationLandscapeLeft:
+                isLands = true;
+                break;
+            default:
+                break;
+        }
+        if (isLands)
+        {
+           self.btnExit.frame = CGRectMake(((CGRectGetWidth(rect) / 2 - width/2)), 0, width, height);
+        }
+        else
+        {
+            self.btnExit.frame = CGRectMake(((CGRectGetWidth(rect) / 2 - width/2)), 22, width, height);
+        }
+    }else{
+        self.btnExit.frame = CGRectMake(((CGRectGetWidth(rect) / 2 - width/2)), 0, width, height);
+    }
+    
     
 //    self.btnExit.frame = CGRectMake(rect.size.width/2 - CGRectGetWidth(self.btnExit.frame), 0, CGRectGetWidth(self.btnExit.frame) * rate, CGRectGetHeight(self.btnExit.frame) *rate);
     self.view.frame                 = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);          //陈星宇，11.27，适配
@@ -495,7 +519,9 @@
             [list addTarget:self action:@selector(showList) forControlEvents:(UIControlEventTouchUpInside)];
             [self.view addSubview:list];
             CGRect f = self.btnOpenBookSnapshots.frame;
-            f.origin.x -= f.size.width;
+            if(self.btnOpenBookSnapshots.layer.opacity != 0.0){
+                f.origin.x -= f.size.width;
+            }
             list.frame = f;
             //        if (_isHideBackBtn) {
             //            CGRect f = self.btnOpenBookSnapshots.frame;

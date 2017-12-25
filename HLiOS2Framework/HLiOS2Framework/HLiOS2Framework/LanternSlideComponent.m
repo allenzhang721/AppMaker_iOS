@@ -443,12 +443,12 @@
 
 - (void)timerUpdate
 {
-    curIndex = [self getEnableIndex:curIndex];
     if (isPlayAnimation)
     {
         return;
     }
     isPlayAnimation = YES;
+    curIndex = [self getEnableIndex:curIndex];
     int nextIndex = curIndex + curAdd;
     nextIndex = [self getEnableIndex:nextIndex];
     if (!self.tmpShowImg)
@@ -479,25 +479,28 @@
 
 - (void)tapGesture
 {
-    if (curIndex >= [self.entity.showImgArr count])//change时点击第一张无反应 1.23 adward
-    {
-        curIndex = 0;
-    }
-    curAdd = 1;
-    if (self.entity.isEndToStart)
-    {
-        [self stopTimer];
-        [self timerUpdate];
-    }
-    else
-    {
-        if (curIndex < self.entity.showImgArr.count - 1)
+    BOOL isGoPage = [self onTapGesture];
+    if(!isGoPage){
+        if (curIndex >= [self.entity.showImgArr count])//change时点击第一张无反应 1.23 adward
+        {
+            curIndex = 0;
+        }
+        curAdd = 1;
+        if (self.entity.isEndToStart)
         {
             [self stopTimer];
             [self timerUpdate];
         }
+        else
+        {
+            if (curIndex < self.entity.showImgArr.count - 1)
+            {
+                [self stopTimer];
+                [self timerUpdate];
+            }
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationScrollEnabled" object:[NSNumber numberWithBool:YES]];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationScrollEnabled" object:[NSNumber numberWithBool:YES]];
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
