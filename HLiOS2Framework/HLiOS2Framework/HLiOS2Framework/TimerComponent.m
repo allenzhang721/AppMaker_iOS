@@ -225,27 +225,28 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
     
     if (self.timer == nil)
     {
+        if (!_isPaused && !_isLastStaticPlay)
+        {
+            if (self.isDesOrder)
+            {
+                totalTime = self.maxValue;
+            }
+            else
+            {
+                totalTime = 0;
+            }
+        }
+        _isLastStaticPlay = NO;
+        _isPaused = NO;
+        _isPlayOver = NO;
+        [self.display setText:[NSString stringWithFormat:@"%d",totalTime]];
         [NSThread detachNewThreadSelector:@selector(updateTimer) toTarget:self withObject:nil];
+        [self.container onPlay];
     }
     else
     {
         return;
     }
-    if (!_isPaused && !_isLastStaticPlay)
-    {
-        if (self.isDesOrder)
-        {
-            totalTime = self.maxValue;
-        }
-        else
-        {
-            totalTime = 0;
-        }
-    }
-    _isLastStaticPlay = NO;
-    _isPaused = NO;
-    _isPlayOver = NO;
-    [self.container onPlay];
 }
 
 -(void)updateTimer//NSTimer计时不准
@@ -343,12 +344,18 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
                 if (totalTime >= 0)
                 {
                     self.mt = 99;
+                    [self setdisplay1:totalTime];
                 }
                 if (totalTime < 0)
                 {
                     totalTime = 0;
+                    [self setdisplay1:totalTime];
                     [self timerStop];
                 }
+            }
+            else
+            {
+                [self setdisplay1:totalTime];
             }
         }
         else
@@ -359,33 +366,44 @@ static NSString* const gobalTimerDidChangedNotification = @"gobalTimerDidChanged
                 if (totalTime <= self.maxValue)
                 {
                     self.mt = 0;
+                    [self setdisplay1:totalTime];
                 }
                 if (totalTime >= self.maxValue)
                 {
                     totalTime = self.maxValue;
+                    [self setdisplay1:totalTime];
                     [self timerStop];
                 }
             }
+            else
+            {
+                [self setdisplay1:totalTime];
+            }
         }
-        
-        [self setdisplay1:totalTime];
     }
     else
     {
         totalTime += _step;
-        [self.display setText:[NSString stringWithFormat:@"%d",totalTime]];
         if (self.isDesOrder == YES)
         {
-            if (totalTime == 0)
+            if (totalTime < 0)
             {
                 [self timerStop];
+            }
+            else
+            {
+                [self.display setText:[NSString stringWithFormat:@"%d",totalTime]];
             }
         }
         else
         {
-            if (totalTime == self.maxValue)
+            if (totalTime > self.maxValue)
             {
                 [self timerStop];
+            }
+            else
+            {
+                [self.display setText:[NSString stringWithFormat:@"%d",totalTime]];
             }
         }
         
